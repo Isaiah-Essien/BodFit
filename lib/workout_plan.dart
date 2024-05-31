@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black87, // Set background color
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor:
+            backgroundColor: 
                 const Color.fromARGB(255, 59, 173, 225), // Set button color
           ),
         ),
