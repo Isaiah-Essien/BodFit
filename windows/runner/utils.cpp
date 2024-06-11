@@ -1,11 +1,11 @@
-#include "utils.h"
 
-#include <flutter_windows.h>
-#include <io.h>
-#include <stdio.h>
-#include <windows.h>
 
-#include <iostream>
+
+
+
+
+
+
 
 void CreateAndAttachConsole() {
   if (::AllocConsole()) {
