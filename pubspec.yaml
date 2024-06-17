@@ -17,9 +17,11 @@ dependencies:
 
 #-----------Utility packages--------#
   http: ^1.1.0
-  intl: ^0.18.1
+  intl: ^0.19.0
   logger: ^2.0.1
   url_launcher: ^6.1.12
+  flutter_native_splash: ^2.4.0
+  smooth_page_indicator: ^1.1.0
 
   
   #Icons
@@ -41,7 +43,7 @@ dev_dependencies:
   
   
   
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 
 
@@ -60,8 +62,9 @@ flutter:
     # - assets/images/exercise0.jpg
     # - assets/images/exercise1.jpg
     # - assets/images/exercise2.jpg
-    # - assets/images/exercise3.jpg
-    - assets\images\
+    - assets/images/
+    - assets/logos/
+    - assets/gifs/
 
   
   
