@@ -1,6 +1,6 @@
 import 'package:bodFit_group5_summative/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:bodFit_group5_summative/features/authentication/screens/onboarding.dart';
+import 'package:bodFit_group5_summative/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:get/get.dart';
 
 class App extends StatelessWidget {

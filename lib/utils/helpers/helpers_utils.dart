@@ -3,16 +3,22 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class MHelperFunctions {
-  //Snacher functions//
-  static void showSnackerBar(String message) {
-    ScaffoldMessenger.of(Get.context!)
-        .showSnackBar(SnackBar(content: Text(message)));
+  // Show a snackbar with a message
+  static void showSnackbar(String message) {
+    final context = Get.context;
+    if (context != null) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    } else {
+      debugPrint('Context is null. Cannot show snackbar.');
+    }
   }
 
-  //Show Alert Function//
+  // Show an alert dialog with a title and message
   static void showAlert(String title, String message) {
-    showDialog(
-        context: Get.context!,
+    final context = Get.context;
+    if (context != null) {
+      showDialog(
+        context: context,
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(title),
@@ -24,10 +30,14 @@ class MHelperFunctions {
               ),
             ],
           );
-        });
+        },
+      );
+    } else {
+      debugPrint('Context is null. Cannot show alert dialog.');
+    }
   }
 
-  //Navigate to other screens//
+  // Navigate to another screen
   static void navigateToScreen(BuildContext context, Widget screen) {
     Navigator.push(
       context,
@@ -35,7 +45,7 @@ class MHelperFunctions {
     );
   }
 
-  //text truncate//
+  // Truncate text if it exceeds maxLength
   static String truncateText(String text, int maxLength) {
     if (text.length <= maxLength) {
       return text;
@@ -44,38 +54,42 @@ class MHelperFunctions {
     }
   }
 
-  //Check for Dark mode//
+  // Check if the current theme is dark mode
   static bool isDarkMode(BuildContext context) {
     return Theme.of(context).brightness == Brightness.dark;
   }
 
-  //Screen Size//
+  // Get the screen size
   static Size screenSize() {
-    return MediaQuery.of(Get.context!).size;
+    final context = Get.context;
+    if (context != null) {
+      return MediaQuery.of(context).size;
+    } else {
+      return Size.zero;
+    }
   }
 
-  //Screen Height//
+  // Get the screen height
   static double screenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
+    return screenSize().height;
   }
 
-  //Screen Width//
+  // Get the screen width
   static double screenWidth() {
-    return MediaQuery.of(Get.context!).size.width;
+    return screenSize().width;
   }
 
-  //Get date format//
-  static String getFormattedDate(DateTime date, {String format = 'dd MM yyy'}) {
+  // Get formatted date as a string
+  static String getFormattedDate(DateTime date, {String format = 'dd MM yyyy'}) {
     return DateFormat(format).format(date);
   }
 
-  //Remove duplicates//
-  static List<T> removeDuplicate<T>(List<T> list) {
+  // Remove duplicates from a list
+  static List<T> removeDuplicates<T>(List<T> list) {
     return list.toSet().toList();
   }
 
-
-  //wrap widget//
+  // Wrap widgets into rows of a specified size
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
     final wrappedList = <Widget>[];
     for (var i = 0; i < widgets.length; i += rowSize) {
@@ -84,5 +98,10 @@ class MHelperFunctions {
       wrappedList.add(Row(children: rowChildren));
     }
     return wrappedList;
+  }
+
+  // Get asset path based on theme
+  static String getAssetPath(BuildContext context, String lightAssetPath, String darkAssetPath) {
+    return isDarkMode(context) ? darkAssetPath : lightAssetPath;
   }
 }
