@@ -56,22 +56,18 @@ flutter:
   
   uses-material-design: true
 
-  #---------Local Assests------#
+  #---------Local Assets------
   assets:
     # - assets/images/image1.jpg
     # - assets/images/exercise0.jpg
     # - assets/images/exercise1.jpg
     # - assets/images/exercise2.jpg
-<<<<<<< HEAD
     # - assets/images/exercise3.jpg
-    - assets/images/
-=======
     - assets/images/
     - assets/logos/
     - assets/gifs/Nutrition.gif
     - assets/gifs/fitness.gif
     - assets/gifs/delivery.gif
->>>>>>> 2b78ce4fb69332fd54564405334f31c3a1d6ca18
 
   
   
