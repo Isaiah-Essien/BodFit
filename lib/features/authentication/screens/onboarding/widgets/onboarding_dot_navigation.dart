@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/device/device_utils.dart';
@@ -12,14 +13,17 @@ class OnBoardingDotNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = OnBoardingController.instance;
     final dark = MHelperFunctions.isDarkMode(context);
 
     return Positioned(
       bottom: MDeviceUtils.getBottomNavigationBarHeight() + 25,
       left: MSizes.defaultSpace,
       child: SmoothPageIndicator(
-          controller: PageController(),
+          
           count: 3,
+          controller: controller.pageController,
+          onDotClicked: controller.dotNavigationClick,
           effect: ExpandingDotsEffect(
               activeDotColor: dark ? MColors.light : MColors.dark,
               dotHeight: 6)),

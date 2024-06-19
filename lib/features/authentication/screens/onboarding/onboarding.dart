@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/onboarding/widgets/onboardig_next_button.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
@@ -6,6 +7,7 @@ import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 
 class OnBoardingScreen extends StatelessWidget {
@@ -13,11 +15,16 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnBoardingController());
+
+    
     return Scaffold(
       body: Stack(
         children: [
           ///Horizontal scrollable pages
           PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
             children: const [
               OnBoardingPage(
                 image: MImages.onboardingImage3,

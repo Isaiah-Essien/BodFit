@@ -1,27 +1,39 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
 
-  ///Variables
-  
-  ///Update Current index when page scrolls
-  void updatePageIndicator(index){}
+  /// Variables
+  final pageController = PageController();
+  Rx<int> currentPageIndex = 0.obs;
 
-  ///Jump to the specific dot selected page
-  void dotNavigationClick(index){}
+  /// Update Current index when page scrolls
+  void updatePageIndicator(int index) {
+    currentPageIndex.value = index;
+  }
 
-  ///Update current index and jump to the next page
-  void nextPage(index){}
+  /// Jump to the specific dot selected page
+  void dotNavigationClick(int index) {
+    currentPageIndex.value = index;
+    pageController.jumpToPage(index);
+  }
 
-  ///update current index and skip to last page
-  void skipPage(index){}
+  /// Update current index and jump to the next page
+  void nextPage() {
+    if (currentPageIndex.value < 2) {
+      int nextPageIndex = currentPageIndex.value + 1;
+      pageController.jumpToPage(nextPageIndex);
+    } else {
+      // Handle the case when the current page is the last one
+      // For example, navigate to the next screen
+      // Get.to(LoginScreen());
+    }
+  }
 
-
-
-
-
-
-
-
+  /// Update current index and skip to the last page
+  void skipPage() {
+    currentPageIndex.value = 2;
+    pageController.jumpToPage(2);
+  }
 }
