@@ -13,11 +13,13 @@ class OnBoardingSkip extends StatelessWidget {
       top: MDeviceUtils.getAppBarHeight(),
       right: MSizes.defaultSpace,
       child: TextButton(
+        
         onPressed: () {
           // Calling the skipPage method
           OnBoardingController.instance.skipPage();
         },
         child: const Text('Skip'),
+        
       ),
     );
   }

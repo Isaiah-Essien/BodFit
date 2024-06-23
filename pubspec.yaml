@@ -65,9 +65,9 @@ flutter:
     # - assets/images/exercise3.jpg
     - assets/images/
     - assets/logos/
-    - assets/gifs/Nutrition.gif
-    - assets/gifs/fitness.gif
-    - assets/gifs/delivery.gif
+    - assets/gifs/
+    - assets/icons/
+
 
   
   

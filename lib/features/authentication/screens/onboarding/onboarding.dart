@@ -6,7 +6,6 @@ import 'package:bodFit_group5_summative/features/authentication/screens/onboardi
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 
