@@ -17,9 +17,9 @@ class MTexts {
 
   //---------------------Authentication headings ------------//
   static const String loginTitle = 'Welcome Back to BODFiT';
-  static const String createAccount = 'Create Account';
+  static const String createAccount = 'Sign Up';
   static const String loginSubTitle = '...your fitness is our priority';
-  static const String signUpTitle = 'Let\'s get you and account';
+  static const String signUpTitle = 'Let\'s get you an account, Champ';
   static const String forgtPasswordTitle = 'Forget Passsword';
   static const String forgtPasswordSubTitle = 'Don\'t Worry we all our Forget Passswords sometimes';
   static const String changeYourpasswordTitle = 'Password reset email sent';
@@ -29,6 +29,7 @@ class MTexts {
   static const String emailNotrecievedMessage = 'Did not recieve email? Check your Spam or Resend it';
   static const String yourAccountCreatedTitle = 'Your account is succesfully created';
   static const String yourAccountCreatedSubTitle = 'Welcome! You are now a BODFiT champ!';
+  static const String alreadyHaveAnAccount = 'Already have an account?';
 
   //-----------------------label Strings for Login and Signup--------------------//
   static const String firstName = 'First Name';

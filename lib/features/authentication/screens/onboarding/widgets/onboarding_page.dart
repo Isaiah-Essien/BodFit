@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/features/authentication/screens/signup/signup.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
@@ -40,10 +41,10 @@ class OnBoardingPage extends StatelessWidget {
           
           ElevatedButton(
             onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const SignUpPage()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignupScreen()),
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: MColors.primaryColor,

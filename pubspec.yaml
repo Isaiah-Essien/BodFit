@@ -14,6 +14,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
 
 #-----------Utility packages--------#
   http: ^1.1.0
@@ -32,6 +33,7 @@ dependencies:
 # State management
   get: ^4.6.5
   get_storage: ^2.1.1
+  flutter_svg: ^2.0.10+1
 #-------------------------./Packges End---------#
 
 dev_dependencies:

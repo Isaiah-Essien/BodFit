@@ -1,7 +1,9 @@
+import 'package:bodFit_group5_summative/features/authentication/screens/signup/signup.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class MloginForm extends StatelessWidget {
@@ -70,11 +72,12 @@ class MloginForm extends StatelessWidget {
                     onPressed: () {}, child: const Text(MTexts.logIn))),
             const SizedBox(height: MSizes.spaceBtwItms),
 
-            ///Create account Link
+            ///Create account Button
             SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(
-                    onPressed: () {}, child: const Text(MTexts.createAccount))),
+                    onPressed: () => Get.to(() => const SignupScreen()), child: const Text(MTexts.createAccount))),
+            
           ],
         ),
       ),
