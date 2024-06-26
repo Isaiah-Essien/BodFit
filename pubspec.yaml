@@ -60,11 +60,7 @@ flutter:
 
   #---------Local Assets------
   assets:
-    # - assets/images/image1.jpg
-    # - assets/images/exercise0.jpg
-    # - assets/images/exercise1.jpg
-    # - assets/images/exercise2.jpg
-    # - assets/images/exercise3.jpg
+
     - assets/images/
     - assets/images/kanayo.jpg
     - assets/logos/

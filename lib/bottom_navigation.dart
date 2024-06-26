@@ -25,9 +25,9 @@ class BottomNavigationMenu extends StatelessWidget {
                 : MColors.dark.withOpacity(0.1),
             destinations: const [
               NavigationDestination(
-                  icon: Icon(Iconsax.home4), label: 'Dashboard'),
+                  icon: Icon(Iconsax.home), label: 'Dashboard'),
               NavigationDestination(
-                  icon: Icon(Iconsax.weight), label: 'Fitness'),
+                  icon: Icon(Iconsax.weight_15), label: 'Fitness'),
               NavigationDestination(
                   icon: Icon(Iconsax.gift), label: 'Nutrition'),
               NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
