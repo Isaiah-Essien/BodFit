@@ -31,7 +31,7 @@ class SuccesScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
-                height: MSizes.spaceBtwItms,
+                height: MSizes.spaceBtwItms*2,
               ),
 
               Text(

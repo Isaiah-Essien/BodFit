@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/bottom_navigation.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/signup/signup.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
@@ -66,11 +67,11 @@ class MloginForm extends StatelessWidget {
             ),
             const SizedBox(height: MSizes.spaceBtwSects),
 
-            ///Sign In button
+            ///lOG In button
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: const Text(MTexts.logIn))),
+                    onPressed: ()=>Get.to(()=>const BottomNavigationMenu()), child: const Text(MTexts.logIn))),
             const SizedBox(height: MSizes.spaceBtwItms),
 
             ///Create account Button
