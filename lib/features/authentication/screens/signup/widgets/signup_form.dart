@@ -1,8 +1,10 @@
 import 'package:bodFit_group5_summative/features/authentication/screens/login/login.dart';
+import 'package:bodFit_group5_summative/features/authentication/screens/signup/verify_email.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignUpForm extends StatelessWidget {
@@ -78,8 +80,8 @@ class SignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
-              child: const Text(MTexts.createAccount),
+              onPressed: ()=>Get.to(() => const VerifyEmailScreen()),
+              child: const Text(MTexts.signUp),
             ),
           ),
           Row(
