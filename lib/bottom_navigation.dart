@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/features/personalisation/screens/settings/settings.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +49,6 @@ class NavigationController extends GetxController {
     Container(color: Colors.black12),
     Container(color: Colors.red),
     Container(color: const Color.fromARGB(31, 19, 177, 234)),
-    Container(color: const Color.fromARGB(31, 222, 35, 182)),
+    const SettingsScreen(),
   ];
 }
