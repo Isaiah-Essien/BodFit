@@ -12,8 +12,12 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MAppTheme.lightTheme,
       darkTheme: MAppTheme.darkTheme,
+<<<<<<< HEAD
       home:
           const OnBoardingScreen(), // Temporarily set DashboardPage as the initial screen
+=======
+      home: const OnBoardingScreen(), // Temporarily set DashboardPage as the initial screen
+>>>>>>> c689c9a104733bde5b91e2268dc8d51a2bdbc738
     );
   }
 }

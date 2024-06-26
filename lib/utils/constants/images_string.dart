@@ -12,8 +12,12 @@ class MImages {
   //Onboarding images//
   static const String onboardingImage1 = 'assets/gifs/Nutrition.gif';
   static const String onboardingImage2 = 'assets/gifs/fitness.gif';
-  static const String onboardingImage3 = 'assets/gifs/delivery.gif';
+  static const String onboardingImage3 = 'assets/gifs/welcome.gif';
 
-  //Login and signup background images for darkmode
-  static const String loginBG = 'assets/images/login_bg.jpg';
+  //some gifs for verify email and congratulations screens
+  static const String deliveryEmail= 'assets/gifs/delivery_email.gif';
+  static const String verify= 'assets/gifs/verify_email.gif';
+  static const String congrats= 'assets/gifs/congrats.png';
+  static const String thinking= 'assets/gifs/thinking.gif';
+  static const String reset= 'assets/gifs/reset.gif';
 }

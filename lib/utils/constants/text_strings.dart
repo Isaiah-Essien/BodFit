@@ -18,22 +18,34 @@ class MTexts {
   //---------------------Authentication headings ------------//
   static const String loginTitle = 'Welcome Back to BODFiT';
   static const String createAccount = 'Create Account';
+  static const String signUp = 'Sign Up';
+  static const String tContinue = 'Continue';
   static const String loginSubTitle = '...your fitness is our priority';
-  static const String signUpTitle = 'Let\'s get you and account';
+  static const String signUpTitle =
+      'Need an account?  You\'re on track, Champ!';
   static const String forgtPasswordTitle = 'Forget Passsword';
-  static const String forgtPasswordSubTitle = 'Don\'t Worry we all our Forget Passswords sometimes';
+  static const String forgtPasswordSubTitle =
+      'That\'s alright, Chapm. We all Forget our Passswords sometimes. \n\n Enter your email, and we will send you a link to rest your password';
   static const String changeYourpasswordTitle = 'Password reset email sent';
-  static const String changeYourpasswordSubTitle = 'Your account privacy is our priority. We have sent you a secure link to rest your password and keep your account from harm';
-  static const String confirmEmailsSubTitle = 'Congratulations BODFiT champ! Your email awaits: verify your email to start the Bodfir experience';
+  static const String changeYourpasswordSubTitle =
+      'Your account privacy is our priority. We have sent you a secure link to rest your password and keep your account from harm';
+  static const String confirmEmailsSubTitle =
+      'Hello, Potential BODFiT champ! \n Your account awaits verification; please verify your email to start the BODFiT experience';
   static const String confirmEmail = 'Verify your Email address';
-  static const String emailNotrecievedMessage = 'Did not recieve email? Check your Spam or Resend it';
-  static const String yourAccountCreatedTitle = 'Your account is succesfully created';
-  static const String yourAccountCreatedSubTitle = 'Welcome! You are now a BODFiT champ!';
+  static const String emailNotrecievedMessage =
+      'Did not recieve email? Check your Spam or Resend it';
+  static const String yourAccountCreatedTitle =
+      'Congratulations! Your account is succesfully created!';
+  static const String yourAccountCreatedSubTitle =
+      'You are now a BODFiT champ!\n Head in and start selecting workouts and meal plans. You can upgrade to Premium for even better experience.';
+  static const String alreadyHaveAnAccount = 'Already have an account?';
 
   //-----------------------label Strings for Login and Signup--------------------//
   static const String firstName = 'First Name';
   static const String lastName = 'Last Name';
   static const String email = 'E-mail';
+  static const String submit = 'Submit';
+  static const String done = 'Done';
   static const String password = 'Password';
   static const String newPassword = 'New Password';
   static const String username = 'Username';

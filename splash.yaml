@@ -6,7 +6,7 @@ flutter_native_splash:
 
   android_12:
     color: '#FFFFFF'
-    color_dark: '#000000'
+    color_dark: '#121212'
     image: assets\logos\light_theme_logo.png
     image_dark: assets\logos\dark_theme_logo.png
 
