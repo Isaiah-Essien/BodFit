@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/signup/signup.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
@@ -60,7 +61,7 @@ class MloginForm extends StatelessWidget {
 
                 ///Forget password
                 TextButton(
-                    onPressed: () {}, child: const Text(MTexts.forgetPassword)),
+                    onPressed: () => Get.to(() => const Forgetpassword()), child: const Text(MTexts.forgetPassword)),
               ],
             ),
             const SizedBox(height: MSizes.spaceBtwSects),

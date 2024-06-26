@@ -25,7 +25,7 @@ class MTexts {
       'Need an account?  You\'re on track, Champ!';
   static const String forgtPasswordTitle = 'Forget Passsword';
   static const String forgtPasswordSubTitle =
-      'Don\'t Worry we all our Forget Passswords sometimes';
+      'That\'s alright, Chapm. We all Forget our Passswords sometimes. \n\n Enter your email, and we will send you a link to rest your password';
   static const String changeYourpasswordTitle = 'Password reset email sent';
   static const String changeYourpasswordSubTitle =
       'Your account privacy is our priority. We have sent you a secure link to rest your password and keep your account from harm';
@@ -44,6 +44,8 @@ class MTexts {
   static const String firstName = 'First Name';
   static const String lastName = 'Last Name';
   static const String email = 'E-mail';
+  static const String submit = 'Submit';
+  static const String done = 'Done';
   static const String password = 'Password';
   static const String newPassword = 'New Password';
   static const String username = 'Username';
