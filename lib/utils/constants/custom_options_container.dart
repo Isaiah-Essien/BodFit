@@ -31,7 +31,7 @@ class CustomImageContainer extends StatelessWidget {
                       fit: BoxFit.cover,
                     ))),
             Text(imageName,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 16,
                   fontWeight: FontWeight.normal,

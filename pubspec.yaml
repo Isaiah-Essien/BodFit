@@ -35,7 +35,8 @@ dependencies:
 # State management
   get: ^4.6.5
   get_storage: ^2.1.1
-#-------------------------./Packges End---------#
+#-------------------------./Packages End---------#
+
 
 dev_dependencies:
   flutter_test:

@@ -10,7 +10,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
   const ScaffoldWithNavBar({
     super.key,
     required this.body,
-    required this.appBar,
+    this.appBar,
     required this.currentIndex,
     required this.onTap,
   });
