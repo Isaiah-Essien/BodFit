@@ -13,6 +13,13 @@ class Movements extends StatefulWidget {
 class _MovementsState extends State<Movements> {
   double screenHeight = 0;
   double screenWidth = 0;
+  int _currentIndex = 0;
+
+  void _onTap(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
