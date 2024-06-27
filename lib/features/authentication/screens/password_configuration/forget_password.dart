@@ -18,7 +18,6 @@ class Forgetpassword extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(MSizes.defaultSpace),
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ///Image
               Center(
