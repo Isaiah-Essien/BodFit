@@ -23,7 +23,7 @@ class MloginForm extends StatelessWidget {
             ///Email
             TextFormField(
               decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.direct_left),
+                prefixIcon: Icon(Iconsax.direct_right),
                 labelText: MTexts.email,
               ),
             ),

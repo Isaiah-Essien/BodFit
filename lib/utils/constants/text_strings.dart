@@ -62,4 +62,7 @@ class MTexts {
   static const String verificationCode = 'Verification Code';
   static const String resendEmail = 'Resend Email';
   static const String resendEmailIn = 'Resend Email in';
+
+//------------Profile and settings-------------//
+  static const String accountTitle1 = 'Account';
 }
