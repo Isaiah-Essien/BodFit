@@ -53,10 +53,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           child: CircleAvatar(
             backgroundColor: Color(0xff29A0E3),
-            radius: 25,
+            radius: 20,
             child: CircleAvatar(
               backgroundImage: AssetImage(MImages.userKanayo),
-              radius: 23.2,
+              radius: 17,
             ),
           ),
         ),

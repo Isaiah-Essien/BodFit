@@ -15,16 +15,13 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: const MyAppBar(heading: MTexts.accountTitle1,),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ///Header
-            const MyAppBar(heading: MTexts.accountTitle1),
-            
-
             ///User profile
             MUserProfileTile(onPressed: ()=>Get.to(()=> const ProfileScreen())),
-            const SizedBox(height: MSizes.spaceBtwSects),
+            const SizedBox(height: MSizes.spaceBtwSects/3),
 
             ///Body
             Padding(

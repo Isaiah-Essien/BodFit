@@ -32,7 +32,8 @@ class MCircularImage extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ??
             (MHelperFunctions.isDarkMode(context)
-                ? MColors.dark
+                // ignore: use_full_hex_values_for_flutter_colors
+                ? const Color(121212)
                 : MColors.light),
         borderRadius: BorderRadius.circular(100),
       ),
