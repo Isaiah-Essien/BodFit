@@ -30,7 +30,7 @@ class MAppTheme {
     fontFamily: 'Roboto',
     brightness: Brightness.dark,
     primaryColor: const Color.fromARGB(255, 68, 162, 255),
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: const Color(0xFF121212),
     textTheme: MTextTheme.darkTextTheme,
     elevatedButtonTheme: MElevatedButtonTheme.darkElevatedButtonTheme,
     appBarTheme: MAppBarTheme.darkAppBarTheme,

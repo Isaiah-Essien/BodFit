@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/features/authentication/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,13 +22,11 @@ class OnBoardingController extends GetxController {
 
   /// Update current index and jump to the next page
   void nextPage() {
-    if (currentPageIndex.value < 2) {
-      int nextPageIndex = currentPageIndex.value + 1;
-      pageController.jumpToPage(nextPageIndex);
+    if (currentPageIndex.value == 2) {
+      Get.offAll(const LoginScreen());
     } else {
-      // Handle the case when the current page is the last one
-      // For example, navigate to the next screen
-      // Get.to(LoginScreen());
+      int page = currentPageIndex.value + 1;
+      pageController.jumpToPage(page);
     }
   }
 
