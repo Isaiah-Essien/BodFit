@@ -3,6 +3,7 @@ import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
 
+//--------------This class is an extracted widget for the user profile-----------//
 class MUserProfileTile extends StatelessWidget {
   const MUserProfileTile({
     super.key,
@@ -18,8 +19,6 @@ class MUserProfileTile extends StatelessWidget {
         height: 100,
         padding: 0,
         backgroundColor: MColors.primaryColor,
-        
-        
       ),
       title: Text('Kanayo O. Kanayo',
           style: Theme.of(context).textTheme.headlineSmall!),

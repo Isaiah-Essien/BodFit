@@ -47,7 +47,6 @@ flutter:
     # - assets/images/exercise2.jpg
     # - assets/images/exercise3.jpg
     - assets/images/
-    - assets/images/kanayo.jpg
     - assets/logos/
     - assets/gifs/Nutrition.gif
     - assets/gifs/fitness.gif

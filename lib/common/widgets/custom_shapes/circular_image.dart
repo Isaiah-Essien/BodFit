@@ -3,6 +3,7 @@ import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
 import 'package:flutter/material.dart';
 
+//This class creates the circular shape around profile images and account setting images
 class MCircularImage extends StatelessWidget {
   const MCircularImage({
     super.key,

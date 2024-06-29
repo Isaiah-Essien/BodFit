@@ -9,13 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+//This class is the  Settings page routed to the Bottom navigation//
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: const MyAppBar(heading: MTexts.accountTitle1,),
+      appBar: const MyAppBar(heading: MTexts.accountTitle1,showAvatar: false,),
       body: SingleChildScrollView(
         child: Column(
           children: [

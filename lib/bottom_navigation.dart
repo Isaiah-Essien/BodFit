@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+//----------Custom Bottom Navigation -----------//
 class BottomNavigationMenu extends StatelessWidget {
   const BottomNavigationMenu({super.key});
 
@@ -42,7 +43,6 @@ class BottomNavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    
     //Using containers and colors as placeholders for the various screens yet to be created
     // for DASHBORAD, FITNESS, WORKOUT, and PROFILE
 

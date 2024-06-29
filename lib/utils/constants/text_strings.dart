@@ -64,5 +64,5 @@ class MTexts {
   static const String resendEmailIn = 'Resend Email in';
 
 //------------Profile and settings-------------//
-  static const String accountTitle1 = 'Account';
+  static const String accountTitle1 = 'Settings';
 }
