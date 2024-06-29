@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +19,41 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class DashboardPage extends StatelessWidget {
+class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
+
+  @override
+  _DashboardPageState createState() => _DashboardPageState();
+}
+
+class _DashboardPageState extends State<DashboardPage> {
+  late List<FlSpot> _spots;
+  String _selectedPeriod = 'Day';
+  double _distance = 0;
+  int _calories = 0;
+  String _time = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _generateRandomData();
+  }
+
+  void _generateRandomData() {
+    final random = Random();
+    _spots = List.generate(10, (index) => FlSpot(index.toDouble(), random.nextDouble() * 10));
+    _distance = random.nextDouble() * 10;
+    _calories = random.nextInt(2000) + 1000;
+    _time = '${random.nextInt(5)}:${random.nextInt(60).toString().padLeft(2, '0')}';
+    setState(() {});
+  }
+
+  void _updateChartData(String period) {
+    setState(() {
+      _selectedPeriod = period;
+      _generateRandomData();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +79,7 @@ class DashboardPage extends StatelessWidget {
             const Row(
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/images/kanayo.jpg'), // Kanayo's Image
+                  backgroundImage: AssetImage('assets/images/kanayo.jpg'), // Kanayo's Image
                   radius: 30,
                 ),
                 SizedBox(width: 10),
@@ -78,29 +112,56 @@ class DashboardPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
-                  child: const Text('Day', style: TextStyle(color: Colors.white)),
+                  onPressed: () => _updateChartData('Day'),
+                  child: Text('Day', style: TextStyle(color: _selectedPeriod == 'Day' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
                 ),
                 TextButton(
-                  onPressed: () {},
-                  child: const Text('Week', style: TextStyle(color: Colors.white)),
+                  onPressed: () => _updateChartData('Week'),
+                  child: Text('Week', style: TextStyle(color: _selectedPeriod == 'Week' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
                 ),
                 TextButton(
-                  onPressed: () {},
-                  child: const Text('Month', style: TextStyle(color: Colors.white)),
+                  onPressed: () => _updateChartData('Month'),
+                  child: Text('Month', style: TextStyle(color: _selectedPeriod == 'Month' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
                 ),
                 TextButton(
-                  onPressed: () {},
-                  child: const Text('Year', style: TextStyle(color: Colors.white)),
+                  onPressed: () => _updateChartData('Year'),
+                  child: Text('Year', style: TextStyle(color: _selectedPeriod == 'Year' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            // Placeholder for the graph
-            Container(
+            SizedBox(
               height: 200,
-              color: Colors.blueAccent,
-              child: const Center(child: Text('Graph Placeholder')),
+              child: LineChart(
+                LineChartData(
+                  gridData: FlGridData(show: true),
+                  titlesData: FlTitlesData(
+                    leftTitles: AxisTitles(
+                      sideTitles: SideTitles(showTitles: true),
+                    ),
+                    bottomTitles: AxisTitles(
+                      sideTitles: SideTitles(showTitles: true, getTitlesWidget: (value, meta) {
+                        const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+                        return SideTitleWidget(
+                          axisSide: meta.axisSide,
+                          space: 8.0,
+                          child: Text(days[value.toInt() % days.length]),
+                        );
+                      }),
+                    ),
+                  ),
+                  borderData: FlBorderData(show: true),
+                  lineBarsData: [
+                    LineChartBarData(
+                      spots: _spots,
+                      isCurved: true,
+                      color: Colors.blue,
+                      barWidth: 2,
+                      belowBarData: BarAreaData(show: true),
+                    ),
+                  ],
+                ),
+              ),
             ),
             const SizedBox(height: 10),
             const Text(
@@ -108,25 +169,25 @@ class DashboardPage extends StatelessWidget {
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   children: [
-                    Text('8.42', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                    Text('Distance'),
+                    Text('${_distance.toStringAsFixed(2)}', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    const Text('Distance'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('1,540', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                    Text('Calories'),
+                    Text('$_calories', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    const Text('Calories'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('3:24', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                    Text('Time'),
+                    Text('$_time', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    const Text('Time'),
                   ],
                 ),
               ],
