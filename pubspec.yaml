@@ -62,7 +62,6 @@ flutter:
   assets:
 
     - assets/images/
-    - assets/images/kanayo.jpg
     - assets/logos/
     - assets/gifs/
     - assets/icons/

@@ -7,13 +7,14 @@ import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+//--------------The main Profile screen that is routed to the Bottom navigation-------//
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(heading: 'Profile'),
+      appBar: const MyAppBar(heading: 'Profile',),
 
       ///Body
       body: SingleChildScrollView(
@@ -43,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
               ///Heading Profile Information
               const MSectionHeading(
                   title: 'Profile Information', showActionButton: false),
-              const SizedBox(height: MSizes.spaceBtwItms),
+              const SizedBox(height: MSizes.spaceBtwItms/2),
 
               MProfileMenu(onPressed: () {}, title: 'Name', value: 'Kanayo O Kanayo',),
               MProfileMenu(onPressed: () {}, title: 'Username', value: 'make_sacrifices_123',),

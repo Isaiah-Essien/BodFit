@@ -2,6 +2,8 @@ import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+
+//This class is the reusable Profile menus //
 class MProfileMenu extends StatelessWidget {
   const MProfileMenu({
     super.key,
