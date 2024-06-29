@@ -10,9 +10,7 @@ environment:
 
 #-------------Packages start here------------#
 dependencies:
-  flutter:
-    sdk: flutter
-    fl_chart: ^0.68.0
+
 
 #-----------Utility packages--------#
   http: ^1.1.0
@@ -29,12 +27,14 @@ dependencies:
 # State management
   get: ^4.6.5
   get_storage: ^2.1.1
+  fl_chart: ^0.68.0
 #-------------------------./Packges End---------#
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+
 
 flutter:
   uses-material-design: true
@@ -48,20 +48,10 @@ flutter:
     # - assets/images/exercise3.jpg
     - assets/images/
     - assets/logos/
-    - assets/gifs/Nutrition.gif
-    - assets/gifs/fitness.gif
-    - assets/gifs/delivery.gif
+    - assets/gifs/
+    - assets/icons/
 
-  
-  
 
-  
-  
-
-  
-  
-  
-  
   #-----Local Fonts-------#
   fonts:
     - family: Roboto

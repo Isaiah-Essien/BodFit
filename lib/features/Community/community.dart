@@ -1,21 +1,9 @@
+import 'package:bodFit_group5_summative/bottom_navigation.dart';
+import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
+import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'FAQ Page',
-      theme: ThemeData.dark(),
-      home: const FAQPage(),
-    );
-  }
-}
 
 class FAQPage extends StatefulWidget {
   const FAQPage({super.key});
@@ -28,21 +16,7 @@ class _FAQPageState extends State<FAQPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('FAQ'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            // onPressed code will be added here!
-          },
-        ),
-        actions: const [
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/images/kanayo.jpg'),
-          ),
-          SizedBox(width: 10),
-        ],
-      ),
+      appBar: const MyAppBar(heading: 'FAQ', showAvatar: true,),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
@@ -76,7 +50,7 @@ class _FAQPageState extends State<FAQPage> {
               'Reach out to us',
               style: TextStyle(color: Colors.white),
             ),
-            leading: const Icon(Icons.message, color: Colors.white),
+            leading: const Icon(Icons.message, color: MColors.primaryColor),
             onTap: () {
               // Handle on tap
             },
@@ -86,26 +60,6 @@ class _FAQPageState extends State<FAQPage> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: 1,
-        onTap: (index) {
-          // Handle bottom navigation item tap
-        },
       ),
     );
   }

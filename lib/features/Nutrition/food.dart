@@ -1,5 +1,6 @@
 // lib/pages/change_foods_page.dart
 import 'package:bodFit_group5_summative/models/recipe.dart';
+import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bodFit_group5_summative/features/Nutrition/food_item.dart';
 
@@ -9,22 +10,7 @@ class ChangeFoodsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Change foods'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'Save',
-              style: TextStyle(color: Colors.blue),
-            ),
-          ),
-        ],
-      ),
+      appBar: const MyAppBar(heading: 'heading',showAvatar: true,),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -97,26 +83,6 @@ class ChangeFoodsPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
-            label: 'Fitness',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.food_bank),
-            label: 'Nutrition',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
       ),
     );
   }

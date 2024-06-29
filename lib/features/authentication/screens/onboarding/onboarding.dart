@@ -26,7 +26,7 @@ class OnBoardingScreen extends StatelessWidget {
             onPageChanged: controller.updatePageIndicator,
             children: const [
               OnBoardingPage(
-                image: MImages.onboardingImage3,
+                image: MImages.onboardingImage1,
                 title: MTexts.onboardingTitle1,
                 subTitle: MTexts.onboardingSubTitle1,
               ),
@@ -36,7 +36,7 @@ class OnBoardingScreen extends StatelessWidget {
                 subTitle: MTexts.onboardingSubTitle2,
               ),
               OnBoardingPage(
-                image: MImages.onboardingImage1,
+                image: MImages.onboardingImage3,
                 title: MTexts.onboardingTitle3,
                 subTitle: MTexts.onboardingSubTitle3,
               ),
