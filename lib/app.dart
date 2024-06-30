@@ -15,13 +15,6 @@ class App extends StatelessWidget {
       theme: MAppTheme.lightTheme,
       darkTheme: MAppTheme.darkTheme,
       home: const OnBoardingScreen(),
-      // home: Movements(),
-      routes: {
-        // Four major routes
-        '/workout': (context) => const WorkoutOptions(),
-        //   Workout Options
-        //   Workout Routines
-      },
     );
   }
 }
