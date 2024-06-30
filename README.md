@@ -161,7 +161,7 @@ BODFiT/
 - All modules crry comments and documantations.
 
 ## To see the project:
-1. clone the repo https://github.com/Isaiah-Essien/BodFit
+1. clone the repository https://github.com/Isaiah-Essien/BodFit
 2. cd into BodFit
 3. run flutter pub get
 4. run flutter run
@@ -169,7 +169,7 @@ BODFiT/
 
 ## Rights:
 
-- This porject soley belongs to the aforementioned members of the Group 5, hereafter refferd to as Authors.
-- We reserve the rights to this porject withon and outside African Leadership University.
-- This repo must not be forked at any insatance. Contact the Authours
+- This project soley belongs to the aforementioned members of the Group 5, hereafter refferd to as Authors.
+- The Authors reserve the rights to this project within and without the settings of the African Leadership University.
+- This repository must not be forked at any insatance. Contact the Authours for contributions
 
