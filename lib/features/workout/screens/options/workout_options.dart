@@ -1,6 +1,8 @@
+import 'package:bodFit_group5_summative/features/Subscription/subscription.dart';
 import 'package:bodFit_group5_summative/utils/constants/custom_options_container.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class WorkoutOptions extends StatelessWidget {
   const WorkoutOptions({super.key});
@@ -14,9 +16,7 @@ class WorkoutOptions extends StatelessWidget {
         crossAxisSpacing: 10.0,
         children: <Widget>[
           InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/');
-            },
+            onTap: ()=>Get.to(()=>const SubscriptionPage()),
             child: const CustomImageContainer(
               imageUrl: MImages.workoutOptions6,
               imageName: 'Customize',

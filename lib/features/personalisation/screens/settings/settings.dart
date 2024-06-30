@@ -2,11 +2,13 @@ import 'package:bodFit_group5_summative/common/widgets/list_tiles/settings_menu_
 import 'package:bodFit_group5_summative/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:bodFit_group5_summative/features/Community/community.dart';
 import 'package:bodFit_group5_summative/features/Subscription/subscription.dart';
+import 'package:bodFit_group5_summative/features/authentication/screens/login/login.dart';
 import 'package:bodFit_group5_summative/features/personalisation/screens/profile/profile.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/section_heading.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -41,7 +43,7 @@ class SettingsScreen extends StatelessWidget {
                   MSettingMenuTile(icon: Iconsax.health5, title: 'Allergien Information', subTitle: 'Set your Allergies',trailing: const Icon(Icons.arrow_forward_ios),onTap: () => Get.to(() => const ProfileScreen()),),
                   MSettingMenuTile(icon: Iconsax.health4, title: 'Health Concerns', subTitle: 'Set your Health concerns',trailing: const Icon(Icons.arrow_forward_ios),onTap: () => Get.to(() => const ProfileScreen()),),
                   MSettingMenuTile(icon: Iconsax.text, title: 'Feedback', subTitle: 'Tell us how you feel about BODFiT',trailing: const Icon(Icons.arrow_forward_ios),onTap: ()=>Get.to(()=> const FAQPage())),
-                  MSettingMenuTile(icon: Iconsax.logout, title: 'Logout', subTitle: 'Sign out',trailing: const Icon(Icons.arrow_forward_ios),onTap: (){},),
+                  MSettingMenuTile(icon: Iconsax.logout, title: 'Logout', subTitle: 'Sign out',trailing: const Icon(Icons.arrow_forward_ios),onTap: ()=>Get.to(()=>const LoginScreen())),
                 ],
               ),
             ),

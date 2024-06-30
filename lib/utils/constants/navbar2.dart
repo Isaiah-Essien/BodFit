@@ -25,10 +25,10 @@ class BottomNavBar2 extends StatelessWidget {
       child: Container(
         height: 65, // Increase height to accommodate icon and text
         decoration: BoxDecoration(
-          color: darkMode ? MColors.dark : MColors.light,
+          color: darkMode ? MColors.grey : MColors.lightGrey,
           borderRadius: BorderRadius.circular(33),
           boxShadow: [
-            // BoxShadow(blurRadius: 20, color: MColors.dark.withOpacity(0.1))
+            BoxShadow(blurRadius: 20, color: MColors.dark.withOpacity(0.1))
           ],
         ),
         child: SafeArea(
