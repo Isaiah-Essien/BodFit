@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:bodFit_group5_summative/utils/constants/psuedo_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -56,6 +57,9 @@ class _DashboardPageState extends State<DashboardPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+                child: DashBar()),
             const Row(
               children: [
                 SizedBox(width: 10),

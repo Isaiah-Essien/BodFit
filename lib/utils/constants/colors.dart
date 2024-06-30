@@ -13,5 +13,5 @@ class MColors {
 //--------------------Int colors for exercises------------//
   static const int warmUp = 0xFF4682B4;
   static const int workOut = 0xFF6F8FAF;
-  static const int coolDown = 0xFF87CEEB;
+  static const int coolDown = 0xbf87CEEB;
 }
