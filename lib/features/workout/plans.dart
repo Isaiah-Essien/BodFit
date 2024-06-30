@@ -21,7 +21,9 @@ class Hiit extends StatelessWidget {
         hoverColor: Color(0xff29A0E3),
         onPressed: () {
           Get.to(
-            () => const Movements(),
+            () => const Movements(
+              title: 'heading',
+            ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
           );
@@ -53,7 +55,7 @@ class WeightLossPlan extends StatelessWidget {
         hoverColor: Color(0xff29A0E3),
         onPressed: () {
           Get.to(
-            () => const Movements(),
+            () => const Movements(title: 'heading'),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
           );
@@ -85,7 +87,9 @@ class RecoveryPlan extends StatelessWidget {
         hoverColor: Color(0xff29A0E3),
         onPressed: () {
           Get.to(
-            () => const Movements(),
+            () => const Movements(
+              title: 'heading',
+            ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
           );
@@ -117,7 +121,9 @@ class CalisthenicsPlan extends StatelessWidget {
         hoverColor: Color(0xff29A0E3),
         onPressed: () {
           Get.to(
-            () => const Movements(),
+            () => const Movements(
+              title: 'heading',
+            ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
           );

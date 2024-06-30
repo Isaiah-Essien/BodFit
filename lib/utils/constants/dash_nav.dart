@@ -2,8 +2,8 @@ import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class dashNav extends StatelessWidget {
-  const dashNav({super.key});
+class DashNav extends StatelessWidget implements PreferredSizeWidget {
+  const DashNav({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,4 +31,8 @@ class dashNav extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => Size.fromHeight(100);
 }

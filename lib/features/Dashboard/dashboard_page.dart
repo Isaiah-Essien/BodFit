@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
+import 'package:bodFit_group5_summative/utils/constants/dash_nav.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +45,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(heading: 'Dashboard', showAvatar: true),
+      appBar: const DashNav(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
