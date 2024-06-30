@@ -64,8 +64,8 @@ class _MovementsState extends State<Movements> {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: const MyAppBar(
-        heading: '500-Calorie Burn',
+      appBar: MyAppBar(
+        heading: widget.title,
       ),
       body: Center(
         child: Column(

@@ -1,5 +1,5 @@
-import 'package:bodFit_group5_summative/features/workout/plans.dart';
 import 'package:bodFit_group5_summative/features/Subscription/subscription.dart';
+import 'package:bodFit_group5_summative/features/workout/plans.dart';
 import 'package:bodFit_group5_summative/utils/constants/custom_options_container.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 // ignore: depend_on_referenced_packages
@@ -18,7 +18,7 @@ class WorkoutOptions extends StatelessWidget {
         crossAxisSpacing: 10.0,
         children: <Widget>[
           InkWell(
-            onTap: ()=>Get.to(()=>const SubscriptionPage()),
+            onTap: () => Get.to(() => const SubscriptionPage()),
             child: const CustomImageContainer(
               imageUrl: MImages.workoutOptions6,
               imageName: 'Customize',
@@ -47,14 +47,14 @@ class WorkoutOptions extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/hiit');
+              Get.to(() => const CalisthenicsPlan());
             },
             child: const CustomImageContainer(
                 imageUrl: MImages.workoutOptions5, imageName: 'Calisthenics'),
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/hiit');
+              Get.to(() => const ThirtyDayPlan());
             },
             child: const CustomImageContainer(
                 imageUrl: 'assets/images/opt-1.jpg',
