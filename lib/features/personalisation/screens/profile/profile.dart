@@ -1,10 +1,12 @@
 import 'package:bodFit_group5_summative/common/widgets/custom_shapes/circular_image.dart';
+import 'package:bodFit_group5_summative/features/authentication/screens/signup/signup.dart';
 import 'package:bodFit_group5_summative/features/personalisation/screens/profile/widgets/profile_menu.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/section_heading.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 //--------------The main Profile screen that is routed to the Bottom navigation-------//
@@ -85,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
               ///Logout
               Center(
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: ()=>Get.to(()=>const SignupScreen()),
                   child: const Text('Delete Account', style: TextStyle(color: Colors.red),),
                 ),
               ),

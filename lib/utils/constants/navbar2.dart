@@ -1,3 +1,5 @@
+import 'package:bodFit_group5_summative/utils/constants/colors.dart';
+import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -13,6 +15,7 @@ class BottomNavBar2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final darkMode = MHelperFunctions.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.only(
         bottom: 0,
@@ -22,10 +25,10 @@ class BottomNavBar2 extends StatelessWidget {
       child: Container(
         height: 65, // Increase height to accommodate icon and text
         decoration: BoxDecoration(
-          color: Color(0xff282A2C),
+          color: darkMode ? MColors.grey : MColors.lightGrey,
           borderRadius: BorderRadius.circular(33),
           boxShadow: [
-            BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(0.1))
+            BoxShadow(blurRadius: 20, color: MColors.dark.withOpacity(0.1))
           ],
         ),
         child: SafeArea(
