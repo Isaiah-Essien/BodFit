@@ -1,4 +1,7 @@
 import 'package:bodFit_group5_summative/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:bodFit_group5_summative/features/workout/plans.dart';
+import 'package:bodFit_group5_summative/features/workout/screens/movements/movements.dart';
+import 'package:bodFit_group5_summative/features/workout/screens/options/workout_options.dart';
 import 'package:bodFit_group5_summative/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +17,17 @@ class App extends StatelessWidget {
       darkTheme: MAppTheme.darkTheme,
       home:
           const OnBoardingScreen(), // Temporarily set DashboardPage as the initial screen
+      // home: Movements(),
+      routes: {
+        // Four major routes
+        '/workout': (context) => const WorkoutOptions(),
+        //   Workout Options
+        '/hiit': (context) => const Hiit(),
+        '/wloss': (context) => const WeightLossPlan(),
+        '/recovery': (context) => const RecoveryPlan(),
+        //   Workout Routines
+        '/movements': (context) => const Movements(),
+      },
     );
   }
 }

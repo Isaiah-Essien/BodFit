@@ -1,7 +1,8 @@
-import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'dart:math';
+
+import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -25,10 +26,12 @@ class _DashboardPageState extends State<DashboardPage> {
 
   void _generateRandomData() {
     final random = Random();
-    _spots = List.generate(10, (index) => FlSpot(index.toDouble(), random.nextDouble() * 10));
+    _spots = List.generate(
+        10, (index) => FlSpot(index.toDouble(), random.nextDouble() * 10));
     _distance = random.nextDouble() * 10;
     _calories = random.nextInt(2000) + 1000;
-    _time = '${random.nextInt(5)}:${random.nextInt(60).toString().padLeft(2, '0')}';
+    _time =
+        '${random.nextInt(5)}:${random.nextInt(60).toString().padLeft(2, '0')}';
     setState(() {});
   }
 
@@ -51,7 +54,8 @@ class _DashboardPageState extends State<DashboardPage> {
             const Row(
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/kanayo.jpg'), // Kanayo's Image
+                  backgroundImage:
+                      AssetImage('assets/images/kanayo.jpg'), // Kanayo's Image
                   radius: 30,
                 ),
                 SizedBox(width: 10),
@@ -60,7 +64,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   children: [
                     Text(
                       'Welcome Back!',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       'Kanayo O Kanayo',
@@ -85,19 +90,35 @@ class _DashboardPageState extends State<DashboardPage> {
               children: [
                 TextButton(
                   onPressed: () => _updateChartData('Day'),
-                  child: Text('Day', style: TextStyle(color: _selectedPeriod == 'Day' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
+                  child: Text('Day',
+                      style: TextStyle(
+                          color: _selectedPeriod == 'Day'
+                              ? Colors.blue
+                              : const Color.fromARGB(255, 132, 194, 229))),
                 ),
                 TextButton(
                   onPressed: () => _updateChartData('Week'),
-                  child: Text('Week', style: TextStyle(color: _selectedPeriod == 'Week' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
+                  child: Text('Week',
+                      style: TextStyle(
+                          color: _selectedPeriod == 'Week'
+                              ? Colors.blue
+                              : const Color.fromARGB(255, 132, 194, 229))),
                 ),
                 TextButton(
                   onPressed: () => _updateChartData('Month'),
-                  child: Text('Month', style: TextStyle(color: _selectedPeriod == 'Month' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
+                  child: Text('Month',
+                      style: TextStyle(
+                          color: _selectedPeriod == 'Month'
+                              ? Colors.blue
+                              : const Color.fromARGB(255, 132, 194, 229))),
                 ),
                 TextButton(
                   onPressed: () => _updateChartData('Year'),
-                  child: Text('Year', style: TextStyle(color: _selectedPeriod == 'Year' ? Colors.blue : const Color.fromARGB(255, 132, 194, 229))),
+                  child: Text('Year',
+                      style: TextStyle(
+                          color: _selectedPeriod == 'Year'
+                              ? Colors.blue
+                              : const Color.fromARGB(255, 132, 194, 229))),
                 ),
               ],
             ),
@@ -112,14 +133,16 @@ class _DashboardPageState extends State<DashboardPage> {
                       sideTitles: SideTitles(showTitles: true),
                     ),
                     bottomTitles: AxisTitles(
-                      sideTitles: SideTitles(showTitles: true, getTitlesWidget: (value, meta) {
-                        const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-                        return SideTitleWidget(
-                          axisSide: meta.axisSide,
-                          space: 8.0,
-                          child: Text(days[value.toInt() % days.length]),
-                        );
-                      }),
+                      sideTitles: SideTitles(
+                          showTitles: true,
+                          getTitlesWidget: (value, meta) {
+                            const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+                            return SideTitleWidget(
+                              axisSide: meta.axisSide,
+                              space: 8.0,
+                              child: Text(days[value.toInt() % days.length]),
+                            );
+                          }),
                     ),
                   ),
                   borderData: FlBorderData(show: true),
@@ -146,19 +169,25 @@ class _DashboardPageState extends State<DashboardPage> {
               children: [
                 Column(
                   children: [
-                    Text('${_distance.toStringAsFixed(2)}', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    Text('${_distance.toStringAsFixed(2)}',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Distance'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('$_calories', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    Text('$_calories',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Calories'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('$_time', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    Text('$_time',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Time'),
                   ],
                 ),
