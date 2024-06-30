@@ -1,16 +1,19 @@
 // lib/pages/change_foods_page.dart
+import 'package:flutter/material.dart';
 import 'package:bodFit_group5_summative/models/recipe.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
-import 'package:flutter/material.dart';
 import 'package:bodFit_group5_summative/features/Nutrition/food_item.dart';
 
 class ChangeFoodsPage extends StatelessWidget {
-  const ChangeFoodsPage({super.key});
+  const ChangeFoodsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(heading: 'heading',showAvatar: true,),
+      appBar: const MyAppBar(
+        heading: 'Change Food',
+        showAvatar: true,
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -20,18 +23,19 @@ class ChangeFoodsPage extends StatelessWidget {
               'Current food',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             FoodItem(
-              title: 'Amala and Ewedu',
-              protein: 20,
-              fat: 47,
-              carbs: 63,
-              imagePath: 'assets/images/amala.jpg',
+              title: 'Fried Yam and Eggs',
+              protein: 15,
+              fat: 20,
+              carbs: 50,
+              imagePath: 'assets/images/friedyam.jpeg',
               recipe: Recipe(
-                title: 'Amala and Ewedu',
-                description: 'A traditional Nigerian dish made with yam flour and jute leaves.',
-                ingredients: ['Yam flour', 'Jute leaves', 'Water', 'Salt'],
-                steps: ['Mix yam flour with water', 'Cook jute leaves', 'Combine and serve'], imagePath: 'assets/images/amala.jpg',
+                title: 'Fried Yam and Eggs',
+                description: 'A delicious combination of fried yam and scrambled eggs.',
+                ingredients: ['Yam', 'Eggs', 'Oil', 'Salt'],
+                steps: ['Peel and slice yam', 'Fry yam in oil', 'Scramble eggs', 'Serve together'],
+                imagePath: 'assets/images/friedyam.jpeg',
               ),
             ),
             const SizedBox(height: 20),
@@ -41,16 +45,17 @@ class ChangeFoodsPage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             FoodItem(
-              title: 'Garri, groundnut and Milk',
+              title: 'Garri, Groundnut and Milk',
               protein: 35,
               fat: 58,
               carbs: 30,
               imagePath: 'assets/images/garri.jpg',
               recipe: Recipe(
-                title: 'Garri, groundnut and Milk',
+                title: 'Garri, Groundnut and Milk',
                 description: 'A simple and nutritious meal.',
                 ingredients: ['Garri', 'Groundnut', 'Milk', 'Water'],
-                steps: ['Mix garri with water', 'Add groundnut and milk', 'Stir and serve'], imagePath: 'assets/images/garri.png',
+                steps: ['Mix garri with water', 'Add groundnut and milk', 'Stir and serve'],
+                imagePath: 'assets/images/garri.jpg',
               ),
             ),
             FoodItem(
@@ -79,6 +84,48 @@ class ChangeFoodsPage extends StatelessWidget {
                 ingredients: ['Rice', 'Tomatoes', 'Onions', 'Spices'],
                 steps: ['Cook tomatoes and onions', 'Add rice and spices', 'Simmer until done'],
                 imagePath: 'assets/images/jollof.jpg',
+              ),
+            ),
+            FoodItem(
+              title: 'Pounded Yam and Egusi Soup',
+              protein: 40,
+              fat: 45,
+              carbs: 70,
+              imagePath: 'assets/images/egusiyam.jpg',
+              recipe: Recipe(
+                title: 'Pounded Yam and Egusi Soup',
+                description: 'A classic Nigerian dish made with pounded yam and melon seed soup.',
+                ingredients: ['Yam', 'Egusi seeds', 'Meat', 'Vegetables'],
+                steps: ['Pound yam', 'Prepare egusi soup', 'Combine and serve'],
+                imagePath: 'assets/images/egusiyam.jpg',
+              ),
+            ),
+            FoodItem(
+              title: 'Efo Riro and Amala',
+              protein: 28,
+              fat: 38,
+              carbs: 52,
+              imagePath: 'assets/images/amala.jpg',
+              recipe: Recipe(
+                title: 'Efo Riro and Amala',
+                description: 'A flavorful Nigerian spinach stew served with yam flour paste.',
+                ingredients: ['Spinach', 'Meat', 'Fish', 'Amala'],
+                steps: ['Cook meat and fish', 'Add spinach and spices', 'Serve with amala'],
+                imagePath: 'assets/images/amala.jpg',
+              ),
+            ),
+            FoodItem(
+              title: 'Moi Moi and Pap',
+              protein: 25,
+              fat: 10,
+              carbs: 40,
+              imagePath: 'assets/images/moimoi.jpg',
+              recipe: Recipe(
+                title: 'Moi Moi and Pap',
+                description: 'A nutritious meal of steamed bean pudding and fermented maize pudding.',
+                ingredients: ['Beans', 'Pepper', 'Onions', 'Pap'],
+                steps: ['Blend beans with pepper and onions', 'Steam mixture', 'Serve with pap'],
+                imagePath: 'assets/images/moimoi.jpg',
               ),
             ),
           ],

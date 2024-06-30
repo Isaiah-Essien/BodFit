@@ -12,28 +12,34 @@ import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-//This class is the  Settings page routed to the Bottom navigation//
+// This class is the Settings page routed to the Bottom navigation
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: const MyAppBar(heading: MTexts.accountTitle1,showAvatar: false,),
+    return Scaffold(
+      appBar: const MyAppBar(
+        heading: MTexts.accountTitle1,
+        showAvatar: false,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ///User profile
-            MUserProfileTile(onPressed: ()=>Get.to(()=> const ProfileScreen())),
-            const SizedBox(height: MSizes.spaceBtwSects/3),
+            // User profile
+            MUserProfileTile(
+              onPressed: () => Get.to(() => const ProfileScreen()),
+            ),
+            const SizedBox(height: MSizes.spaceBtwSects / 3),
 
-            ///Body
+            // Body
             Padding(
               padding: const EdgeInsets.all(MSizes.defaultSpace),
               child: Column(
                 children: [
-                  ///Account Settings
+                  // Account Settings
                   const MSectionHeading(title: 'Account Settings'),
                   const SizedBox(height: MSizes.spaceBtwItms),
 
@@ -43,7 +49,7 @@ class SettingsScreen extends StatelessWidget {
                   MSettingMenuTile(icon: Iconsax.health5, title: 'Allergien Information', subTitle: 'Set your Allergies',trailing: const Icon(Icons.arrow_forward_ios),onTap: () => Get.to(() => const ProfileScreen()),),
                   MSettingMenuTile(icon: Iconsax.health4, title: 'Health Concerns', subTitle: 'Set your Health concerns',trailing: const Icon(Icons.arrow_forward_ios),onTap: () => Get.to(() => const ProfileScreen()),),
                   MSettingMenuTile(icon: Iconsax.text, title: 'Feedback', subTitle: 'Tell us how you feel about BODFiT',trailing: const Icon(Icons.arrow_forward_ios),onTap: ()=>Get.to(()=> const FAQPage())),
-                  MSettingMenuTile(icon: Iconsax.logout, title: 'Logout', subTitle: 'Sign out',trailing: const Icon(Icons.arrow_forward_ios),onTap: ()=>Get.to(()=>const LoginScreen())),
+                  MSettingMenuTile(icon: Iconsax.logout, title: 'Logout', subTitle: 'Sign out',trailing: const Icon(Icons.arrow_forward_ios),onTap: (){},),
                 ],
               ),
             ),
@@ -51,5 +57,13 @@ class SettingsScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

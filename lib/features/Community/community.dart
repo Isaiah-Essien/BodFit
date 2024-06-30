@@ -1,9 +1,12 @@
+import 'package:bodFit_group5_summative/bottom_navigation.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
-
+/// FAQPage displays a list of frequently asked questions and their answers.
+/// This page includes a custom app bar and a list of FAQ items with expandable answers.
 class FAQPage extends StatefulWidget {
   const FAQPage({super.key});
 
@@ -16,33 +19,52 @@ class _FAQPageState extends State<FAQPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(heading: 'FAQ', showAvatar: true,),
+      appBar: const MyAppBar(
+        heading: 'FAQ',
+        showAvatar: true,
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          const FAQItem(
+          FAQItem(
             question: 'Do you have premium offers?',
-            answer: 'We do have a wide range of premium offers personalized just for you',
+            answer:
+                'We do have a wide range of premium offers personalized just for you.',
+            onTap: () {
+              // Navigate to the subscription page when tapped
+              Get.to(() => const SubscriptionPage());
+            },
+            showSubscriptionLink: true,
           ),
           const Divider(),
           const FAQItem(
             question: 'What can I do to check my weight?',
-            answer: 'make some sacrifices'
+            answer: 'You can use our app’s weight tracking feature to monitor your progress.',
           ),
           const Divider(),
           const FAQItem(
             question: 'I can’t access my profile',
-            answer: 'Make sure that you have stable internet connection and then try again',
+            answer: 'Make sure that you have a stable internet connection and then try again.',
           ),
           const Divider(),
           const FAQItem(
-            question: 'How do I Contact Customer service',
-            answer: 'You can reach us by email bodfit@info.com or call +250791848842'
+            question: 'How do I contact customer service?',
+            answer: 'You can reach us by email at bodfit@info.com or call +250791848842.',
           ),
           const Divider(),
           const FAQItem(
             question: 'Is there a night eating plan?',
-            answer: 'We have dinner on our menu which serves as the night plan as well'
+            answer: 'We have dinner on our menu which serves as the night plan as well.',
+          ),
+          const Divider(),
+          const FAQItem(
+            question: 'How do I reset my password?',
+            answer: 'You can reset your password by going to the settings and selecting "Reset Password".',
+          ),
+          const Divider(),
+          const FAQItem(
+            question: 'What payment methods are accepted?',
+            answer: 'We accept various payment methods including credit cards, PayPal, and Stripe.',
           ),
           const Divider(),
           ListTile(
@@ -52,7 +74,8 @@ class _FAQPageState extends State<FAQPage> {
             ),
             leading: const Icon(Icons.message, color: MColors.primaryColor),
             onTap: () {
-              // Handle on tap
+              // Open the form link when tapped
+              launch('https://forms.gle/oc5J4vX8Rgafke8cA');
             },
             tileColor: Colors.grey[800],
             shape: RoundedRectangleBorder(
@@ -65,11 +88,15 @@ class _FAQPageState extends State<FAQPage> {
   }
 }
 
+/// FAQItem is a custom widget that displays a question and its answer.
+/// The answer can be expanded or collapsed by tapping on the item.
 class FAQItem extends StatefulWidget {
   final String question;
   final String? answer;
+  final VoidCallback? onTap;
+  final bool showSubscriptionLink; // Flag to show subscription link
 
-  const FAQItem({required this.question, this.answer, super.key});
+  const FAQItem({required this.question, this.answer, Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -87,9 +114,28 @@ class _FAQItemState extends State<FAQItem> {
         style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
       subtitle: _isExpanded && widget.answer != null
-          ? Text(
-              widget.answer!,
-              style: const TextStyle(fontSize: 14),
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.answer!,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: MColors.primaryColor,
+                  ),
+                ),
+                if (widget.showSubscriptionLink && widget.question == 'Do you have premium offers?')
+                  GestureDetector(
+                    onTap: widget.onTap,
+                    child: const Text(
+                      ' Tap here to check our subscription page.',
+                      style: TextStyle(
+                        color: MColors.primaryColor,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+              ],
             )
           : null,
       trailing: Icon(_isExpanded ? Icons.expand_less : Icons.expand_more),
