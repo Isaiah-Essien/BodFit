@@ -1,31 +1,20 @@
 import 'package:bodFit_group5_summative/features/Nutrition/mealplans.dart';
+import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
+import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart'; // Importing Flutter's material package for UI components
 import 'package:fl_chart/fl_chart.dart'; // Importing FL Chart package for displaying charts
 import 'dart:math'; // Importing Dart's math package for random number generation
 import 'package:iconsax/iconsax.dart'; // Importing Iconsax package for icons
 import 'package:bodFit_group5_summative/features/Nutrition/food.dart'; // Importing a custom food feature
 
-<<<<<<< HEAD
 // DashboardColors class defines color constants used in the dashboard
 class DashboardColors {
   DashboardColors._(); // Private constructor to prevent instantiation
 
-  static const Color primaryColor = Color.fromARGB(255, 29, 144, 215); // Primary color for the dashboard
+  static const Color primaryColor =
+      Color.fromARGB(255, 29, 144, 215); // Primary color for the dashboard
   static const Color dark = Colors.black; // Dark color used in dark mode
   static const Color light = Colors.white; // Light color used in light mode
-=======
-import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
-import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
-
-import '../../utils/constants/colors.dart';
-
-class DashboardPage extends StatefulWidget {
-  const DashboardPage({super.key});
-
-  @override
-  _DashboardPageState createState() => _DashboardPageState();
->>>>>>> 223bd44e29aed20109bee99e95e921c093bec139
 }
 
 // Main widget for the dashboard page, using a stateful widget
@@ -33,7 +22,8 @@ class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key}); // Constructor
 
   @override
-  _DashboardPageState createState() => _DashboardPageState(); // Creates the state for this widget
+  _DashboardPageState createState() =>
+      _DashboardPageState(); // Creates the state for this widget
 }
 
 // State class for DashboardPage
@@ -44,7 +34,8 @@ class _DashboardPageState extends State<DashboardPage> {
   int _calories = 0; // Calories data
   String _time = ''; // Time data
   bool _showNotifications = false; // Flag to show/hide notifications
-  String _activityMessage = '10% more active than last week.'; // Activity message
+  String _activityMessage =
+      '10% more active than last week.'; // Activity message
 
   @override
   void initState() {
@@ -76,7 +67,8 @@ class _DashboardPageState extends State<DashboardPage> {
   // Generates an activity message based on the selected period
   String _getActivityMessage(String period) {
     final random = Random();
-    final activityPercent = random.nextInt(20) + 5; // percentage between 5% and 25%
+    final activityPercent =
+        random.nextInt(20) + 5; // percentage between 5% and 25%
     switch (period) {
       case 'Day':
         return '$activityPercent% more active than yesterday.';
@@ -102,17 +94,11 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     final darkMode = Theme.of(context).brightness == Brightness.dark;
     final textColor = darkMode ? DashboardColors.light : DashboardColors.dark;
-    final selectedTextColor = darkMode ? DashboardColors.dark : DashboardColors.light;
+    final selectedTextColor =
+        darkMode ? DashboardColors.dark : DashboardColors.light;
     final borderColor = DashboardColors.primaryColor;
 
     return Scaffold(
-<<<<<<< HEAD
-=======
-      appBar: AppBar(
-        toolbarHeight: 10,
-        backgroundColor: MColors.lightGrey,
-      ),
->>>>>>> 223bd44e29aed20109bee99e95e921c093bec139
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(MSizes.spaceBtwSects / 4),
         child: Column(
@@ -167,7 +153,8 @@ class _DashboardPageState extends State<DashboardPage> {
                     Stack(
                       children: [
                         IconButton(
-                          icon: Icon(Iconsax.notification, color: DashboardColors.primaryColor),
+                          icon: Icon(Iconsax.notification,
+                              color: DashboardColors.primaryColor),
                           onPressed: _toggleNotifications,
                         ),
                         // Small red dot to indicate notifications
@@ -186,7 +173,8 @@ class _DashboardPageState extends State<DashboardPage> {
                       ],
                     ),
                     IconButton(
-                      icon: Icon(Iconsax.search_normal, color: DashboardColors.primaryColor),
+                      icon: Icon(Iconsax.search_normal,
+                          color: DashboardColors.primaryColor),
                       onPressed: () {},
                     ),
                   ],
@@ -199,7 +187,8 @@ class _DashboardPageState extends State<DashboardPage> {
                 width: 250,
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
-                  color: darkMode ? DashboardColors.dark : DashboardColors.light,
+                  color:
+                      darkMode ? DashboardColors.dark : DashboardColors.light,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
@@ -212,12 +201,14 @@ class _DashboardPageState extends State<DashboardPage> {
                 child: Column(
                   children: const [
                     ListTile(
-                      leading: Icon(Icons.fitness_center, color: DashboardColors.primaryColor),
+                      leading: Icon(Icons.fitness_center,
+                          color: DashboardColors.primaryColor),
                       title: Text('Workout Reminder'),
                       subtitle: Text('Time for your daily workout!'),
                     ),
                     ListTile(
-                      leading: Icon(Icons.fastfood, color: DashboardColors.primaryColor),
+                      leading: Icon(Icons.fastfood,
+                          color: DashboardColors.primaryColor),
                       title: Text('Nutrition Tip'),
                       subtitle: Text('Eat more protein for better recovery.'),
                     ),
@@ -238,10 +229,14 @@ class _DashboardPageState extends State<DashboardPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                buildPeriodButton('Day', textColor, selectedTextColor, borderColor),
-                buildPeriodButton('Week', textColor, selectedTextColor, borderColor),
-                buildPeriodButton('Month', textColor, selectedTextColor, borderColor),
-                buildPeriodButton('Year', textColor, selectedTextColor, borderColor),
+                buildPeriodButton(
+                    'Day', textColor, selectedTextColor, borderColor),
+                buildPeriodButton(
+                    'Week', textColor, selectedTextColor, borderColor),
+                buildPeriodButton(
+                    'Month', textColor, selectedTextColor, borderColor),
+                buildPeriodButton(
+                    'Year', textColor, selectedTextColor, borderColor),
               ],
             ),
             const SizedBox(height: 20),
@@ -294,19 +289,25 @@ class _DashboardPageState extends State<DashboardPage> {
               children: [
                 Column(
                   children: [
-                    Text('${_distance.toStringAsFixed(2)}', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    Text('${_distance.toStringAsFixed(2)}',
+                        style: const TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Distance'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('$_calories', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    Text('$_calories',
+                        style: const TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Calories'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('$_time', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    Text('$_time',
+                        style: const TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Time'),
                   ],
                 ),
@@ -323,16 +324,21 @@ class _DashboardPageState extends State<DashboardPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildDayPlanItem('assets/gifs/weightlifting.gif', 'Workout', '2 hours', () {
+                buildDayPlanItem(
+                    MImages.weightlifting, 'Workout', '2 hours', () {
                   // Placeholder for navigation to WorkoutPage
                 }),
-                buildDayPlanItem('assets/gifs/sleep.gif', 'Sleeping', '9 hours', () {
+                buildDayPlanItem(MImages.sleep, 'Sleeping', '9 hours',
+                    () {
                   // Placeholder for navigation to WorkoutPage
                 }),
-                buildDayPlanItem('assets/gifs/catering.gif', 'Diet', '3 meals', () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MealPlansPage()));
+                buildDayPlanItem(MImages.catering, 'Diet', '3 meals',
+                    () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MealPlansPage()));
                 }),
-                buildDayPlanItem('assets/gifs/running.gif', 'Running', '10 km', () {
+                buildDayPlanItem('assets/gifs/running.gif', 'Running', '10 km',
+                    () {
                   // Placeholder for navigation to WorkoutPage
                 }),
               ],
@@ -350,7 +356,8 @@ class _DashboardPageState extends State<DashboardPage> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  color: darkMode ? DashboardColors.dark : DashboardColors.light,
+                  color:
+                      darkMode ? DashboardColors.dark : DashboardColors.light,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
@@ -365,7 +372,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   children: [
                     Text(
                       'Eating healthy and Exercising is important!',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -383,7 +391,8 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   // Builds a widget for a day plan item
-  Widget buildDayPlanItem(String gifPath, String title, String subtitle, VoidCallback onTap) {
+  Widget buildDayPlanItem(
+      String gifPath, String title, String subtitle, VoidCallback onTap) {
     final darkMode = Theme.of(context).brightness == Brightness.dark;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -407,8 +416,16 @@ class _DashboardPageState extends State<DashboardPage> {
             children: [
               Image.asset(gifPath, height: 40, width: 40),
               const SizedBox(height: 10),
-              Text(title, style: TextStyle(color: darkMode ? DashboardColors.light : DashboardColors.dark)),
-              Text(subtitle, style: TextStyle(color: darkMode ? DashboardColors.light : DashboardColors.dark)),
+              Text(title,
+                  style: TextStyle(
+                      color: darkMode
+                          ? DashboardColors.light
+                          : DashboardColors.dark)),
+              Text(subtitle,
+                  style: TextStyle(
+                      color: darkMode
+                          ? DashboardColors.light
+                          : DashboardColors.dark)),
             ],
           ),
         ),
@@ -417,7 +434,8 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   // Builds a button for selecting a period (Day, Week, Month, Year)
-  Widget buildPeriodButton(String period, Color textColor, Color selectedTextColor, Color borderColor) {
+  Widget buildPeriodButton(String period, Color textColor,
+      Color selectedTextColor, Color borderColor) {
     final isSelected = _selectedPeriod == period;
     final backgroundColor = isSelected ? borderColor : Colors.transparent;
     final color = isSelected ? selectedTextColor : textColor;
@@ -433,7 +451,8 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
         child: Text(
           period,
-          style: TextStyle(color: color, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: color, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     );
