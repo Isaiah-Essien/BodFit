@@ -56,7 +56,7 @@ class BottomNavBar2 extends StatelessWidget {
             color: currentIndex == index ? Color(0xff29A0E3) : Colors.grey,
             size: 29,
           ),
-          SizedBox(height: 2), // Space between icon and text
+          const SizedBox(height: 2), // Space between icon and text
           Text(
             text,
             style: TextStyle(
