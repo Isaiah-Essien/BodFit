@@ -3,6 +3,7 @@ import 'package:bodFit_group5_summative/features/navigation/navigation.dart';
 import 'package:bodFit_group5_summative/features/nutrition/nutrition.dart';
 import 'package:bodFit_group5_summative/features/profile/profile.dart';
 import 'package:bodFit_group5_summative/features/workout/options.dart';
+import 'package:bodFit_group5_summative/features/workout/screens/movements/movements.dart';
 import 'package:bodFit_group5_summative/features/workout/screens/options/workout_options.dart';
 import 'package:bodFit_group5_summative/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class App extends StatelessWidget {
       darkTheme: MAppTheme.darkTheme,
       // home: const OnBoardingScreen(),
       // home: Movements(),
-      home: Navigation(),
+      home: const Navigation(),
       routes: {
         // Four major routes
         '/dashboard': (context) => const Dashboard(),
@@ -28,6 +29,10 @@ class App extends StatelessWidget {
         '/profile': (context) => const Profile(),
         //   Workout Options
         '/hiit': (context) => const Hiit(),
+        '/wloss': (context) => const WeightLossPlan(),
+        '/recovery': (context) => const RecoveryPlan(),
+        //   Workout Routines
+        '/movements': (context) => const Movements(),
       },
     );
   }

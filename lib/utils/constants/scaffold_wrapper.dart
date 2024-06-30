@@ -1,4 +1,4 @@
-import 'package:bodFit_group5_summative/utils/constants/navbar.dart';
+import 'package:bodFit_group5_summative/utils/constants/navbar2.dart';
 import 'package:flutter/material.dart';
 
 class ScaffoldWithNavBar extends StatelessWidget {
@@ -20,7 +20,7 @@ class ScaffoldWithNavBar extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: body,
-      bottomNavigationBar: BottomNavBar(
+      bottomNavigationBar: BottomNavBar2(
         currentIndex: currentIndex,
         onTap: onTap,
       ),

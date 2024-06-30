@@ -15,7 +15,7 @@ class WorkoutOptions extends StatelessWidget {
         children: <Widget>[
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/hiit');
+              Navigator.pushNamed(context, '/');
             },
             child: const CustomImageContainer(
               imageUrl: MImages.workoutOptions6,
@@ -31,29 +31,28 @@ class WorkoutOptions extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
+              Navigator.pushNamed(context, '/wloss');
+            },
+            child: const CustomImageContainer(
+                imageUrl: MImages.workoutOptions7, imageName: 'Weight loss'),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/recovery');
+            },
+            child: const CustomImageContainer(
+                imageUrl: MImages.workoutOptions4, imageName: 'Recovery'),
+          ),
+          InkWell(
+            onTap: () {
               Navigator.pushNamed(context, '/hiit');
-            },
-            child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions3,
-                imageName: 'Strength Training'),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/hitt');
-            },
-            child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions4, imageName: 'Bulking Season'),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/hitt');
             },
             child: const CustomImageContainer(
                 imageUrl: MImages.workoutOptions5, imageName: 'Calisthenics'),
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/hitt');
+              Navigator.pushNamed(context, '/hiit');
             },
             child: const CustomImageContainer(
                 imageUrl: 'assets/images/opt-1.jpg',

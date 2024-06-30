@@ -16,11 +16,12 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 5,
+        bottom: 0,
         left: 1,
         right: 1,
       ),
       child: Container(
+        height: 60,
         decoration: BoxDecoration(
           color: Color(0xff282A2C),
           borderRadius: BorderRadius.circular(33),
@@ -44,19 +45,19 @@ class BottomNavBar extends StatelessWidget {
                   tabs: const [
                     GButton(
                       icon: Iconsax.home4,
-                      text: 'home',
+                      iconSize: 30,
                     ),
                     GButton(
                       icon: Iconsax.weight_15,
-                      text: 'workouts',
+                      iconSize: 30,
                     ),
                     GButton(
                       icon: Iconsax.gift,
-                      text: 'nutrition',
+                      iconSize: 30,
                     ),
                     GButton(
                       icon: Iconsax.user,
-                      text: 'profile',
+                      iconSize: 30,
                     ),
                   ],
                   selectedIndex: currentIndex,

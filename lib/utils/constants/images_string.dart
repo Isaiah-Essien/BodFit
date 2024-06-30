@@ -21,4 +21,5 @@ class MImages {
   static const String workoutOptions4 = 'assets/images/opt-4.jpg';
   static const String workoutOptions5 = 'assets/images/opt-5.jpg';
   static const String workoutOptions6 = 'assets/images/opt-6.jpg';
+  static const String workoutOptions7 = 'assets/images/weight.jpg';
 }
