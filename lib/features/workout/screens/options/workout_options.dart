@@ -1,7 +1,9 @@
+import 'package:bodFit_group5_summative/features/workout/plans.dart';
 import 'package:bodFit_group5_summative/features/Subscription/subscription.dart';
 import 'package:bodFit_group5_summative/utils/constants/custom_options_container.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get.dart';
 
 class WorkoutOptions extends StatelessWidget {
@@ -24,21 +26,21 @@ class WorkoutOptions extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/hiit');
+              Get.to(() => const Hiit());
             },
             child: const CustomImageContainer(
                 imageUrl: MImages.workoutOptions2, imageName: 'High Intensity'),
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/wloss');
+              Get.to(() => const WeightLossPlan());
             },
             child: const CustomImageContainer(
                 imageUrl: MImages.workoutOptions7, imageName: 'Weight loss'),
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/recovery');
+              Get.to(() => const RecoveryPlan());
             },
             child: const CustomImageContainer(
                 imageUrl: MImages.workoutOptions8, imageName: 'Recovery'),
