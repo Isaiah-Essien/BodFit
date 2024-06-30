@@ -34,4 +34,9 @@ class MImages {
   static const String workoutOptions6 = 'assets/images/opt-6.jpg';
   static const String workoutOptions7 = 'assets/images/weight.jpg';
   static const String workoutOptions8 = 'assets/images/recovery.jpg';
+
+  //dashboard gifs//
+  static const String weightlifting = 'assets/gifs/weightlifting.gif';
+  static const String sleep = 'assets/gifs/sleep.gif';
+  static const String catering = 'assets/gifs/catering.gif';
 }
