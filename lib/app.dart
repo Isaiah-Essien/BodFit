@@ -1,5 +1,5 @@
+import 'package:bodFit_group5_summative/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:bodFit_group5_summative/features/dashboard/dashboard.dart';
-import 'package:bodFit_group5_summative/features/navigation/navigation.dart';
 import 'package:bodFit_group5_summative/features/nutrition/nutrition.dart';
 import 'package:bodFit_group5_summative/features/profile/profile.dart';
 import 'package:bodFit_group5_summative/features/workout/options.dart';
@@ -18,9 +18,8 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MAppTheme.lightTheme,
       darkTheme: MAppTheme.darkTheme,
-      // home: const OnBoardingScreen(),
+      home: const OnBoardingScreen(),
       // home: Movements(),
-      home: const Navigation(),
       routes: {
         // Four major routes
         '/dashboard': (context) => const Dashboard(),
