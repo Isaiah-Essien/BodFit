@@ -2,8 +2,8 @@ import 'package:bodFit_group5_summative/features/workout/plans.dart';
 import 'package:bodFit_group5_summative/features/Subscription/subscription.dart';
 import 'package:bodFit_group5_summative/utils/constants/custom_options_container.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:get/get.dart';
 
 class WorkoutOptions extends StatelessWidget {
