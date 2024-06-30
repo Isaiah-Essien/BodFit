@@ -14,7 +14,6 @@ class App extends StatelessWidget {
       theme: MAppTheme.lightTheme,
       darkTheme: MAppTheme.darkTheme,
       home: const OnBoardingScreen(),
-      // home: Movements(),
     );
   }
 }
