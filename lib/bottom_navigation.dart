@@ -1,9 +1,14 @@
+import 'package:bodFit_group5_summative/features/Dashboard/dashboard_page.dart';
+import 'package:bodFit_group5_summative/features/Nutrition/food.dart';
+import 'package:bodFit_group5_summative/features/Nutrition/mealplans.dart';
+import 'package:bodFit_group5_summative/features/personalisation/screens/settings/settings.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+//----------Custom Bottom Navigation -----------//
 class BottomNavigationMenu extends StatelessWidget {
   const BottomNavigationMenu({super.key});
 
@@ -41,13 +46,12 @@ class BottomNavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    
     //Using containers and colors as placeholders for the various screens yet to be created
     // for DASHBORAD, FITNESS, WORKOUT, and PROFILE
 
-    Container(color: Colors.black12),
+    const DashboardPage(),
     Container(color: Colors.red),
-    Container(color: const Color.fromARGB(31, 19, 177, 234)),
-    Container(color: const Color.fromARGB(31, 222, 35, 182)),
+    const ChangeFoodsPage(),
+    const SettingsScreen(),
   ];
 }

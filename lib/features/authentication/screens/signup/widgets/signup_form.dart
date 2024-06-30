@@ -53,7 +53,7 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             expands: false,
             decoration: const InputDecoration(
-                labelText: MTexts.email, prefixIcon: Icon(Iconsax.direct)),
+                labelText: MTexts.email, prefixIcon: Icon(Iconsax.direct_right)),
           ),
           const SizedBox(height: MSizes.spaceBtwinputfield),
 

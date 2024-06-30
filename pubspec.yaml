@@ -1,20 +1,16 @@
 name: bodFit_group5_summative
 description: "A new Flutter project."
 
-
-publish_to: 'none' 
+publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
   sdk: '>=3.4.1 <4.0.0'
 
-
 #-------------Packages start here------------#
 dependencies:
-  flutter:
-    sdk: flutter
-  
+
 
 #-----------Utility packages--------#
   http: ^1.1.0
@@ -23,73 +19,51 @@ dependencies:
   url_launcher: ^6.1.12
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.1.0
-
   
-  #Icons
+  # Icons
   cupertino_icons: ^1.0.6
   iconsax: ^0.0.8
-
 
 # State management
   get: ^4.6.5
   get_storage: ^2.1.1
-  flutter_svg: ^2.0.10+1
+  fl_chart: ^0.68.0
 #-------------------------./Packges End---------#
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  
-  
-  
-  
-  
   flutter_lints: ^4.0.0
 
 
-
-
-
 flutter:
-
-  
-  
-  
   uses-material-design: true
 
   #---------Local Assets------
   assets:
-
+    # - assets/images/image1.jpg
+    # - assets/images/exercise0.jpg
+    # - assets/images/exercise1.jpg
+    # - assets/images/exercise2.jpg
+    # - assets/images/exercise3.jpg
     - assets/images/
-    - assets/images/kanayo.jpg
     - assets/logos/
     - assets/gifs/
     - assets/icons/
 
 
-  
-  
-
-  
-  
-
-  
-  
-  
-  
   #-----Local Fonts-------#
   fonts:
     - family: Roboto
       fonts:
-          - asset: assets\fonts\Roboto-Black.ttf
-          - asset: assets\fonts\Roboto-Bold.ttf
-          - asset: assets\fonts\Roboto-BoldItalic.ttf
-          - asset: assets\fonts\Roboto-Italic.ttf
-          - asset: assets\fonts\Roboto-Light.ttf
-          - asset: assets\fonts\Roboto-LightItalic.ttf
-          - asset: assets\fonts\Roboto-Medium.ttf
-          - asset: assets\fonts\Roboto-MediumItalic.ttf
-          - asset: assets\fonts\Roboto-Regular.ttf
-          - asset: assets\fonts\Roboto-Thin.ttf
-          - asset: assets\fonts\Roboto-ThinItalic.ttf
+        - asset: assets/fonts/Roboto-Black.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto-BoldItalic.ttf
+        - asset: assets/fonts/Roboto-Italic.ttf
+        - asset: assets/fonts/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto-LightItalic.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto-MediumItalic.ttf
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Thin.ttf
+        - asset: assets/fonts/Roboto-ThinItalic.ttf
