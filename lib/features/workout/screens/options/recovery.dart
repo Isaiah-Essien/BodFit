@@ -1,3 +1,4 @@
+import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -57,7 +58,7 @@ class _RecoveryState extends State<Recovery> {
               itemCount: HIntensity.warmUp.length,
               itemBuilder: (context, index) {
                 return item(index, HIntensity.warmUp, HIntensity.warmUpIcons,
-                    0xcf29A0E3);
+                    MColors.warmUp);
               },
             ),
             const SizedBox(
@@ -80,7 +81,7 @@ class _RecoveryState extends State<Recovery> {
               itemCount: HIntensity.circuit.length,
               itemBuilder: (context, index) {
                 return item(index, HIntensity.circuit, HIntensity.workoutIcons,
-                    0xdf392AE5);
+                    MColors.workOut);
               },
             ),
             const SizedBox(
@@ -103,7 +104,7 @@ class _RecoveryState extends State<Recovery> {
               itemCount: HIntensity.coolDown.length,
               itemBuilder: (context, index) {
                 return item(index, HIntensity.coolDown, HIntensity.coolIcons,
-                    0xbf3A8ADA);
+                    MColors.coolDown);
               },
             ),
           ],

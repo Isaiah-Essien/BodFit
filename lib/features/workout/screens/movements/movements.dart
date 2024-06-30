@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class Movements extends StatefulWidget {
-  const Movements({super.key});
+  final String title;
+
+  const Movements({super.key, required this.title});
 
   @override
   State<Movements> createState() => _MovementsState();
