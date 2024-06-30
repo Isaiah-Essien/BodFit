@@ -65,4 +65,11 @@ class MTexts {
 
 //------------Profile and settings-------------//
   static const String accountTitle1 = 'Settings';
+
+//---------------Movement Titles------------//
+  static const String highIntensity = 'High Intensity';
+  static const String weightLoss = 'Weight Loss';
+  static const String recovery = 'Recovery';
+  static const String cali = 'Calisthenics';
+  static const String daysChallenge = '30-Day Challenge';
 }
