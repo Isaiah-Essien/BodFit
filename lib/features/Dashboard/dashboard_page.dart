@@ -5,6 +5,7 @@ import 'dart:math'; // Importing Dart's math package for random number generatio
 import 'package:iconsax/iconsax.dart'; // Importing Iconsax package for icons
 import 'package:bodFit_group5_summative/features/Nutrition/food.dart'; // Importing a custom food feature
 
+<<<<<<< HEAD
 // DashboardColors class defines color constants used in the dashboard
 class DashboardColors {
   DashboardColors._(); // Private constructor to prevent instantiation
@@ -12,6 +13,19 @@ class DashboardColors {
   static const Color primaryColor = Color.fromARGB(255, 29, 144, 215); // Primary color for the dashboard
   static const Color dark = Colors.black; // Dark color used in dark mode
   static const Color light = Colors.white; // Light color used in light mode
+=======
+import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
+
+import '../../utils/constants/colors.dart';
+
+class DashboardPage extends StatefulWidget {
+  const DashboardPage({super.key});
+
+  @override
+  _DashboardPageState createState() => _DashboardPageState();
+>>>>>>> 223bd44e29aed20109bee99e95e921c093bec139
 }
 
 // Main widget for the dashboard page, using a stateful widget
@@ -92,8 +106,15 @@ class _DashboardPageState extends State<DashboardPage> {
     final borderColor = DashboardColors.primaryColor;
 
     return Scaffold(
+<<<<<<< HEAD
+=======
+      appBar: AppBar(
+        toolbarHeight: 10,
+        backgroundColor: MColors.lightGrey,
+      ),
+>>>>>>> 223bd44e29aed20109bee99e95e921c093bec139
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(MSizes.spaceBtwSects/4),
+        padding: const EdgeInsets.all(MSizes.spaceBtwSects / 4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

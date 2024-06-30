@@ -1,4 +1,4 @@
-import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
+import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -8,15 +8,13 @@ class DashNav extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: const Padding(
-        padding: EdgeInsets.only(left: 10),
-        child: CircleAvatar(
-          backgroundColor: Color(0xff29A0E3),
-          radius: 20,
-          child: CircleAvatar(
-            backgroundImage: AssetImage(MImages.userKanayo),
-            radius: 18,
-          ),
+      backgroundColor: MColors.lightGrey,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 10),
+        child: Container(
+          width: 60,
+          height: 60,
+          color: MColors.primaryColor,
         ),
       ),
       title: const Column(
@@ -25,9 +23,25 @@ class DashNav extends StatelessWidget implements PreferredSizeWidget {
           Text('Kanayo O Kanayo'),
         ],
       ),
-      actions: const [
-        Icon(Iconsax.search_favorite),
-        Icon(Iconsax.notification),
+      actions: [
+        Container(
+          height: 40,
+          width: 40,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50.0),
+            color: MColors.grey,
+          ),
+          child: const Center(child: Icon(Icons.search_rounded)),
+        ),
+        Container(
+          height: 40,
+          width: 40,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50.0),
+            color: MColors.grey,
+          ),
+          child: const Center(child: Icon(Iconsax.notification)),
+        ),
       ],
     );
   }
