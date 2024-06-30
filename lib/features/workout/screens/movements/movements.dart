@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bodFit_group5_summative/features/workout/screens/movements/build_button.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

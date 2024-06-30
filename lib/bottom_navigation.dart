@@ -1,6 +1,5 @@
 import 'package:bodFit_group5_summative/features/Dashboard/dashboard_page.dart';
 import 'package:bodFit_group5_summative/features/Nutrition/food.dart';
-import 'package:bodFit_group5_summative/features/Nutrition/mealplans.dart';
 import 'package:bodFit_group5_summative/features/personalisation/screens/settings/settings.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
