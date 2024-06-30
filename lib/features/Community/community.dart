@@ -1,10 +1,9 @@
-import 'package:bodFit_group5_summative/features/Subscription/subscription.dart';
-// Importing SubscriptionPage for navigation
+import 'package:bodFit_group5_summative/bottom_navigation.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Import for navigation to subscription page
-import 'package:url_launcher/url_launcher.dart'; 
+import 'package:iconsax/iconsax.dart';
 
 /// FAQPage displays a list of frequently asked questions and their answers.
 /// This page includes a custom app bar and a list of FAQ items with expandable answers.
@@ -12,6 +11,7 @@ class FAQPage extends StatefulWidget {
   const FAQPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _FAQPageState createState() => _FAQPageState();
 }
 
@@ -96,15 +96,10 @@ class FAQItem extends StatefulWidget {
   final VoidCallback? onTap;
   final bool showSubscriptionLink; // Flag to show subscription link
 
-  const FAQItem({
-    required this.question,
-    this.answer,
-    this.onTap,
-    this.showSubscriptionLink = false, // Default to false
-    Key? key,
-  }) : super(key: key);
+  const FAQItem({required this.question, this.answer, Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _FAQItemState createState() => _FAQItemState();
 }
 

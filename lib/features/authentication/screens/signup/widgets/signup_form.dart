@@ -89,13 +89,7 @@ class SignUpForm extends StatelessWidget {
               const Text(MTexts.alreadyHaveAnAccount),
               const SizedBox(width: MSizes.spaceBtwItms),
               TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginScreen()),
-                    );
-                  },
+                  onPressed: () =>Get.to(()=>const LoginScreen()),
                   child: const Text(
                     MTexts.logIn,
                     style: TextStyle(color: MColors.primaryColor),

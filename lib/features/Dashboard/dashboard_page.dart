@@ -41,10 +41,12 @@ class _DashboardPageState extends State<DashboardPage> {
   // Generates random data for the chart and other metrics
   void _generateRandomData() {
     final random = Random();
-    _spots = List.generate(10, (index) => FlSpot(index.toDouble(), random.nextDouble() * 10));
+    _spots = List.generate(
+        10, (index) => FlSpot(index.toDouble(), random.nextDouble() * 10));
     _distance = random.nextDouble() * 10;
     _calories = random.nextInt(2000) + 1000;
-    _time = '${random.nextInt(5)}:${random.nextInt(60).toString().padLeft(2, '0')}';
+    _time =
+        '${random.nextInt(5)}:${random.nextInt(60).toString().padLeft(2, '0')}';
     setState(() {});
   }
 
@@ -91,7 +93,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
     return Scaffold(
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(MSizes.spaceBtwSects/4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -233,14 +235,16 @@ class _DashboardPageState extends State<DashboardPage> {
                       sideTitles: SideTitles(showTitles: true),
                     ),
                     bottomTitles: AxisTitles(
-                      sideTitles: SideTitles(showTitles: true, getTitlesWidget: (value, meta) {
-                        const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-                        return SideTitleWidget(
-                          axisSide: meta.axisSide,
-                          space: 8.0,
-                          child: Text(days[value.toInt() % days.length]),
-                        );
-                      }),
+                      sideTitles: SideTitles(
+                          showTitles: true,
+                          getTitlesWidget: (value, meta) {
+                            const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+                            return SideTitleWidget(
+                              axisSide: meta.axisSide,
+                              space: 8.0,
+                              child: Text(days[value.toInt() % days.length]),
+                            );
+                          }),
                     ),
                   ),
                   borderData: FlBorderData(show: true),
