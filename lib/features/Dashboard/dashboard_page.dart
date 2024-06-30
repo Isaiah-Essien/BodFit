@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bodFit_group5_summative/utils/constants/dash_nav.dart';
+import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -47,31 +48,15 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
       appBar: const DashNav(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(MSizes.spaceBtwSects/4),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Row(
               children: [
-                CircleAvatar(
-                  backgroundImage:
-                      AssetImage('assets/images/kanayo.jpg'), // Kanayo's Image
-                  radius: 30,
-                ),
                 SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Welcome Back!',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'Kanayo O Kanayo',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
                 ),
               ],
             ),
