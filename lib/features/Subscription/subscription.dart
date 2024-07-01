@@ -1,6 +1,4 @@
-import 'dart:convert'; // Import dart:convert for jsonEncode
 import 'package:flutter/material.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http; // Import http package for making HTTP requests which will be used during backend
 import 'package:url_launcher/url_launcher.dart'; // This imports the url_launcher for launching URLs. I used it to launch the paypal url
 
@@ -173,54 +171,5 @@ class SubscriptionPage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  // Function to initiate payment using Stripe (not used in this version), it will be implemented during our backend project
-  Future<void> initiatePayment() async {
-    try {
-      // Create a payment intent on your server or use your backend endpoint
-      final paymentIntentClientSecret = await createPaymentIntent();
-
-      // Initialize the payment sheet
-      await Stripe.instance.initPaymentSheet(
-        paymentSheetParameters: SetupPaymentSheetParameters(
-          paymentIntentClientSecret: paymentIntentClientSecret,
-          merchantDisplayName: 'BODFIT',
-          customerId: 'id',
-          customerEphemeralKeySecret: 'customer-ephemeral-key',
-        ),
-      );
-
-      // Present the payment sheet
-      await Stripe.instance.presentPaymentSheet();
-
-      // Handle the payment result
-      // You can add your custom logic here
-    } catch (e) {
-      print('Error: $e');
-    }
-  }
-
-  // Function to create a payment intent on the server (not used in this version)
-  Future<String> createPaymentIntent() async {
-    // Your backend endpoint to create a payment intent
-    const url = 'https://your-backend-endpoint/create-payment-intent';
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: jsonEncode({
-        'amount': 3000, // Amount in currency
-        'currency': 'ngn',
-      }),
-    );
-
-    if (response.statusCode == 200) {
-      final jsonResponse = jsonDecode(response.body);
-      return jsonResponse['clientSecret'];
-    } else {
-      throw Exception('Failed to create payment intent');
-    }
   }
 }

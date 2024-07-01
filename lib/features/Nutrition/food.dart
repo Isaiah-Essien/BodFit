@@ -4,6 +4,7 @@ import 'package:bodFit_group5_summative/models/recipe.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/features/Nutrition/food_item.dart';
 
+///this page shows you the food items you available to you and upon clicking shows you the recipe and how to cook
 class ChangeFoodsPage extends StatelessWidget {
   const ChangeFoodsPage({Key? key}) : super(key: key);
 
@@ -25,7 +26,7 @@ class ChangeFoodsPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             FoodItem(
-              title: 'Fried Yam and Eggs',
+              title: 'Fried Yam and Eggs', // this is the current food item
               protein: 15,
               fat: 20,
               carbs: 50,
@@ -43,7 +44,7 @@ class ChangeFoodsPage extends StatelessWidget {
               'Other suitable food',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 10), //more food items
             FoodItem(
               title: 'Garri, Groundnut and Milk',
               protein: 35,
@@ -53,7 +54,7 @@ class ChangeFoodsPage extends StatelessWidget {
               recipe: Recipe(
                 title: 'Garri, Groundnut and Milk',
                 description: 'A simple and nutritious meal.',
-                ingredients: ['Garri', 'Groundnut', 'Milk', 'Water'],
+                ingredients: ['Garri', 'Groundnut', 'Milk', 'Water'], // ingredients and steps on how to cook follow
                 steps: ['Mix garri with water', 'Add groundnut and milk', 'Stir and serve'],
                 imagePath: 'assets/images/garri.jpg',
               ),
