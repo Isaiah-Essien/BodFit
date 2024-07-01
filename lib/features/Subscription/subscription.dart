@@ -1,5 +1,7 @@
+import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
+import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http; // Import http package for making HTTP requests which will be used during backend
+
 import 'package:url_launcher/url_launcher.dart'; // This imports the url_launcher for launching URLs. I used it to launch the paypal url
 
 class SubscriptionPage extends StatelessWidget {
@@ -11,18 +13,19 @@ class SubscriptionPage extends StatelessWidget {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.close, color: isDarkMode ? Colors.white : Colors.black),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        title: Text('Get Premium', style: TextStyle(color: isDarkMode ? Colors.white : Colors.black)),
-        centerTitle: true,
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   leading: IconButton(
+      //     icon: Icon(Icons.close, color: isDarkMode ? Colors.white : Colors.black),
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //   ),
+      //   backgroundColor: isDarkMode ? Colors.black : Colors.white,
+      //   title: Text('Get Premium', style: TextStyle(color: isDarkMode ? Colors.white : Colors.black)),
+      //   centerTitle: true,
+      //   elevation: 0,
+      // ),
+      appBar: MyAppBar(heading: 'Get Premium'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -65,6 +68,7 @@ class SubscriptionPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
+                      SizedBox(height: MSizes.spaceBtwSects/2),
                       Text(
                         'First 30 days free - Then ₦25000/Year',
                         style: TextStyle(fontSize: 16, color: Colors.white),

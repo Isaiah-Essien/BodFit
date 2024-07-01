@@ -5,7 +5,7 @@ import 'package:flutter/material.dart'; // Importing Flutter's material package 
 import 'package:fl_chart/fl_chart.dart'; // Importing FL Chart package for displaying charts
 import 'dart:math'; // Importing Dart's math package for random number generation
 import 'package:iconsax/iconsax.dart'; // Importing Iconsax package for icons
-import 'package:bodFit_group5_summative/features/Nutrition/food.dart'; // Importing a custom food feature
+// Importing a custom food feature
 
 // DashboardColors class defines color constants used in the dashboard
 class DashboardColors {
@@ -116,9 +116,10 @@ class _DashboardPageState extends State<DashboardPage> {
                           width: 2,
                         ),
                       ),
+                      
                       child: CircleAvatar(
                         backgroundImage: AssetImage('assets/images/kanayo.jpg'),
-                        radius: 30,
+                        radius: 20,
                         backgroundColor: DashboardColors.primaryColor,
                       ),
                     ),
