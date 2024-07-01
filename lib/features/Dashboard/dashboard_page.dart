@@ -1,11 +1,13 @@
+import 'dart:math'; // Importing Dart's math package for random number generation
+
 import 'package:bodFit_group5_summative/features/Nutrition/mealplans.dart';
+import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
-import 'package:flutter/material.dart'; // Importing Flutter's material package for UI components
 import 'package:fl_chart/fl_chart.dart'; // Importing FL Chart package for displaying charts
-import 'dart:math'; // Importing Dart's math package for random number generation
+import 'package:flutter/material.dart'; // Importing Flutter's material package for UI components
 import 'package:iconsax/iconsax.dart'; // Importing Iconsax package for icons
-import 'package:bodFit_group5_summative/features/Nutrition/food.dart'; // Importing a custom food feature
+// Importing a custom food feature
 
 // DashboardColors class defines color constants used in the dashboard
 class DashboardColors {
@@ -99,6 +101,10 @@ class _DashboardPageState extends State<DashboardPage> {
     final borderColor = DashboardColors.primaryColor;
 
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 10,
+        backgroundColor: MColors.lightGrey,
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(MSizes.spaceBtwSects / 4),
         child: Column(
@@ -120,7 +126,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ),
                       child: CircleAvatar(
                         backgroundImage: AssetImage('assets/images/kanayo.jpg'),
-                        radius: 30,
+                        radius: 20,
                         backgroundColor: DashboardColors.primaryColor,
                       ),
                     ),
@@ -324,16 +330,14 @@ class _DashboardPageState extends State<DashboardPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildDayPlanItem(
-                    MImages.weightlifting, 'Workout', '2 hours', () {
-                  // Placeholder for navigation to WorkoutPage
-                }),
-                buildDayPlanItem(MImages.sleep, 'Sleeping', '9 hours',
+                buildDayPlanItem(MImages.weightlifting, 'Workout', '2 hours',
                     () {
                   // Placeholder for navigation to WorkoutPage
                 }),
-                buildDayPlanItem(MImages.catering, 'Diet', '3 meals',
-                    () {
+                buildDayPlanItem(MImages.sleep, 'Sleeping', '9 hours', () {
+                  // Placeholder for navigation to WorkoutPage
+                }),
+                buildDayPlanItem(MImages.catering, 'Diet', '3 meals', () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MealPlansPage()));
                 }),

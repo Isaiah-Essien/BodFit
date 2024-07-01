@@ -63,7 +63,7 @@ class BottomNavBar2 extends StatelessWidget {
           Text(
             text,
             style: TextStyle(
-              color: currentIndex == index ? Color(0xff29A0E3) : Colors.grey,
+              color: currentIndex == index ? const Color(0xff29A0E3) : Colors.grey,
               fontSize: 17,
             ),
           ),

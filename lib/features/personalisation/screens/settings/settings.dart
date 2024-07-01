@@ -49,7 +49,7 @@ class SettingsScreen extends StatelessWidget {
                   MSettingMenuTile(icon: Iconsax.health5, title: 'Allergien Information', subTitle: 'Set your Allergies',trailing: const Icon(Icons.arrow_forward_ios),onTap: () => Get.to(() => const ProfileScreen()),),
                   MSettingMenuTile(icon: Iconsax.health4, title: 'Health Concerns', subTitle: 'Set your Health concerns',trailing: const Icon(Icons.arrow_forward_ios),onTap: () => Get.to(() => const ProfileScreen()),),
                   MSettingMenuTile(icon: Iconsax.text, title: 'Feedback', subTitle: 'Tell us how you feel about BODFiT',trailing: const Icon(Icons.arrow_forward_ios),onTap: ()=>Get.to(()=> const FAQPage())),
-                  MSettingMenuTile(icon: Iconsax.logout, title: 'Logout', subTitle: 'Sign out',trailing: const Icon(Icons.arrow_forward_ios),onTap: (){},),
+                  MSettingMenuTile(icon: Iconsax.logout, title: 'Logout', subTitle: 'Sign out',trailing: const Icon(Icons.arrow_forward_ios),onTap: ()=>Get.to(()=>const LoginScreen())),
                 ],
               ),
             ),

@@ -9,7 +9,7 @@ class MColors {
   static const Color grey = Color(0xff282A2C);
   static const Color lightGrey = Color(0xffE8E6E6);
 
-  //--------------------Int colors for exercises------------//
+//--------------------Int colors for exercises------------//
   static const int warmUp = 0xFF4682B4;
   static const int workOut = 0xFF6F8FAF;
   static const int coolDown = 0xbf87CEEB;

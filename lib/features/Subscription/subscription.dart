@@ -1,7 +1,7 @@
-import 'dart:convert'; // Import dart:convert for jsonEncode
+import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
+import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:http/http.dart' as http; // Import http package for making HTTP requests which will be used during backend
+
 import 'package:url_launcher/url_launcher.dart'; // This imports the url_launcher for launching URLs. I used it to launch the paypal url
 
 class SubscriptionPage extends StatelessWidget {
@@ -13,18 +13,19 @@ class SubscriptionPage extends StatelessWidget {
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.close, color: isDarkMode ? Colors.white : Colors.black),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        title: Text('Get Premium', style: TextStyle(color: isDarkMode ? Colors.white : Colors.black)),
-        centerTitle: true,
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   leading: IconButton(
+      //     icon: Icon(Icons.close, color: isDarkMode ? Colors.white : Colors.black),
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //   ),
+      //   backgroundColor: isDarkMode ? Colors.black : Colors.white,
+      //   title: Text('Get Premium', style: TextStyle(color: isDarkMode ? Colors.white : Colors.black)),
+      //   centerTitle: true,
+      //   elevation: 0,
+      // ),
+      appBar: const MyAppBar(heading: 'Get Premium',showBackArrow: false,showCloseIcon: true,showAvatar: true),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -67,6 +68,7 @@ class SubscriptionPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
+                      SizedBox(height: MSizes.spaceBtwSects/2),
                       Text(
                         'First 30 days free - Then ₦25000/Year',
                         style: TextStyle(fontSize: 16, color: Colors.white),
@@ -173,54 +175,5 @@ class SubscriptionPage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  // Function to initiate payment using Stripe (not used in this version), it will be implemented during our backend project
-  Future<void> initiatePayment() async {
-    try {
-      // Create a payment intent on your server or use your backend endpoint
-      final paymentIntentClientSecret = await createPaymentIntent();
-
-      // Initialize the payment sheet
-      await Stripe.instance.initPaymentSheet(
-        paymentSheetParameters: SetupPaymentSheetParameters(
-          paymentIntentClientSecret: paymentIntentClientSecret,
-          merchantDisplayName: 'BODFIT',
-          customerId: 'id',
-          customerEphemeralKeySecret: 'customer-ephemeral-key',
-        ),
-      );
-
-      // Present the payment sheet
-      await Stripe.instance.presentPaymentSheet();
-
-      // Handle the payment result
-      // You can add your custom logic here
-    } catch (e) {
-      print('Error: $e');
-    }
-  }
-
-  // Function to create a payment intent on the server (not used in this version)
-  Future<String> createPaymentIntent() async {
-    // Your backend endpoint to create a payment intent
-    const url = 'https://your-backend-endpoint/create-payment-intent';
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: jsonEncode({
-        'amount': 3000, // Amount in currency
-        'currency': 'ngn',
-      }),
-    );
-
-    if (response.statusCode == 200) {
-      final jsonResponse = jsonDecode(response.body);
-      return jsonResponse['clientSecret'];
-    } else {
-      throw Exception('Failed to create payment intent');
-    }
   }
 }
