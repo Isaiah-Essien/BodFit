@@ -25,7 +25,7 @@ class SubscriptionPage extends StatelessWidget {
       //   centerTitle: true,
       //   elevation: 0,
       // ),
-      appBar: MyAppBar(heading: 'Get Premium'),
+      appBar: const MyAppBar(heading: 'Get Premium',showBackArrow: false,showCloseIcon: true,showAvatar: true),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

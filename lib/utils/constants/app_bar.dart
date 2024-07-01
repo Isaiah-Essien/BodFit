@@ -6,18 +6,33 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String heading;
   final bool showAvatar;
   final String? page;
+  final bool showBackArrow; // Boolean for showing back arrow
+  final bool showCloseIcon; // Boolean for showing close icon
 
   const MyAppBar({
     super.key,
     required this.heading,
-    this.showAvatar = true, // Default value is true
+    this.showAvatar = false, // Default value is false
     this.page,
+    this.showBackArrow = false, // Default value is false
+    this.showCloseIcon = false, // Default value is false
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       toolbarHeight: 100,
+      leading: showCloseIcon
+          ? IconButton(
+              icon: Icon(Icons.close),
+              onPressed: () => Navigator.of(context).pop(),
+            )
+          : showBackArrow
+              ? IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () => Navigator.of(context).pop(),
+                )
+              : null,
       iconTheme: IconThemeData(
         color: Theme.of(context).iconTheme.color,
         size: 30,
@@ -52,6 +67,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(100);
 }
