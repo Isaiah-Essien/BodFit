@@ -10,8 +10,6 @@ environment:
 
 #-------------Packages start here------------#
 dependencies:
-
-
   #-----------Utility packages--------#
   http: ^1.1.0
   intl: ^0.19.0
@@ -34,7 +32,9 @@ dependencies:
   fl_chart: ^0.68.0
 #-------------------------./Packages End---------#
 
-  flutter: any
+  flutter:
+    sdk: flutter
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

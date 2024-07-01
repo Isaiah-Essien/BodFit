@@ -23,7 +23,7 @@ class BottomNavBar2 extends StatelessWidget {
         right: 1,
       ),
       child: Container(
-        height: 65, // Increase height to accommodate icon and text
+        height: 57, // Increase height to accommodate icon and text
         decoration: BoxDecoration(
           color: darkMode ? MColors.grey : MColors.lightGrey,
           borderRadius: BorderRadius.circular(33),
@@ -56,15 +56,17 @@ class BottomNavBar2 extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: currentIndex == index ? const Color(0xff29A0E3) : Colors.grey,
-            size: 29,
+            color:
+                currentIndex == index ? const Color(0xff29A0E3) : Colors.grey,
+            size: 25,
           ),
           const SizedBox(height: 2), // Space between icon and text
           Text(
             text,
             style: TextStyle(
-              color: currentIndex == index ? const Color(0xff29A0E3) : Colors.grey,
-              fontSize: 17,
+              color:
+                  currentIndex == index ? const Color(0xff29A0E3) : Colors.grey,
+              fontSize: 15,
             ),
           ),
         ],

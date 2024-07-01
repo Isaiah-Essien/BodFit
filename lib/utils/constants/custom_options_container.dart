@@ -18,8 +18,8 @@ class CustomImageContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-                width: 170,
-                height: 177,
+                width: 150,
+                height: 150,
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xff29A0E3), width: 2),
                   borderRadius: BorderRadius.circular(20.0),
@@ -33,7 +33,7 @@ class CustomImageContainer extends StatelessWidget {
             Text(imageName,
                 style: const TextStyle(
                   fontFamily: 'Poppins',
-                  fontSize: 16,
+                  fontSize: 20,
                   fontWeight: FontWeight.normal,
                 )),
           ],
