@@ -24,6 +24,7 @@ class MImages {
   //User test Images
   static const String userKanayo = 'assets/images/kanayo.jpg';
 
+
   //Workout Options//
   static const String workoutOptions1 = 'assets/images/opt-1.jpg';
   static const String workoutOptions2 = 'assets/images/opt-2.jpg';
