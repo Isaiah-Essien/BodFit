@@ -25,7 +25,7 @@ class CustomImageContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: ClipRRect(
-                    borderRadius: BorderRadius.circular(18.0),
+                    borderRadius: BorderRadius.circular(19.0),
                     child: Image.asset(
                       imageUrl,
                       fit: BoxFit.cover,
