@@ -257,7 +257,12 @@ class _MealPlansPageState extends State<MealPlansPage> {
         Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
         Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
       ],
-    },
+    }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
   };
 
   void _onMealSwiped(int index) {
@@ -418,6 +423,7 @@ class _MealPlansPageState extends State<MealPlansPage> {
       ),
     );
   }
+}
 }
 
 class Meal {
