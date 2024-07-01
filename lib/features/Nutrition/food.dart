@@ -6,7 +6,7 @@ import 'package:bodFit_group5_summative/features/Nutrition/food_item.dart';
 
 ///this page shows you the food items you available to you and upon clicking shows you the recipe and how to cook
 class ChangeFoodsPage extends StatelessWidget {
-  const ChangeFoodsPage({Key? key}) : super(key: key);
+  const ChangeFoodsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

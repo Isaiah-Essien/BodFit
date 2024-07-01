@@ -24,12 +24,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 100,
       leading: showCloseIcon
           ? IconButton(
-              icon: Icon(Icons.close),
+              icon: const Icon(Icons.close),
               onPressed: () => Navigator.of(context).pop(),
             )
           : showBackArrow
               ? IconButton(
-                  icon: Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back),
                   onPressed: () => Navigator.of(context).pop(),
                 )
               : null,
@@ -67,5 +67,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(100);
 }

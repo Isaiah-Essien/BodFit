@@ -1,4 +1,5 @@
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -48,5 +49,5 @@ class DashNav extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(100);
 }

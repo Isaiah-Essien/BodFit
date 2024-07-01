@@ -5,10 +5,10 @@ class CustomImageContainer extends StatelessWidget {
   final String imageName;
 
   const CustomImageContainer({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.imageName,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class CustomImageContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-                width: 170,
-                height: 177,
+                width: 150,
+                height: 150,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xff29A0E3), width: 2),
+                  border: Border.all(color: const Color(0xff29A0E3), width: 2),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: ClipRRect(
@@ -33,7 +33,7 @@ class CustomImageContainer extends StatelessWidget {
             Text(imageName,
                 style: const TextStyle(
                   fontFamily: 'Poppins',
-                  fontSize: 16,
+                  fontSize: 20,
                   fontWeight: FontWeight.normal,
                 )),
           ],

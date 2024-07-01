@@ -7,10 +7,10 @@ class BottomNavBar extends StatelessWidget {
   final Function(int) onTap;
 
   const BottomNavBar({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class BottomNavBar extends StatelessWidget {
       child: Container(
         height: 60,
         decoration: BoxDecoration(
-          color: Color(0xff282A2C),
+          color: const Color(0xff282A2C),
           borderRadius: BorderRadius.circular(33),
           boxShadow: [
             BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(0.1))
@@ -41,7 +41,7 @@ class BottomNavBar extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   duration: const Duration(milliseconds: 800),
-                  tabBackgroundColor: Color(0xff29A0E3),
+                  tabBackgroundColor: const Color(0xff29A0E3),
                   tabs: const [
                     GButton(
                       icon: Iconsax.home4,

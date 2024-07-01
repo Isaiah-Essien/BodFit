@@ -19,20 +19,20 @@ class UserProfileTest extends StatelessWidget {
         )),
         toolbarHeight: 100,
       ),
-      body: Container(
+      body: SizedBox(
         height: 150,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ClipOval(
               child: SizedBox.fromSize(
-                size: Size(130, 130), // Customize the size as needed
+                size: const Size(130, 130), // Customize the size as needed
                 child: Image.asset(MImages.workoutOptions5, fit: BoxFit.cover),
               ),
             ),
-            Container(
+            const SizedBox(
               height: 100,
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
@@ -46,7 +46,7 @@ class UserProfileTest extends StatelessWidget {
                 ],
               ),
             ),
-            ElevatedButton(onPressed: onPressed, child: Text('Edit'))
+            ElevatedButton(onPressed: onPressed, child: const Text('Edit'))
           ],
         ),
       ),

@@ -1,12 +1,9 @@
-import 'package:bodFit_group5_summative/bottom_navigation.dart';
 import 'package:bodFit_group5_summative/features/Subscription/subscription.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// FAQPage displays a list of frequently asked questions and their answers.
@@ -43,32 +40,38 @@ class _FAQPageState extends State<FAQPage> {
           const Divider(),
           const FAQItem(
             question: 'What can I do to check my weight?',
-            answer: 'You can use our app’s weight tracking feature to monitor your progress.',
+            answer:
+                'You can use our app’s weight tracking feature to monitor your progress.',
           ),
           const Divider(),
           const FAQItem(
             question: 'I can’t access my profile',
-            answer: 'Make sure that you have a stable internet connection and then try again.',
+            answer:
+                'Make sure that you have a stable internet connection and then try again.',
           ),
           const Divider(),
           const FAQItem(
             question: 'How do I contact customer service?',
-            answer: 'You can reach us by email at bodfit@info.com or call +250791848842.',
+            answer:
+                'You can reach us by email at bodfit@info.com or call +250791848842.',
           ),
           const Divider(),
           const FAQItem(
             question: 'Is there a night eating plan?',
-            answer: 'We have dinner on our menu which serves as the night plan as well.',
+            answer:
+                'We have dinner on our menu which serves as the night plan as well.',
           ),
           const Divider(),
           const FAQItem(
             question: 'How do I reset my password?',
-            answer: 'You can reset your password by going to the settings and selecting "Reset Password".',
+            answer:
+                'You can reset your password by going to the settings and selecting "Reset Password".',
           ),
           const Divider(),
           const FAQItem(
             question: 'What payment methods are accepted?',
-            answer: 'We accept various payment methods including credit cards, PayPal, and Stripe.',
+            answer:
+                'We accept various payment methods including credit cards, PayPal, and Stripe.',
           ),
           const Divider(),
           ListTile(
@@ -105,8 +108,8 @@ class FAQItem extends StatefulWidget {
     this.answer,
     this.onTap,
     this.showSubscriptionLink = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   // ignore: library_private_types_in_public_api
@@ -134,7 +137,8 @@ class _FAQItemState extends State<FAQItem> {
                     color: MColors.primaryColor,
                   ),
                 ),
-                if (widget.showSubscriptionLink && widget.question == 'Do you have premium offers?')
+                if (widget.showSubscriptionLink &&
+                    widget.question == 'Do you have premium offers?')
                   GestureDetector(
                     onTap: widget.onTap,
                     child: const Text(
