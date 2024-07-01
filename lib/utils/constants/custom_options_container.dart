@@ -5,10 +5,10 @@ class CustomImageContainer extends StatelessWidget {
   final String imageName;
 
   const CustomImageContainer({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.imageName,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CustomImageContainer extends StatelessWidget {
                 width: 170,
                 height: 177,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xff29A0E3), width: 2),
+                  border: Border.all(color: const Color(0xff29A0E3), width: 2),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: ClipRRect(

@@ -8,10 +8,10 @@ class BottomNavBar2 extends StatelessWidget {
   final Function(int) onTap;
 
   const BottomNavBar2({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class BottomNavBar2 extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: currentIndex == index ? Color(0xff29A0E3) : Colors.grey,
+            color: currentIndex == index ? const Color(0xff29A0E3) : Colors.grey,
             size: 29,
           ),
           const SizedBox(height: 2), // Space between icon and text

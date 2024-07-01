@@ -98,7 +98,7 @@ class _DashboardPageState extends State<DashboardPage> {
     final textColor = darkMode ? DashboardColors.light : DashboardColors.dark;
     final selectedTextColor =
         darkMode ? DashboardColors.dark : DashboardColors.light;
-    final borderColor = DashboardColors.primaryColor;
+    const borderColor = DashboardColors.primaryColor;
 
     return Scaffold(
       appBar: AppBar(
@@ -124,7 +124,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           width: 2,
                         ),
                       ),
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                         backgroundImage: AssetImage('assets/images/kanayo.jpg'),
                         radius: 20,
                         backgroundColor: DashboardColors.primaryColor,
@@ -159,7 +159,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     Stack(
                       children: [
                         IconButton(
-                          icon: Icon(Iconsax.notification,
+                          icon: const Icon(Iconsax.notification,
                               color: DashboardColors.primaryColor),
                           onPressed: _toggleNotifications,
                         ),
@@ -179,7 +179,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       ],
                     ),
                     IconButton(
-                      icon: Icon(Iconsax.search_normal,
+                      icon: const Icon(Iconsax.search_normal,
                           color: DashboardColors.primaryColor),
                       onPressed: () {},
                     ),
@@ -204,8 +204,8 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                   ],
                 ),
-                child: Column(
-                  children: const [
+                child: const Column(
+                  children: [
                     ListTile(
                       leading: Icon(Icons.fitness_center,
                           color: DashboardColors.primaryColor),
@@ -251,9 +251,9 @@ class _DashboardPageState extends State<DashboardPage> {
               height: 200,
               child: LineChart(
                 LineChartData(
-                  gridData: FlGridData(show: true),
+                  gridData: const FlGridData(show: true),
                   titlesData: FlTitlesData(
-                    leftTitles: AxisTitles(
+                    leftTitles: const AxisTitles(
                       sideTitles: SideTitles(showTitles: true),
                     ),
                     bottomTitles: AxisTitles(
@@ -295,7 +295,7 @@ class _DashboardPageState extends State<DashboardPage> {
               children: [
                 Column(
                   children: [
-                    Text('${_distance.toStringAsFixed(2)}',
+                    Text(_distance.toStringAsFixed(2),
                         style: const TextStyle(
                             fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Distance'),
@@ -311,7 +311,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
                 Column(
                   children: [
-                    Text('$_time',
+                    Text(_time,
                         style: const TextStyle(
                             fontSize: 24, fontWeight: FontWeight.bold)),
                     const Text('Time'),
@@ -339,7 +339,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 }),
                 buildDayPlanItem(MImages.catering, 'Diet', '3 meals', () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MealPlansPage()));
+                      MaterialPageRoute(builder: (context) => const MealPlansPage()));
                 }),
                 buildDayPlanItem('assets/gifs/running.gif', 'Running', '10 km',
                     () {
@@ -353,7 +353,7 @@ class _DashboardPageState extends State<DashboardPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MealPlansPage()),
+                  MaterialPageRoute(builder: (context) => const MealPlansPage()),
                 );
               },
               child: Container(

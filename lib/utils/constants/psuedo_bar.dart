@@ -8,7 +8,7 @@ class DashBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 70,
       width: 500,
       child: Row(

@@ -34,11 +34,13 @@ dependencies:
   fl_chart: ^0.68.0
 #-------------------------./Packages End---------#
 
+  flutter: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
 
+  flutter: any
 flutter:
   uses-material-design: true
 

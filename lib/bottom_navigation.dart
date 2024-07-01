@@ -51,7 +51,7 @@ class NavigationController extends GetxController {
 
     const DashboardPage(),
     Container(color: Colors.red),
-    MealPlansPage(),
+    const MealPlansPage(),
     const SettingsScreen(),
   ];
 }

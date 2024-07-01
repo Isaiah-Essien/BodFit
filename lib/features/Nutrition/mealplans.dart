@@ -16,114 +16,128 @@ class _MealPlansPageState extends State<MealPlansPage> {
   String _selectedMeal = 'Breakfast';
   int _selectedMealIndex = 0;
 
-///Days of the week from monday to sunday with detailed meals 
+  ///Days of the week from monday to sunday with detailed meals
   final Map<String, Map<String, List<Meal>>> _meals = {
-  'Mon 24': {
-    'Breakfast': [
-      Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20, 47, 63),
-      Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
-      Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67)
-    ],
-    'Lunch': [
-      Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
-      Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45, 55),
-    ],
-    'Dinner': [
-      Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
-      Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
-    ],
-  },
-  'Tue': {
-    'Breakfast': [
-      Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
-      Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
-      Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20, 47, 63)
-    ],
-    'Lunch': [
-      Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45, 55),
-      Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
-    ],
-    'Dinner': [
-      Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
-      Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
-    ],
-  },
-  'Wed': {
-    'Breakfast': [
-      Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
-      Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20, 47, 63),
-      Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
-    ],
-    'Lunch': [
-      Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
-      Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45, 55),
-    ],
-    'Dinner': [
-      Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
-      Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
-    ],
-  },
-  'Thu': {
-    'Breakfast': [
-      Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
-      Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20, 47, 63),
-      Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
-    ],
-    'Lunch': [
-      Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45, 55),
-      Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
-    ],
-    'Dinner': [
-      Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
-      Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
-    ],
-  },
-  'Fri': {
-    'Breakfast': [
-      Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
-      Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20, 47, 63),
-      Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
-    ],
-    'Lunch': [
-      Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
-      Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45, 55),
-    ],
-    'Dinner': [
-      Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
-      Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
-    ],
-  },
-  'Sat': {
-    'Breakfast': [
-      Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20, 47, 63),
-      Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
-      Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
-    ],
-    'Lunch': [
-      Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45, 55),
-      Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
-    ],
-    'Dinner': [
-      Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
-      Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
-    ],
-  },
-  'Sun 30': {
-    'Breakfast': [
-      Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
-      Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20, 47, 63),
-      Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
-    ],
-    'Lunch': [
-      Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
-      Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45, 55),
-    ],
-    'Dinner': [
-      Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
-      Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
-    ],
-  },
-};
+    'Mon 24': {
+      'Breakfast': [
+        Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20,
+            47, 63),
+        Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
+        Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67)
+      ],
+      'Lunch': [
+        Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
+        Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45,
+            55),
+      ],
+      'Dinner': [
+        Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
+        Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
+      ],
+    },
+    'Tue': {
+      'Breakfast': [
+        Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
+        Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
+        Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20,
+            47, 63)
+      ],
+      'Lunch': [
+        Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45,
+            55),
+        Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
+      ],
+      'Dinner': [
+        Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
+        Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
+      ],
+    },
+    'Wed': {
+      'Breakfast': [
+        Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
+        Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20,
+            47, 63),
+        Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
+      ],
+      'Lunch': [
+        Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
+        Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45,
+            55),
+      ],
+      'Dinner': [
+        Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
+        Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
+      ],
+    },
+    'Thu': {
+      'Breakfast': [
+        Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
+        Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20,
+            47, 63),
+        Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
+      ],
+      'Lunch': [
+        Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45,
+            55),
+        Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
+      ],
+      'Dinner': [
+        Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
+        Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
+      ],
+    },
+    'Fri': {
+      'Breakfast': [
+        Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
+        Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20,
+            47, 63),
+        Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
+      ],
+      'Lunch': [
+        Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
+        Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45,
+            55),
+      ],
+      'Dinner': [
+        Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
+        Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
+      ],
+    },
+    'Sat': {
+      'Breakfast': [
+        Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20,
+            47, 63),
+        Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
+        Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
+      ],
+      'Lunch': [
+        Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45,
+            55),
+        Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
+      ],
+      'Dinner': [
+        Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
+        Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
+      ],
+    },
+    'Sun 30': {
+      'Breakfast': [
+        Meal('Akamu with Akara', 'assets/images/akamu.jpg', 25, 40, 60),
+        Meal('Fried Yam, Eggs, and Plantain', 'assets/images/yameggs.jpg', 20,
+            47, 63),
+        Meal('Noodles and Eggs', 'assets/images/noodles.png', 20, 30, 67),
+      ],
+      'Lunch': [
+        Meal('Jollof Rice and Chicken', 'assets/images/jollof.jpg', 30, 40, 50),
+        Meal('Efo Riro and Pounded Yam', 'assets/images/poundedyam.jpg', 35, 45,
+            55),
+      ],
+      'Dinner': [
+        Meal('Egusi Soup and Semovita', 'assets/images/egusi.jpg', 30, 40, 50),
+        Meal('Fried Rice and Fish', 'assets/images/friedrice.jpg', 25, 35, 45),
+      ],
+    },
+  };
 
   void _onMealSwiped(int index) {
     setState(() {
@@ -132,9 +146,9 @@ class _MealPlansPageState extends State<MealPlansPage> {
   }
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
+      appBar: const MyAppBar(
         heading: 'Meal Plans',
         showAvatar: true,
       ),
@@ -142,7 +156,8 @@ class _MealPlansPageState extends State<MealPlansPage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [// Blue text above dates
+          children: [
+            // Blue text above dates
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: Text(
@@ -156,12 +171,21 @@ class _MealPlansPageState extends State<MealPlansPage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: ['Mon 24', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun 30']  //week days
+              children: [
+                'Mon 24',
+                'Tue',
+                'Wed',
+                'Thu',
+                'Fri',
+                'Sat',
+                'Sun 30'
+              ] //week days
                   .map((day) => GestureDetector(
                         onTap: () {
                           setState(() {
                             _selectedDay = day;
-                            _selectedMealIndex = 0; // Reset the selected meal index
+                            _selectedMealIndex =
+                                0; // Reset the selected meal index
                           });
                         },
                         child: Column(
@@ -194,11 +218,13 @@ class _MealPlansPageState extends State<MealPlansPage> {
                         onTap: () {
                           setState(() {
                             _selectedMeal = meal;
-                            _selectedMealIndex = 0; // Reset the selected meal index
+                            _selectedMealIndex =
+                                0; // Reset the selected meal index
                           });
                         },
                         child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 4, horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: _selectedMeal == meal
@@ -219,13 +245,15 @@ class _MealPlansPageState extends State<MealPlansPage> {
                   .toList(),
             ),
             const SizedBox(height: 20),
-            if (_meals[_selectedDay] != null && _meals[_selectedDay]![_selectedMeal] != null)
+            if (_meals[_selectedDay] != null &&
+                _meals[_selectedDay]![_selectedMeal] != null)
               SizedBox(
                 height: 250,
                 child: PageView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: _meals[_selectedDay]![_selectedMeal]!.length,
-                  onPageChanged: _onMealSwiped, //for horizontally swiping beween meal options
+                  onPageChanged:
+                      _onMealSwiped, //for horizontally swiping beween meal options
                   itemBuilder: (context, index) {
                     final meal = _meals[_selectedDay]![_selectedMeal]![index];
                     return Padding(
@@ -245,6 +273,7 @@ class _MealPlansPageState extends State<MealPlansPage> {
           ],
         ),
       ),
+
       ///the bottom navigation bar
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -289,7 +318,7 @@ class MealItem extends StatelessWidget {
   final bool isSelected;
 
   const MealItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.protein,
     required this.fat,
@@ -316,12 +345,14 @@ class MealItem extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.asset(imagePath, width: double.infinity, height: 150, fit: BoxFit.cover),
+                Image.asset(imagePath,
+                    width: double.infinity, height: 150, fit: BoxFit.cover),
                 if (isSelected)
-                  Positioned(
+                  const Positioned(
                     top: 10,
                     right: 10,
-                    child: Icon(Icons.check_circle, color: Colors.green, size: 24),
+                    child:
+                        Icon(Icons.check_circle, color: Colors.green, size: 24),
                   ),
               ],
             ),
@@ -362,7 +393,7 @@ class MealItem extends StatelessWidget {
           backgroundColor: color,
           radius: 5,
         ),
-        SizedBox(width: 4),
+        const SizedBox(width: 4),
         Text('$label $value'),
       ],
     );

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class RecipePage extends StatelessWidget {
   final Recipe recipe;
 
-  const RecipePage({Key? key, required this.recipe}) : super(key: key);
+  const RecipePage({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class RecipePage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 20),
-            Text(
+            const Text(
               'Description:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             Text(recipe.description),
             const SizedBox(height: 20),
-            Text(
+            const Text(
               'Ingredients:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -43,7 +43,7 @@ class RecipePage extends StatelessWidget {
                   .toList(),
             ),
             const SizedBox(height: 20),
-            Text(
+            const Text(
               'Steps:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),

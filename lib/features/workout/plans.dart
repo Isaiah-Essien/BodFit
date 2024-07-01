@@ -16,10 +16,10 @@ class Hiit extends StatelessWidget {
         heading: MTexts.highIntensity,
         page: '/',
       ),
-      body: HighIntensity(),
+      body: const HighIntensity(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
-        hoverColor: Color(0xff29A0E3),
+        hoverColor: const Color(0xff29A0E3),
         onPressed: () {
           Get.to(
             () => const Movements(
@@ -50,10 +50,10 @@ class WeightLossPlan extends StatelessWidget {
         heading: MTexts.weightLoss,
         page: '/',
       ),
-      body: HighIntensity(),
+      body: const HighIntensity(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
-        hoverColor: Color(0xff29A0E3),
+        hoverColor: const Color(0xff29A0E3),
         onPressed: () {
           Get.to(
             () => const Movements(
@@ -84,10 +84,10 @@ class RecoveryPlan extends StatelessWidget {
         heading: MTexts.recovery,
         page: '/',
       ),
-      body: HighIntensity(),
+      body: const HighIntensity(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
-        hoverColor: Color(0xff29A0E3),
+        hoverColor: const Color(0xff29A0E3),
         onPressed: () {
           Get.to(
             () => const Movements(
@@ -118,10 +118,10 @@ class CalisthenicsPlan extends StatelessWidget {
         heading: MTexts.cali,
         page: '/',
       ),
-      body: HighIntensity(),
+      body: const HighIntensity(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
-        hoverColor: Color(0xff29A0E3),
+        hoverColor: const Color(0xff29A0E3),
         onPressed: () {
           Get.to(
             () => const Movements(
@@ -152,7 +152,7 @@ class ThirtyDayPlan extends StatelessWidget {
         heading: MTexts.daysChallenge,
         page: '/',
       ),
-      body: HighIntensity(),
+      body: const HighIntensity(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
         hoverColor: const Color(0xff29A0E3),
