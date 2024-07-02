@@ -24,7 +24,6 @@ class MImages {
   //User test Images
   static const String userKanayo = 'assets/images/kanayo.jpg';
 
-
   //Workout Options//
   static const String workoutOptions1 = 'assets/images/opt-1.jpg';
   static const String workoutOptions2 = 'assets/images/opt-2.jpg';
@@ -39,4 +38,7 @@ class MImages {
   static const String weightlifting = 'assets/gifs/weightlifting.gif';
   static const String sleep = 'assets/gifs/sleep.gif';
   static const String catering = 'assets/gifs/catering.gif';
+
+//    food path
+  static const String afang = 'assets/images/afang2.jpg';
 }

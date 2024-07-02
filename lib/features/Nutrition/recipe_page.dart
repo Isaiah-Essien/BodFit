@@ -1,5 +1,6 @@
 // lib/pages/recipe_page.dart
 import 'package:bodFit_group5_summative/models/recipe.dart';
+import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class RecipePage extends StatelessWidget {
@@ -10,8 +11,8 @@ class RecipePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(recipe.title),
+      appBar: MyAppBar(
+        heading: recipe.title,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -51,7 +52,8 @@ class RecipePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: recipe.steps
                   .asMap()
-                  .map((index, step) => MapEntry(index, Text('${index + 1}. $step')))
+                  .map((index, step) =>
+                      MapEntry(index, Text('${index + 1}. $step')))
                   .values
                   .toList(),
             ),

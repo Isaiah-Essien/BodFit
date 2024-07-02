@@ -1,8 +1,9 @@
 // lib/pages/change_foods_page.dart
-import 'package:flutter/material.dart';
+import 'package:bodFit_group5_summative/features/Nutrition/food_item.dart';
 import 'package:bodFit_group5_summative/models/recipe.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
-import 'package:bodFit_group5_summative/features/Nutrition/food_item.dart';
+import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
+import 'package:flutter/material.dart';
 
 ///this page shows you the food items you available to you and upon clicking shows you the recipe and how to cook
 class ChangeFoodsPage extends StatelessWidget {
@@ -33,9 +34,15 @@ class ChangeFoodsPage extends StatelessWidget {
               imagePath: 'assets/images/friedyam.jpeg',
               recipe: Recipe(
                 title: 'Fried Yam and Eggs',
-                description: 'A delicious combination of fried yam and scrambled eggs.',
+                description:
+                    'A delicious combination of fried yam and scrambled eggs.',
                 ingredients: ['Yam', 'Eggs', 'Oil', 'Salt'],
-                steps: ['Peel and slice yam', 'Fry yam in oil', 'Scramble eggs', 'Serve together'],
+                steps: [
+                  'Peel and slice yam',
+                  'Fry yam in oil',
+                  'Scramble eggs',
+                  'Serve together'
+                ],
                 imagePath: 'assets/images/friedyam.jpeg',
               ),
             ),
@@ -54,8 +61,17 @@ class ChangeFoodsPage extends StatelessWidget {
               recipe: Recipe(
                 title: 'Garri, Groundnut and Milk',
                 description: 'A simple and nutritious meal.',
-                ingredients: ['Garri', 'Groundnut', 'Milk', 'Water'], // ingredients and steps on how to cook follow
-                steps: ['Mix garri with water', 'Add groundnut and milk', 'Stir and serve'],
+                ingredients: [
+                  'Garri',
+                  'Groundnut',
+                  'Milk',
+                  'Water'
+                ], // ingredients and steps on how to cook follow
+                steps: [
+                  'Mix garri with water',
+                  'Add groundnut and milk',
+                  'Stir and serve'
+                ],
                 imagePath: 'assets/images/garri.jpg',
               ),
             ),
@@ -64,13 +80,18 @@ class ChangeFoodsPage extends StatelessWidget {
               protein: 31,
               fat: 43,
               carbs: 55,
-              imagePath: 'assets/images/afang.jpg',
+              imagePath: MImages.afang,
               recipe: Recipe(
                 title: 'Afang Soup and Semolina',
-                description: 'A traditional Nigerian soup made with afang leaves and semolina.',
+                description:
+                    'A traditional Nigerian soup made with afang leaves and semolina.',
                 ingredients: ['Afang leaves', 'Meat', 'Fish', 'Semolina'],
-                steps: ['Cook meat and fish', 'Add afang leaves', 'Serve with semolina'],
-                imagePath: 'assets/images/afang.jpg',
+                steps: [
+                  'Cook meat and fish',
+                  'Add afang leaves',
+                  'Serve with semolina'
+                ],
+                imagePath: MImages.afang,
               ),
             ),
             FoodItem(
@@ -81,9 +102,14 @@ class ChangeFoodsPage extends StatelessWidget {
               imagePath: 'assets/images/jollof.jpg',
               recipe: Recipe(
                 title: 'Nigerian Jollof Rice',
-                description: 'A popular West African dish made with rice, tomatoes, and spices.',
+                description:
+                    'A popular West African dish made with rice, tomatoes, and spices.',
                 ingredients: ['Rice', 'Tomatoes', 'Onions', 'Spices'],
-                steps: ['Cook tomatoes and onions', 'Add rice and spices', 'Simmer until done'],
+                steps: [
+                  'Cook tomatoes and onions',
+                  'Add rice and spices',
+                  'Simmer until done'
+                ],
                 imagePath: 'assets/images/jollof.jpg',
               ),
             ),
@@ -95,7 +121,8 @@ class ChangeFoodsPage extends StatelessWidget {
               imagePath: 'assets/images/egusiyam.jpg',
               recipe: Recipe(
                 title: 'Pounded Yam and Egusi Soup',
-                description: 'A classic Nigerian dish made with pounded yam and melon seed soup.',
+                description:
+                    'A classic Nigerian dish made with pounded yam and melon seed soup.',
                 ingredients: ['Yam', 'Egusi seeds', 'Meat', 'Vegetables'],
                 steps: ['Pound yam', 'Prepare egusi soup', 'Combine and serve'],
                 imagePath: 'assets/images/egusiyam.jpg',
@@ -109,9 +136,14 @@ class ChangeFoodsPage extends StatelessWidget {
               imagePath: 'assets/images/amala.jpg',
               recipe: Recipe(
                 title: 'Efo Riro and Amala',
-                description: 'A flavorful Nigerian spinach stew served with yam flour paste.',
+                description:
+                    'A flavorful Nigerian spinach stew served with yam flour paste.',
                 ingredients: ['Spinach', 'Meat', 'Fish', 'Amala'],
-                steps: ['Cook meat and fish', 'Add spinach and spices', 'Serve with amala'],
+                steps: [
+                  'Cook meat and fish',
+                  'Add spinach and spices',
+                  'Serve with amala'
+                ],
                 imagePath: 'assets/images/amala.jpg',
               ),
             ),
@@ -123,9 +155,14 @@ class ChangeFoodsPage extends StatelessWidget {
               imagePath: 'assets/images/moimoi.jpg',
               recipe: Recipe(
                 title: 'Moi Moi and Pap',
-                description: 'A nutritious meal of steamed bean pudding and fermented maize pudding.',
+                description:
+                    'A nutritious meal of steamed bean pudding and fermented maize pudding.',
                 ingredients: ['Beans', 'Pepper', 'Onions', 'Pap'],
-                steps: ['Blend beans with pepper and onions', 'Steam mixture', 'Serve with pap'],
+                steps: [
+                  'Blend beans with pepper and onions',
+                  'Steam mixture',
+                  'Serve with pap'
+                ],
                 imagePath: 'assets/images/moimoi.jpg',
               ),
             ),

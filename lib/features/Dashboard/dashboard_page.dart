@@ -1,7 +1,6 @@
 import 'dart:math'; // Importing Dart's math package for random number generation
 
 import 'package:bodFit_group5_summative/features/Nutrition/mealplans.dart';
-import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:fl_chart/fl_chart.dart'; // Importing FL Chart package for displaying charts
@@ -103,7 +102,6 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 10,
-        backgroundColor: MColors.lightGrey,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(MSizes.spaceBtwSects / 4),
@@ -338,8 +336,10 @@ class _DashboardPageState extends State<DashboardPage> {
                   // Placeholder for navigation to WorkoutPage
                 }),
                 buildDayPlanItem(MImages.catering, 'Diet', '3 meals', () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const MealPlansPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MealPlansPage()));
                 }),
                 buildDayPlanItem('assets/gifs/running.gif', 'Running', '10 km',
                     () {
@@ -353,7 +353,8 @@ class _DashboardPageState extends State<DashboardPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MealPlansPage()),
+                  MaterialPageRoute(
+                      builder: (context) => const MealPlansPage()),
                 );
               },
               child: Container(

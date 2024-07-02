@@ -54,9 +54,9 @@ class _MovementsState extends State<Movements> {
     });
   }
 
-  void _onTap(int index) {
+  void _onTap() {
     setState(() {
-      _currentIndex = index;
+      _currentIndex++;
     });
   }
 
@@ -81,7 +81,7 @@ class _MovementsState extends State<Movements> {
               ),
               child: Center(
                 child: Text(
-                  HIntensity.warmUp[0],
+                  HIntensity.warmUp[_currentIndex],
                   style: const TextStyle(
                     fontSize: 28,
                     fontFamily: 'poppins',
@@ -102,15 +102,19 @@ class _MovementsState extends State<Movements> {
                 size: 100,
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Icon(
+                const Icon(
                   Iconsax.arrow_circle_left,
                   size: 50,
                 ),
-                Icon(Iconsax.arrow_circle_right, size: 50),
+                InkWell(
+                    onTap: () {
+                      _onTap();
+                    },
+                    child: Icon(Iconsax.arrow_circle_right, size: 50)),
               ],
             ),
             buildTimer(),
