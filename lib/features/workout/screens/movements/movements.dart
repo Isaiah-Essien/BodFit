@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bodFit_group5_summative/features/workout/screens/movements/build_button.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
+import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -78,10 +79,10 @@ class _MovementsState extends State<Movements> {
                 borderRadius: BorderRadius.circular(10),
                 color: MColors.primaryColor,
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
-                  'test',
-                  style: TextStyle(
+                  HIntensity.warmUp[0],
+                  style: const TextStyle(
                     fontSize: 28,
                     fontFamily: 'poppins',
                     fontWeight: FontWeight.bold,
