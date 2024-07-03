@@ -1,4 +1,5 @@
 # BODFiT Nutrition and Fitness Mobile Application
+This is the link to the video demo of our app : https://youtu.be/Via1ebsCK8I
 
 ## Members (Group 5):
 - Oche David Ankeli
