@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "662759304121",
+    "project_id": "bodfit-6f6ce",
+    "storage_bucket": "bodfit-6f6ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662759304121:android:4e56fbbeaa71003c486468",
+        "android_client_info": {
+          "package_name": "com.example.bodfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662759304121-k7j5i6udstdevispaolk3e9fqrqegl1o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bodfit",
+            "certificate_hash": "aeb7634c19cf99c97d4f4d6f6ccba7d0064942a2"
+          }
+        },
+        {
+          "client_id": "662759304121-ttj9caovs9vifkjlj67mtm9a31f51fl8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ3J_0ifEwAibD-LbdBmraU8DIKFgz24E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662759304121-ttj9caovs9vifkjlj67mtm9a31f51fl8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "662759304121-s7gaoi2dn65t57l8niko0lpbbgt3uolv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.widgetAssignmnent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
