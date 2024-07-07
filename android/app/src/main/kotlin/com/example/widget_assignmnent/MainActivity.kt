@@ -1,4 +1,4 @@
-package com.example.widget_assignmnent
+package com.example.bodfit
 
 import io.flutter.embedding.android.FlutterActivity
 

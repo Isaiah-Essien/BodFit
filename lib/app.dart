@@ -1,4 +1,4 @@
-import 'package:bodFit_group5_summative/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/theme/theme.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
@@ -13,7 +13,8 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: MAppTheme.lightTheme,
       darkTheme: MAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      ///Loader of Circular Progress indicator while Authetication Repository is deciding to show relevant screen.
+      home: const Scaffold(backgroundColor: MColors.primaryColor,body:Center(child: CircularProgressIndicator(color: MColors.light))),
     );
   }
 }
