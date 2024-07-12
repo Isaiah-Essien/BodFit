@@ -44,5 +44,6 @@ class MImages {
   static const String afang = 'assets/images/afang2.jpg';
 
   //Loaders
-  static const String docerAnimation = 'assets/gifs/animation1.json';
+  static const String docerAnimation = 'assets/lottie_animations/animation1.json';
+  static const String docerAnimation2 = 'assets/lottie_animations/animation2.json';
 }

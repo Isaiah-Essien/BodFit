@@ -60,6 +60,7 @@ class SignupController extends GetxController {
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
 
+      //Remove Loader
       MFullScreenloader.stopLoading();
 
       //Show success message
@@ -69,10 +70,11 @@ class SignupController extends GetxController {
               'Your account has been created! Verify your email to continue!');
 
       //Move to Verify email Screen
-      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
+      Get.to(() => const VerifyEmailScreen());
     } catch (e) {
       //Remove Loader
       MFullScreenloader.stopLoading();
+
       //Show some Generic Error to user
       MLoaders.errorSnackBar(
           title: MTexts.errorSnackBar, message: e.toString());

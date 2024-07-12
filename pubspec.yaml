@@ -57,6 +57,7 @@ flutter:
     - assets/logos/
     - assets/gifs/
     - assets/icons/
+    - assets/lottie_animations/
 
   #-----Local Fonts-------#
   fonts:

@@ -9,7 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class VerifyEmailControllers extends GetxController {
-  static VerifyEmailControllers get instace => Get.find();
+  static VerifyEmailControllers get instance => Get.find();
 
   /// Sends email whenever verify email screen appears and sets a timer for auto redirect
   @override
@@ -27,7 +27,7 @@ class VerifyEmailControllers extends GetxController {
           title: 'Email sent.',
           message: 'Please check your inbox and verify your email');
     } catch (e) {
-      MLoaders.errorSnackBar(title: 'O! Snap!', message: e.toString());
+      MLoaders.errorSnackBar(title: 'Oh, Snap!', message: e.toString());
     }
   }
 
@@ -40,7 +40,7 @@ class VerifyEmailControllers extends GetxController {
         timer.cancel();
         Get.off(
           () => SuccesScreen(
-            image: MImages.succesScreen,
+            image: MImages.docerAnimation2,
             title: MTexts.yourAccountCreatedTitle,
             subTitle: MTexts.yourAccountCreatedSubTitle,
             onPressed: () => AuthRepository.instance.screenRedirect(),
@@ -56,7 +56,7 @@ class VerifyEmailControllers extends GetxController {
     if(currentUser!=null&&currentUser.emailVerified){
       Get.off(
         () => SuccesScreen(
-          image: MImages.succesScreen,
+          image: MImages.docerAnimation2,
           title: MTexts.yourAccountCreatedTitle,
           subTitle: MTexts.yourAccountCreatedSubTitle,
           onPressed: () => AuthRepository.instance.screenRedirect(),
