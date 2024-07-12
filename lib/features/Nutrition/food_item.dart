@@ -1,7 +1,8 @@
 // lib/widgets/food_item.dart
 import 'package:bodFit_group5_summative/features/Nutrition/recipe_page.dart';
-import 'package:bodFit_group5_summative/models/recipe.dart';
 import 'package:flutter/material.dart';
+
+import '../../food_models/recipe.dart';
 
 
 class FoodItem extends StatelessWidget {

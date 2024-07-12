@@ -1,7 +1,7 @@
-// lib/pages/recipe_page.dart
-import 'package:bodFit_group5_summative/models/recipe.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:flutter/material.dart';
+
+import '../../food_models/recipe.dart';
 
 class RecipePage extends StatelessWidget {
   final Recipe recipe;

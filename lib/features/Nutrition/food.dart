@@ -1,9 +1,10 @@
 // lib/pages/change_foods_page.dart
 import 'package:bodFit_group5_summative/features/Nutrition/food_item.dart';
-import 'package:bodFit_group5_summative/models/recipe.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
+
+import '../../food_models/recipe.dart';
 
 ///this page shows you the food items you available to you and upon clicking shows you the recipe and how to cook
 class ChangeFoodsPage extends StatelessWidget {
