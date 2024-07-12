@@ -13,7 +13,7 @@ class MAuthLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Image(
-        height: 200,
+        height: 180,
         image: AssetImage(dark ? MImages.lightLogo : MImages.darkLogo),
       ),
     );

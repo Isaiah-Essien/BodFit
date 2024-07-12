@@ -20,7 +20,7 @@ class SignupScreen extends StatelessWidget {
       body: SingleChildScrollView(
         
         child: Padding(
-          padding: const EdgeInsets.all(MSizes.defaultSpace),
+          padding: const EdgeInsets.all(MSizes.defaultSpace/2),
           
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

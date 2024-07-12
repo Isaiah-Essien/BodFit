@@ -27,16 +27,7 @@ class OnBoardingController extends GetxController {
     if (currentPageIndex.value == 2) {
       final storage = GetStorage();
 
-      if (kDebugMode) {
-        print('==============GET STORAGE=============');
-        print(storage.read('isFirstTime'));
-      }
-
       storage.write('isFirstTime', false);
-      if (kDebugMode) {
-        print('==============GET STORAGE=============');
-        print(storage.read('isFirstTime'));
-      }
       Get.offAll(const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;

@@ -20,6 +20,7 @@ class MImages {
   static const String congrats = 'assets/gifs/congrats.png';
   static const String thinking = 'assets/gifs/thinking.gif';
   static const String reset = 'assets/gifs/reset.gif';
+  static const String succesScreen = 'assets/gifs/succes_screen.gif';
 
   //User test Images
   static const String userKanayo = 'assets/images/kanayo.jpg';
@@ -41,4 +42,7 @@ class MImages {
 
 //    food path
   static const String afang = 'assets/images/afang2.jpg';
+
+  //Loaders
+  static const String docerAnimation = 'assets/gifs/animation1.json';
 }

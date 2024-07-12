@@ -1,9 +1,10 @@
+import 'package:bodFit_group5_summative/features/authentication/controllers/login/login_controller.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:bodFit_group5_summative/features/authentication/screens/signup/signup.dart';
-import 'package:bodFit_group5_summative/features/navigation/navigation.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
+import 'package:bodFit_group5_summative/utils/validators/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,13 +16,18 @@ class MloginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     return Form(
+      key: controller.loginFormKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: MSizes.spaceBtwSects),
         child: Column(
           children: [
             ///Email
             TextFormField(
+              validator: (value)=>MValidator.validateEmail(value),
+              controller: controller.email,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText: MTexts.email,
@@ -30,11 +36,21 @@ class MloginForm extends StatelessWidget {
             const SizedBox(height: MSizes.spaceBtwinputfield),
 
             ///Password
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.password_check),
-                labelText: MTexts.password,
-                suffixIcon: Icon(Iconsax.eye_slash),
+            Obx(
+              () => TextFormField(
+                controller: controller.password,
+                validator: (value) => MValidator.validatePassword(value),
+                obscureText: controller.hidePassword.value,
+                decoration: InputDecoration(
+                  labelText: MTexts.password,
+                  prefixIcon: const Icon(Iconsax.password_check),
+                  suffixIcon: IconButton(
+                      onPressed: () => controller.hidePassword.value =
+                          !controller.hidePassword.value,
+                      icon: Icon(controller.hidePassword.value
+                          ? Iconsax.eye_slash
+                          : Iconsax.eye)),
+                ),
               ),
             ),
             const SizedBox(height: MSizes.spaceBtwinputfield / 2),
@@ -48,10 +64,12 @@ class MloginForm extends StatelessWidget {
                   children: [
                     ///Checkbox
 
-                    Checkbox(
-                      value: true,
-                      onChanged: (value) {},
-                      activeColor: MColors.primaryColor,
+                    Obx(
+                      ()=> Checkbox(
+                        value: controller.rememberMe.value,
+                        onChanged: (value) =>controller.rememberMe.value=!controller.rememberMe.value,
+                        activeColor: MColors.primaryColor,
+                      ),
                     ),
                     const Text(
                       MTexts.rememberMe,
@@ -72,7 +90,7 @@ class MloginForm extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => Get.to(() => const Navigation()),
+                    onPressed: () => controller.emailAndPasswordSignIn(),
                     child: const Text(MTexts.logIn))),
             const SizedBox(height: MSizes.spaceBtwItms),
 

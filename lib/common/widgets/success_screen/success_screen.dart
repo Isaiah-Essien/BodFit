@@ -1,8 +1,8 @@
 import 'package:bodFit_group5_summative/common/styles/spacing_styles.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
-import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SuccesScreen extends StatelessWidget {
   const SuccesScreen({super.key, required this.image, required this.title, required this.subTitle, required this.onPressed});
@@ -19,9 +19,10 @@ class SuccesScreen extends StatelessWidget {
           child: Column(
             children: [
               ///Image
-              Image(
-                  image: AssetImage(image),
-                  width: MHelperFunctions.screenWidth() * 0.7),
+              Lottie.asset(image,width: MediaQuery.of(context).size.width*0.6),
+              // Image(
+              //     image: AssetImage(image),
+              //     width: MHelperFunctions.screenWidth() * 0.7),
               const SizedBox(height: MSizes.spaceBtwSects),
 
               ///Title and subTitle
