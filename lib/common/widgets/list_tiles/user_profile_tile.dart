@@ -21,10 +21,9 @@ class MUserProfileTile extends StatelessWidget {
     return ListTile(
       leading: MCircularImage(
         image: imageUrl, // Use the passed image URL
-        width: 55,
-        height: 100,
+
         padding: 0,
-        backgroundColor: MColors.primaryColor,
+
         isNetworkImage: imageUrl.isNotEmpty, // Determine if it's a network image
       ),
       title: Text(controller.user.value.fullName,
