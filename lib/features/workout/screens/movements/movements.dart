@@ -24,6 +24,7 @@ class _MovementsState extends State<Movements> {
   static const maxSeconds = 30;
   int seconds = maxSeconds;
   Timer? timer;
+  late List<String> allExercises;
 
   void resetTimer() {
     setState(() {
@@ -61,6 +62,22 @@ class _MovementsState extends State<Movements> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    if (widget.title.contains('Recovery')) {
+      allExercises = Recovery.allExercises;
+    } else if (widget.title.contains('WeightLoss')) {
+      allExercises = WeightLoss.allExercises;
+    } else if (widget.title.contains('HIntensity')) {
+      allExercises = HIntensity.allExercises;
+    } else if (widget.title.contains('StrengthTraining')) {
+      allExercises = StrengthTraining.allExercises;
+    } else {
+      allExercises = Challenge.allExercises;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
@@ -73,15 +90,15 @@ class _MovementsState extends State<Movements> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: 230,
-              height: 49,
+              width: screenWidth / 1.2,
+              height: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: MColors.primaryColor,
               ),
               child: Center(
                 child: Text(
-                  HIntensity.warmUp[_currentIndex],
+                  allExercises[_currentIndex],
                   style: const TextStyle(
                     fontSize: 28,
                     fontFamily: 'poppins',
@@ -106,19 +123,31 @@ class _MovementsState extends State<Movements> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.max,
               children: [
-                const Icon(
-                  Iconsax.arrow_circle_left,
-                  size: 50,
+                InkWell(
+                  onTap: () {
+                    if (_currentIndex > 0) {
+                      setState(() {
+                        _currentIndex--;
+                      });
+                    }
+                  },
+                  child: const Icon(
+                    Iconsax.arrow_circle_left,
+                    size: 50,
+                  ),
                 ),
                 InkWell(
                     onTap: () {
                       _onTap();
                     },
-                    child: Icon(Iconsax.arrow_circle_right, size: 50)),
+                    child: const Icon(Iconsax.arrow_circle_right, size: 50)),
               ],
             ),
             buildTimer(),
             buildButton(),
+            const SizedBox(
+              height: 1,
+            )
           ],
         ),
       ),

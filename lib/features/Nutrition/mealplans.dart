@@ -148,7 +148,7 @@ class _MealPlansPageState extends State<MealPlansPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
+      appBar: const MyAppBar(
         heading: 'Meal Plans',
         showAvatar: true,
       ),
@@ -296,7 +296,7 @@ class MealItem extends StatelessWidget {
   final bool isSelected;
 
   const MealItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.protein,
     required this.fat,
@@ -326,7 +326,7 @@ class MealItem extends StatelessWidget {
                 Image.asset(imagePath,
                     width: double.infinity, height: 150, fit: BoxFit.cover),
                 if (isSelected)
-                  Positioned(
+                  const Positioned(
                     top: 10,
                     right: 10,
                     child:
@@ -371,7 +371,7 @@ class MealItem extends StatelessWidget {
           backgroundColor: color,
           radius: 5,
         ),
-        SizedBox(width: 4),
+        const SizedBox(width: 4),
         Text('$label $value'),
       ],
     );

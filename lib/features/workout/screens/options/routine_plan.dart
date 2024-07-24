@@ -3,7 +3,8 @@ import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 import 'package:flutter/cupertino.dart';
 
 class HighIntensity extends StatefulWidget {
-  const HighIntensity({super.key});
+  final List<String> selectedWorkout;
+  const HighIntensity({super.key, required this.selectedWorkout});
 
   @override
   State<HighIntensity> createState() => _HighIntensityState();
@@ -12,18 +13,43 @@ class HighIntensity extends StatefulWidget {
 class _HighIntensityState extends State<HighIntensity> {
   double screenHeight = 0;
   double screenWidth = 0;
-
   bool startAnimation = false;
+
+  late List<String> warmUp;
+  late List<String> circuit;
+  late List<String> coolDown;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       setState(() {
         startAnimation = true;
       });
     });
+
+    // Determine the workout type and set the appropriate data
+    if (widget.selectedWorkout.contains('Recovery')) {
+      warmUp = Recovery.warmUp;
+      circuit = Recovery.circuit;
+      coolDown = Recovery.coolDown;
+    } else if (widget.selectedWorkout.contains('WeightLoss')) {
+      warmUp = WeightLoss.warmUp;
+      circuit = WeightLoss.circuit;
+      coolDown = WeightLoss.coolDown;
+    } else if (widget.selectedWorkout.contains('HIntensity')) {
+      warmUp = HIntensity.warmUp;
+      circuit = HIntensity.circuit;
+      coolDown = HIntensity.coolDown;
+    } else if (widget.selectedWorkout.contains('StrengthTraining')) {
+      warmUp = StrengthTraining.warmUp;
+      circuit = StrengthTraining.circuit;
+      coolDown = StrengthTraining.coolDown;
+    } else {
+      warmUp = Challenge.warmUp;
+      circuit = Challenge.circuit;
+      coolDown = Challenge.coolDown;
+    }
   }
 
   @override
@@ -46,7 +72,7 @@ class _HighIntensityState extends State<HighIntensity> {
               style: TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.w600,
-                fontFamily: 'poppins',
+                fontFamily: 'Roboto',
               ),
             ),
             const SizedBox(
@@ -55,10 +81,9 @@ class _HighIntensityState extends State<HighIntensity> {
             ListView.builder(
               primary: false,
               shrinkWrap: true,
-              itemCount: HIntensity.warmUp.length,
+              itemCount: warmUp.length,
               itemBuilder: (context, index) {
-                return item(index, HIntensity.warmUp, HIntensity.warmUpIcons,
-                    MColors.warmUp);
+                return item(index, warmUp, WorkoutIcons.warmUp, MColors.warmUp);
               },
             ),
             const SizedBox(
@@ -69,7 +94,7 @@ class _HighIntensityState extends State<HighIntensity> {
               style: TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.w600,
-                fontFamily: 'poppins',
+                fontFamily: 'Roboto',
               ),
             ),
             const SizedBox(
@@ -78,10 +103,10 @@ class _HighIntensityState extends State<HighIntensity> {
             ListView.builder(
               primary: false,
               shrinkWrap: true,
-              itemCount: HIntensity.circuit.length,
+              itemCount: circuit.length,
               itemBuilder: (context, index) {
-                return item(index, HIntensity.circuit, HIntensity.workoutIcons,
-                    MColors.workOut);
+                return item(
+                    index, circuit, WorkoutIcons.circuit, MColors.workOut);
               },
             ),
             const SizedBox(
@@ -92,7 +117,7 @@ class _HighIntensityState extends State<HighIntensity> {
               style: TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.w600,
-                fontFamily: 'poppins',
+                fontFamily: 'Roboto',
               ),
             ),
             const SizedBox(
@@ -101,10 +126,10 @@ class _HighIntensityState extends State<HighIntensity> {
             ListView.builder(
               primary: false,
               shrinkWrap: true,
-              itemCount: HIntensity.coolDown.length,
+              itemCount: coolDown.length,
               itemBuilder: (context, index) {
-                return item(index, HIntensity.coolDown, HIntensity.coolIcons,
-                    MColors.coolDown);
+                return item(
+                    index, coolDown, WorkoutIcons.coolDown, MColors.coolDown);
               },
             ),
           ],
@@ -113,7 +138,7 @@ class _HighIntensityState extends State<HighIntensity> {
     );
   }
 
-  Widget item(int index, List texts, List icons, int color) {
+  Widget item(int index, List texts, IconData icon, int color) {
     return AnimatedContainer(
       height: 55,
       width: screenWidth,
@@ -142,7 +167,7 @@ class _HighIntensityState extends State<HighIntensity> {
             ),
           ),
           Icon(
-            icons[index],
+            icon,
           ),
         ],
       ),

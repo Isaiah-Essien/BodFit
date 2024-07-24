@@ -1,6 +1,7 @@
 import 'package:bodFit_group5_summative/features/workout/screens/movements/movements.dart';
-import 'package:bodFit_group5_summative/features/workout/screens/options/high_intensity.dart';
+import 'package:bodFit_group5_summative/features/workout/screens/options/routine_plan.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
+import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,9 @@ class Hiit extends StatelessWidget {
         heading: MTexts.highIntensity,
         page: '/',
       ),
-      body: const HighIntensity(),
+      body: HighIntensity(
+        selectedWorkout: HIntensity.warmUp,
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
         hoverColor: const Color(0xff29A0E3),
@@ -50,7 +53,9 @@ class WeightLossPlan extends StatelessWidget {
         heading: MTexts.weightLoss,
         page: '/',
       ),
-      body: const HighIntensity(),
+      body: HighIntensity(
+        selectedWorkout: WeightLoss.warmUp,
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
         hoverColor: const Color(0xff29A0E3),
@@ -84,7 +89,9 @@ class RecoveryPlan extends StatelessWidget {
         heading: MTexts.recovery,
         page: '/',
       ),
-      body: const HighIntensity(),
+      body: HighIntensity(
+        selectedWorkout: Recovery.warmUp,
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
         hoverColor: const Color(0xff29A0E3),
@@ -108,8 +115,8 @@ class RecoveryPlan extends StatelessWidget {
   }
 }
 
-class CalisthenicsPlan extends StatelessWidget {
-  const CalisthenicsPlan({super.key});
+class StrengthPlan extends StatelessWidget {
+  const StrengthPlan({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +125,9 @@ class CalisthenicsPlan extends StatelessWidget {
         heading: MTexts.cali,
         page: '/',
       ),
-      body: const HighIntensity(),
+      body: HighIntensity(
+        selectedWorkout: StrengthTraining.warmUp,
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
         hoverColor: const Color(0xff29A0E3),
@@ -152,7 +161,9 @@ class ThirtyDayPlan extends StatelessWidget {
         heading: MTexts.daysChallenge,
         page: '/',
       ),
-      body: const HighIntensity(),
+      body: HighIntensity(
+        selectedWorkout: Challenge.warmUp,
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
         hoverColor: const Color(0xff29A0E3),
