@@ -1,5 +1,6 @@
 
 import 'package:bodFit_group5_summative/data/repositories/authentication/auth_repository.dart';
+import 'package:bodFit_group5_summative/features/personalisation/controllers/users_controllers.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/device/network_manager.dart';
 import 'package:bodFit_group5_summative/utils/popups/full_screen_loader.dart';
@@ -16,6 +17,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController=Get.put(UserController());
 
   @override
   void onInit() {
@@ -62,6 +64,37 @@ class LoginController extends GetxController {
     } catch (e) {
       MFullScreenloader.stopLoading();
       MLoaders.errorSnackBar(title: 'Oh, Snap!', message: e.toString());
+    }
+  }
+
+  ///Google SignIn authentication
+  Future<void> googleSignIn()async{
+    try{
+      //Start loading
+      MFullScreenloader.openLoadingDialog('Logging you in...', MImages.docerAnimation);
+
+      //check Internet connection
+      final isConnected = await NetworkManager.instance.isConnected();
+      if(!isConnected){
+        MFullScreenloader.stopLoading();
+        return;
+      }
+
+      //Google Authentication
+      final userCredentials= await AuthRepository.instance.signInWithGoogle();
+
+      //Save User record
+      await userController.saveUserRecord(userCredentials);
+
+      //Remove Loader
+      MFullScreenloader.stopLoading();
+
+      //REDIRECT USER
+      AuthRepository.instance.screenRedirect();
+    }catch(e){
+      //Remove Loader
+      MFullScreenloader.stopLoading();
+      MLoaders.errorSnackBar(title: 'Oh, Snap!',message: e.toString());
     }
   }
 }

@@ -1,3 +1,5 @@
+import 'package:bodFit_group5_summative/features/authentication/controllers/forget_password/forget_password_controller.dart';
+import 'package:bodFit_group5_summative/features/authentication/screens/login/login.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
@@ -7,18 +9,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+  const ResetPassword({super.key, required this.email});
+
+  final String email;
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(onPressed:()=> Get.back(), icon: const Icon(CupertinoIcons.clear))
+          IconButton(
+              onPressed: () => Get.back(),
+              icon: const Icon(CupertinoIcons.clear))
         ],
       ),
-      body:  SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(MSizes.defaultSpace),
           child: Column(
@@ -29,17 +35,22 @@ class ResetPassword extends StatelessWidget {
                     image: const AssetImage(MImages.reset),
                     width: MHelperFunctions.screenWidth() * 0.6),
               ),
-              const SizedBox(height: MSizes.spaceBtwSects/2),
+              const SizedBox(height: MSizes.spaceBtwSects / 2),
 
+              ///Email, title, and Password
               Text(
-                MTexts.changeYourpasswordTitle,
+                email,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: MSizes.spaceBtwItms,
               ),
-
+              Text(
+                MTexts.changeYourpasswordTitle,
+                style: Theme.of(context).textTheme.headlineMedium,
+                textAlign: TextAlign.center,
+              ),
               Text(
                 MTexts.changeYourpasswordSubTitle,
                 style: Theme.of(context).textTheme.labelMedium,
@@ -53,14 +64,13 @@ class ResetPassword extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: (){},
-                      child: const Text(MTexts.done))),
+                      onPressed: () =>Get.offAll(()=>const LoginScreen()), child: const Text(MTexts.done))),
               const SizedBox(height: MSizes.spaceBtwItms),
 
               SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                      onPressed: () {}, child: const Text(MTexts.resendEmail))),
+                      onPressed: () =>ForgetPasswordController.instance.resendPasswordResetEmail(email), child: const Text(MTexts.resendEmail))),
             ],
           ),
         ),

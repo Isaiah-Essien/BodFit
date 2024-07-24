@@ -1,6 +1,8 @@
+import 'package:bodFit_group5_summative/features/authentication/controllers/login/login_controller.dart';
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MSocialIcons extends StatelessWidget {
   const MSocialIcons({
@@ -9,6 +11,7 @@ class MSocialIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -18,7 +21,7 @@ class MSocialIcons extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () =>controller.googleSignIn(),
             icon: const Image(
               width: MSizes.iconMd,
               height: MSizes.iconMd,

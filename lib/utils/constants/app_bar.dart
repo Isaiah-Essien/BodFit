@@ -1,5 +1,7 @@
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../features/personalisation/controllers/users_controllers.dart';
 
 // This class defines the Custom Appbar
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -20,19 +22,21 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
+
     return AppBar(
       toolbarHeight: 100,
       leading: showCloseIcon
           ? IconButton(
-              icon: const Icon(Icons.close),
-              onPressed: () => Navigator.of(context).pop(),
-            )
+        icon: const Icon(Icons.close),
+        onPressed: () => Navigator.of(context).pop(),
+      )
           : showBackArrow
-              ? IconButton(
-                  icon: const Icon(Icons.arrow_back),
-                  onPressed: () => Navigator.of(context).pop(),
-                )
-              : null,
+          ? IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => Navigator.of(context).pop(),
+      )
+          : null,
       iconTheme: IconThemeData(
         color: Theme.of(context).iconTheme.color,
         size: 30,
@@ -49,17 +53,21 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           if (showAvatar)
-            const Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: CircleAvatar(
-                backgroundColor: Color(0xff29A0E3),
-                radius: 20,
+            Obx(() {
+              final networkImage = controller.user.value.profilePicture;
+              final imageUrl = networkImage.isNotEmpty ? networkImage : MImages.userKanayo;
+              return Padding(
+                padding: const EdgeInsets.only(left: 10),
                 child: CircleAvatar(
-                  backgroundImage: AssetImage(MImages.userKanayo),
-                  radius: 18,
+                  backgroundColor: const Color(0xff29A0E3),
+                  radius: 20,
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(imageUrl),
+                    radius: 18,
+                  ),
                 ),
-              ),
-            ),
+              );
+            }),
         ],
       ),
       actions: showAvatar ? [] : [],
