@@ -47,10 +47,11 @@ class WorkoutOptions extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Get.to(() => const CalisthenicsPlan());
+              Get.to(() => const StrengthPlan());
             },
             child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions5, imageName: 'Calisthenics'),
+                imageUrl: MImages.workoutOptions5,
+                imageName: 'Strength Training'),
           ),
           InkWell(
             onTap: () {

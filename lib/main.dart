@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+
 import 'app.dart';
 
 Future<void> main() async {
@@ -19,8 +20,9 @@ Future<void> main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   /// Init Firebase and Authentication
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then(
-    (FirebaseApp value)=>Get.put(AuthRepository()),
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+      .then(
+    (FirebaseApp value) => Get.put(AuthRepository()),
   );
 
 // Load all the material designs, themes, modes, bindings
