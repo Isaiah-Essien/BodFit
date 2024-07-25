@@ -1,9 +1,10 @@
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
+import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/cupertino.dart';
 
 class HighIntensity extends StatefulWidget {
-  final List<String> selectedWorkout;
+  final String selectedWorkout;
   const HighIntensity({super.key, required this.selectedWorkout});
 
   @override
@@ -29,19 +30,19 @@ class _HighIntensityState extends State<HighIntensity> {
     });
 
     // Determine the workout type and set the appropriate data
-    if (widget.selectedWorkout.contains('Recovery')) {
+    if (widget.selectedWorkout == MTexts.recovery) {
       warmUp = Recovery.warmUp;
       circuit = Recovery.circuit;
       coolDown = Recovery.coolDown;
-    } else if (widget.selectedWorkout.contains('WeightLoss')) {
+    } else if (widget.selectedWorkout == MTexts.weightLoss) {
       warmUp = WeightLoss.warmUp;
       circuit = WeightLoss.circuit;
       coolDown = WeightLoss.coolDown;
-    } else if (widget.selectedWorkout.contains('HIntensity')) {
+    } else if (widget.selectedWorkout == MTexts.highIntensity) {
       warmUp = HIntensity.warmUp;
       circuit = HIntensity.circuit;
       coolDown = HIntensity.coolDown;
-    } else if (widget.selectedWorkout.contains('StrengthTraining')) {
+    } else if (widget.selectedWorkout == MTexts.strength) {
       warmUp = StrengthTraining.warmUp;
       circuit = StrengthTraining.circuit;
       coolDown = StrengthTraining.coolDown;

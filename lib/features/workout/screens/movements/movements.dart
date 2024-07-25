@@ -8,6 +8,9 @@ import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../api/api_exercise.dart';
+import '../../api/api_service.dart';
+
 class Movements extends StatefulWidget {
   final String title;
 
@@ -25,6 +28,7 @@ class _MovementsState extends State<Movements> {
   int seconds = maxSeconds;
   Timer? timer;
   late List<String> allExercises;
+  late Future<List<Exercise>> futureExercises;
 
   void resetTimer() {
     setState(() {
@@ -56,9 +60,12 @@ class _MovementsState extends State<Movements> {
   }
 
   void _onTap() {
-    setState(() {
-      _currentIndex++;
-    });
+    if (_currentIndex < (allExercises.length - 1)) {
+      setState(() {
+        _currentIndex++;
+      });
+      futureExercises = ApiService.fetchExercise();
+    }
   }
 
   @override
@@ -75,6 +82,8 @@ class _MovementsState extends State<Movements> {
     } else {
       allExercises = Challenge.allExercises;
     }
+
+    futureExercises = ApiService.fetchExercise();
   }
 
   @override
@@ -112,11 +121,26 @@ class _MovementsState extends State<Movements> {
               height: screenHeight / 4,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.grey,
+                color: MColors.light,
               ),
-              child: const Icon(
-                Iconsax.play_circle5,
-                size: 100,
+              child: FutureBuilder<List<Exercise>>(
+                future: futureExercises,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                        child: CircularProgressIndicator(
+                            color: MColors.primaryColor));
+                  } else if (snapshot.hasError) {
+                    return Center(child: Text('Error: ${snapshot.error}'));
+                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    return const Center(child: Text('No exercises found'));
+                  } else {
+                    Exercise exercise = snapshot.data!.first;
+                    return exercise.gifUrl != null
+                        ? Image.network(exercise.gifUrl!)
+                        : const Text('No GIF available');
+                  }
+                },
               ),
             ),
             Row(
