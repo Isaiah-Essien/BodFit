@@ -13,6 +13,9 @@ class DashboardAppbar extends StatelessWidget {
 
   final bool darkMode;
 
+  // Define the color using the hex code
+  static const Color primaryColor = Color(0xFF5B2D90);
+
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UserController());
@@ -21,20 +24,26 @@ class DashboardAppbar extends StatelessWidget {
         Obx(
               () {
             final networkImage = controller.user.value.profilePicture;
-            final imageUrl = networkImage.isNotEmpty ? networkImage : 'assets/images/kanayo.jpg';
+            final imageWidget = networkImage.isNotEmpty
+                ? CircleAvatar(
+              backgroundImage: NetworkImage(networkImage),
+              radius: 20,
+              backgroundColor: primaryColor, // Use the defined primary color
+            )
+                : const CircleAvatar(
+              backgroundImage: AssetImage('assets/images/user.png'),
+              radius: 20,
+              backgroundColor: primaryColor, // Use the defined primary color
+            );
             return Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: DashboardColors.primaryColor,
+                  color: primaryColor, // Use the defined primary color
                   width: 2,
                 ),
               ),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(imageUrl),
-                radius: 20,
-                backgroundColor: DashboardColors.primaryColor,
-              ),
+              child: imageWidget,
             );
           },
         ),

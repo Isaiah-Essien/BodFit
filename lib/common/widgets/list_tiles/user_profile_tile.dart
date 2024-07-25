@@ -1,7 +1,5 @@
 import 'package:bodFit_group5_summative/common/widgets/custom_shapes/circular_image.dart';
 import 'package:bodFit_group5_summative/features/personalisation/controllers/users_controllers.dart';
-import 'package:bodFit_group5_summative/utils/constants/colors.dart';
-import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
 
 //--------------This class is an extracted widget for the user profile-----------//
