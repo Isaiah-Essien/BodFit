@@ -16,6 +16,7 @@ class MloginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Accessing the LoginController
     final controller = Get.put(LoginController());
 
     return Form(
@@ -26,7 +27,7 @@ class MloginForm extends StatelessWidget {
           children: [
             ///Email
             TextFormField(
-              validator: (value)=>MValidator.validateEmail(value),
+              validator: (value) => MValidator.validateEmail(value),
               controller: controller.email,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
@@ -45,11 +46,12 @@ class MloginForm extends StatelessWidget {
                   labelText: MTexts.password,
                   prefixIcon: const Icon(Iconsax.password_check),
                   suffixIcon: IconButton(
-                      onPressed: () => controller.hidePassword.value =
-                          !controller.hidePassword.value,
-                      icon: Icon(controller.hidePassword.value
-                          ? Iconsax.eye_slash
-                          : Iconsax.eye)),
+                    onPressed: () => controller.hidePassword.value =
+                        !controller.hidePassword.value,
+                    icon: Icon(controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye),
+                  ),
                 ),
               ),
             ),
@@ -63,11 +65,11 @@ class MloginForm extends StatelessWidget {
                 Row(
                   children: [
                     ///Checkbox
-
                     Obx(
-                      ()=> Checkbox(
+                      () => Checkbox(
                         value: controller.rememberMe.value,
-                        onChanged: (value) =>controller.rememberMe.value=!controller.rememberMe.value,
+                        onChanged: (value) => controller.rememberMe.value =
+                            !controller.rememberMe.value,
                         activeColor: MColors.primaryColor,
                       ),
                     ),
@@ -80,26 +82,31 @@ class MloginForm extends StatelessWidget {
 
                 ///Forget password
                 TextButton(
-                    onPressed: () => Get.to(() => const Forgetpassword()),
-                    child: const Text(MTexts.forgetPassword)),
+                  onPressed: () => Get.to(() => const Forgetpassword()),
+                  child: const Text(MTexts.forgetPassword),
+                ),
               ],
             ),
             const SizedBox(height: MSizes.spaceBtwSects),
 
-            ///lOG In button
+            ///Log In button
             SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                    onPressed: () => controller.emailAndPasswordSignIn(),
-                    child: const Text(MTexts.logIn))),
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () => controller.emailAndPasswordSignIn(),
+                child: const Text(MTexts.logIn),
+              ),
+            ),
             const SizedBox(height: MSizes.spaceBtwItms),
 
             ///Create account Button
             SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
-                    onPressed: () => Get.to(() => const SignupScreen()),
-                    child: const Text(MTexts.createAccount))),
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: () => Get.to(() => const SignupScreen()),
+                child: const Text(MTexts.createAccount),
+              ),
+            ),
           ],
         ),
       ),

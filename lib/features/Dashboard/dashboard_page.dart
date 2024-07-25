@@ -5,7 +5,9 @@ import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:fl_chart/fl_chart.dart'; // Importing FL Chart package for displaying charts
 import 'package:flutter/material.dart'; // Importing Flutter's material package for UI components
-import 'package:iconsax/iconsax.dart'; // Importing Iconsax package for icons
+import 'package:iconsax/iconsax.dart';
+
+import 'dashboard_appbar.dart'; // Importing Iconsax package for icons
 // Importing a custom food feature
 
 // DashboardColors class defines color constants used in the dashboard
@@ -112,46 +114,10 @@ class _DashboardPageState extends State<DashboardPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: DashboardColors.primaryColor,
-                          width: 2,
-                        ),
-                      ),
-                      child: const CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/kanayo.jpg'),
-                        radius: 20,
-                        backgroundColor: DashboardColors.primaryColor,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Welcome Back!',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.normal,
-                            color: darkMode ? Colors.white : Colors.black,
-                          ),
-                        ),
-                        Text(
-                          'Kanayo O. Kanayo',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: darkMode ? Colors.white : Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                //------The dashboard appbar is the class that contains
+                //-------the profile picture, Name, Search ,and the Notification
+                //-------extracted for easier backend mapping. Nothing is changed
+                DashboardAppbar(darkMode: darkMode),
                 Row(
                   children: [
                     Stack(

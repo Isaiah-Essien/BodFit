@@ -11,7 +11,7 @@ class MPlatformException implements Exception {
   /// Get the corresponding error message based on the error code
   String get message {
     switch (code) {
-      case 'invalid-login':
+      case 'INVALID_LOGIN_CREDENTIALS':
         return 'The login credentials provided are invalid. Please check your username and password.';
       case 'too-many-requests':
         return 'Too many requests have been made in a short period. Please try again later.';
@@ -39,6 +39,10 @@ class MPlatformException implements Exception {
         return 'The user account has been disabled. Please contact support for assistance.';
       case 'user-not-found':
         return 'No user found with the provided credentials. Please check and try again.';
+      case 'invalid-password':
+        return 'The Password you entered is incorrect.Please enter the correct password';
+      case 'invalid-phone-number':
+        return 'The phone number you entered is invalid.Please enter a valid phone';
       default:
         return 'An unknown error occurred. Please try again later.';
     }

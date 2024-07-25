@@ -1,6 +1,8 @@
+import 'package:bodFit_group5_summative/common/widgets/loaders/shimmer.dart';
 import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:bodFit_group5_summative/utils/helpers/helpers_utils.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 //This class creates the circular shape around profile images and account setting images
@@ -38,18 +40,22 @@ class MCircularImage extends StatelessWidget {
                 : MColors.light),
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Center(
-        child: ClipOval(
-          child: SizedBox.fromSize(
-            size: const Size(180, 180),
-            child: Image(
-              fit: fit,
-              image: isNetworkImage
-                  ? NetworkImage(image)
-                  : AssetImage(image) as ImageProvider,
-              color: overlayColor,
-            ),
-          ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Center(
+          child: isNetworkImage
+              ?CachedNetworkImage(
+                fit: fit,
+                color: overlayColor,
+                imageUrl: image,
+                progressIndicatorBuilder: (context,url,downloadProgress)=>const MShimmerEffect(width: 55, height: 55),
+                errorWidget: (context,url,error)=>const Icon(Icons.error),
+              )
+              :Image(
+                fit: fit,
+                image: AssetImage(image),
+                color: overlayColor,
+              ),
         ),
       ),
     );
