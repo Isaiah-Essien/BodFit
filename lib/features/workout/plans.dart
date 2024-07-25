@@ -1,7 +1,6 @@
 import 'package:bodFit_group5_summative/features/workout/screens/movements/movements.dart';
 import 'package:bodFit_group5_summative/features/workout/screens/options/routine_plan.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
-import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,8 +16,8 @@ class Hiit extends StatelessWidget {
         heading: MTexts.highIntensity,
         page: '/',
       ),
-      body: HighIntensity(
-        selectedWorkout: HIntensity.warmUp,
+      body: const HighIntensity(
+        selectedWorkout: MTexts.highIntensity,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -28,6 +27,7 @@ class Hiit extends StatelessWidget {
             () => const Movements(
               title: MTexts.highIntensity,
             ),
+            // () => const Test(),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
           );
@@ -53,8 +53,8 @@ class WeightLossPlan extends StatelessWidget {
         heading: MTexts.weightLoss,
         page: '/',
       ),
-      body: HighIntensity(
-        selectedWorkout: WeightLoss.warmUp,
+      body: const HighIntensity(
+        selectedWorkout: MTexts.weightLoss,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -89,8 +89,8 @@ class RecoveryPlan extends StatelessWidget {
         heading: MTexts.recovery,
         page: '/',
       ),
-      body: HighIntensity(
-        selectedWorkout: Recovery.warmUp,
+      body: const HighIntensity(
+        selectedWorkout: MTexts.recovery,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -122,11 +122,11 @@ class StrengthPlan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        heading: MTexts.cali,
+        heading: MTexts.strength,
         page: '/',
       ),
-      body: HighIntensity(
-        selectedWorkout: StrengthTraining.warmUp,
+      body: const HighIntensity(
+        selectedWorkout: MTexts.strength,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -134,7 +134,7 @@ class StrengthPlan extends StatelessWidget {
         onPressed: () {
           Get.to(
             () => const Movements(
-              title: MTexts.cali,
+              title: MTexts.strength,
             ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
@@ -161,8 +161,8 @@ class ThirtyDayPlan extends StatelessWidget {
         heading: MTexts.daysChallenge,
         page: '/',
       ),
-      body: HighIntensity(
-        selectedWorkout: Challenge.warmUp,
+      body: const HighIntensity(
+        selectedWorkout: MTexts.daysChallenge,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,

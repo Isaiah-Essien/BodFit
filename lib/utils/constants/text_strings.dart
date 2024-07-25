@@ -72,6 +72,7 @@ class MTexts {
   static const String recovery = 'Recovery';
   static const String cali = 'Calisthenics';
   static const String daysChallenge = '30-Day Challenge';
+  static const String strength = 'Strength Training';
 
   //---------------- error snacBar message-------------------//
   static const String errorSnackBar = 'Oh Snap!';
