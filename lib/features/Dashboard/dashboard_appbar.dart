@@ -14,7 +14,7 @@ class DashboardAppbar extends StatelessWidget {
   final bool darkMode;
 
   // Define the color using the hex code
-  static const Color primaryColor = Color(0xFF5B2D90);
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +28,18 @@ class DashboardAppbar extends StatelessWidget {
                 ? CircleAvatar(
               backgroundImage: NetworkImage(networkImage),
               radius: 20,
-              backgroundColor: primaryColor, // Use the defined primary color
+              backgroundColor: MColors.primaryColor, // Use the defined primary color
             )
                 : const CircleAvatar(
               backgroundImage: AssetImage('assets/images/user.png'),
               radius: 20,
-              backgroundColor: primaryColor, // Use the defined primary color
+              backgroundColor: MColors.primaryColor, // Use the defined primary color
             );
             return Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: primaryColor, // Use the defined primary color
+                  color: MColors.primaryColor, // Use the defined primary color
                   width: 2,
                 ),
               ),
