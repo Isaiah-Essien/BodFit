@@ -6,6 +6,7 @@ import 'package:bodFit_group5_summative/utils/constants/colors.dart';
 import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../api/api_exercise.dart';
@@ -29,6 +30,7 @@ class _MovementsState extends State<Movements> {
   Timer? timer;
   late List<String> allExercises;
   late Future<List<Exercise>> futureExercises;
+  late ApiService apiService = ApiService(part: widget.title);
 
   void resetTimer() {
     setState(() {
@@ -64,7 +66,7 @@ class _MovementsState extends State<Movements> {
       setState(() {
         _currentIndex++;
       });
-      futureExercises = ApiService.fetchExercise();
+      futureExercises = apiService.fetchExercise();
     }
   }
 
@@ -83,7 +85,7 @@ class _MovementsState extends State<Movements> {
       allExercises = Challenge.allExercises;
     }
 
-    futureExercises = ApiService.fetchExercise();
+    futureExercises = apiService.fetchExercise();
   }
 
   @override
@@ -98,50 +100,53 @@ class _MovementsState extends State<Movements> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              width: screenWidth / 1.2,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: MColors.primaryColor,
-              ),
-              child: Center(
-                child: Text(
-                  allExercises[_currentIndex],
-                  style: const TextStyle(
-                    fontSize: 28,
-                    fontFamily: 'poppins',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              width: screenWidth - 40,
-              height: screenHeight / 4,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: MColors.light,
-              ),
-              child: FutureBuilder<List<Exercise>>(
-                future: futureExercises,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(
-                        child: CircularProgressIndicator(
-                            color: MColors.primaryColor));
-                  } else if (snapshot.hasError) {
-                    return Center(child: Text('Error: ${snapshot.error}'));
-                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                    return const Center(child: Text('No exercises found'));
-                  } else {
-                    Exercise exercise = snapshot.data!.first;
-                    return exercise.gifUrl != null
-                        ? Image.network(exercise.gifUrl!)
-                        : const Text('No GIF available');
-                  }
-                },
-              ),
+            FutureBuilder<List<Exercise>>(
+              future: futureExercises,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                      child: CircularProgressIndicator(
+                          color: MColors.primaryColor));
+                } else if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return const Center(child: Text('No exercises found'));
+                } else {
+                  Exercise exercise = snapshot.data![_currentIndex];
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        width: screenWidth / 1.2,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: MColors.primaryColor,
+                        ),
+                        child: Center(
+                          child: Text(exercise.name ?? 'no name',
+                              style: GoogleFonts.nanumGothicCoding(
+                                  fontSize: 30, fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: screenWidth - 40,
+                        height: screenHeight / 4,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: MColors.light,
+                        ),
+                        child: exercise.gifUrl != null
+                            ? Image.network(exercise.gifUrl!)
+                            : const Text('No GIF available'),
+                      )
+                    ],
+                  );
+                }
+              },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -232,14 +237,10 @@ class _MovementsState extends State<Movements> {
   }
 
   Widget buildTime() {
-    return Text(
-      '$seconds',
-      style: const TextStyle(
-        fontFamily: 'poppins',
-        fontWeight: FontWeight.bold,
-        fontSize: 75,
-        color: MColors.primaryColor,
-      ),
-    );
+    return Text('$seconds',
+        style: GoogleFonts.nanumGothicCoding(
+            color: MColors.primaryColor,
+            fontSize: 80,
+            fontWeight: FontWeight.bold));
   }
 }

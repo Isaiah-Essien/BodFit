@@ -73,6 +73,10 @@ class MTexts {
   static const String cali = 'Calisthenics';
   static const String daysChallenge = '30-Day Challenge';
   static const String strength = 'Strength Training';
+  static const String cardio = 'cardio';
+  static const String chest = 'chest';
+  static const String back = 'back';
+  static const String lowerLegs = 'lower legs';
 
   //---------------- error snacBar message-------------------//
   static const String errorSnackBar = 'Oh Snap!';

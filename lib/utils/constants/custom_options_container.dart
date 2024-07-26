@@ -12,14 +12,18 @@ class CustomImageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = 0;
+    double screenWidth = 0;
+    screenHeight = MediaQuery.of(context).size.height;
+    screenWidth = MediaQuery.of(context).size.width;
     return Container(
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-                width: 150,
-                height: 150,
+                width: screenWidth / 2.5,
+                height: screenHeight / 5.13,
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xff29A0E3), width: 2),
                   borderRadius: BorderRadius.circular(20.0),

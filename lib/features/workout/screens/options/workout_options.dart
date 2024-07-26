@@ -29,37 +29,35 @@ class WorkoutOptions extends StatelessWidget {
               Get.to(() => const Hiit());
             },
             child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions2, imageName: 'High Intensity'),
+                imageUrl: MImages.workoutOptions2, imageName: 'Cardio'),
           ),
           InkWell(
             onTap: () {
               Get.to(() => const WeightLossPlan());
             },
             child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions7, imageName: 'Weight loss'),
+                imageUrl: MImages.workoutOptions3, imageName: 'Shoulders'),
           ),
           InkWell(
             onTap: () {
               Get.to(() => const RecoveryPlan());
             },
             child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions8, imageName: 'Recovery'),
+                imageUrl: MImages.workoutOptions7, imageName: 'Lower Legs'),
           ),
           InkWell(
             onTap: () {
               Get.to(() => const StrengthPlan());
             },
             child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions5,
-                imageName: 'Strength Training'),
+                imageUrl: MImages.workoutOptions5, imageName: 'Lower arms'),
           ),
           InkWell(
             onTap: () {
               Get.to(() => const ThirtyDayPlan());
             },
             child: const CustomImageContainer(
-                imageUrl: 'assets/images/opt-1.jpg',
-                imageName: '30-Day Challenge'),
+                imageUrl: 'assets/images/opt-1.jpg', imageName: 'Chest'),
           ),
         ],
       ),

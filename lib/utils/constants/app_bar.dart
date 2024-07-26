@@ -1,6 +1,7 @@
 import 'package:bodFit_group5_summative/utils/constants/images_string.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../features/personalisation/controllers/users_controllers.dart';
 
 // This class defines the Custom Appbar
@@ -28,15 +29,15 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 100,
       leading: showCloseIcon
           ? IconButton(
-        icon: const Icon(Icons.close),
-        onPressed: () => Navigator.of(context).pop(),
-      )
+              icon: const Icon(Icons.close),
+              onPressed: () => Navigator.of(context).pop(),
+            )
           : showBackArrow
-          ? IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Navigator.of(context).pop(),
-      )
-          : null,
+              ? IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () => Navigator.of(context).pop(),
+                )
+              : null,
       iconTheme: IconThemeData(
         color: Theme.of(context).iconTheme.color,
         size: 30,
@@ -46,16 +47,19 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: Text(
-              heading,
-              style: Theme.of(context).textTheme.headlineMedium!,
-              textAlign: TextAlign.center,
+            child: Center(
+              child: Text(
+                heading,
+                style: Theme.of(context).textTheme.headlineMedium!,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
           if (showAvatar)
             Obx(() {
               final networkImage = controller.user.value.profilePicture;
-              final imageUrl = networkImage.isNotEmpty ? networkImage : MImages.userKanayo;
+              final imageUrl =
+                  networkImage.isNotEmpty ? networkImage : MImages.userKanayo;
               return Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: CircleAvatar(

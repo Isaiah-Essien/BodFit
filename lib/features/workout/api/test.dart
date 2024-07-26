@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/constants/text_strings.dart';
 import 'api_exercise.dart';
 import 'api_service.dart';
 
@@ -24,11 +25,12 @@ class ExerciseList extends StatefulWidget {
 
 class _ExerciseListState extends State<ExerciseList> {
   late Future<List<Exercise>> futureExercises;
+  ApiService apiService = ApiService(part: MTexts.cardio);
 
   @override
   void initState() {
     super.initState();
-    futureExercises = ApiService.fetchExercise();
+    futureExercises = apiService.fetchExercise();
   }
 
   @override

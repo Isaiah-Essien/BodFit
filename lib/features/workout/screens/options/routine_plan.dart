@@ -3,15 +3,15 @@ import 'package:bodFit_group5_summative/utils/constants/exercise.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/cupertino.dart';
 
-class HighIntensity extends StatefulWidget {
+class RoutinePlan extends StatefulWidget {
   final String selectedWorkout;
-  const HighIntensity({super.key, required this.selectedWorkout});
+  const RoutinePlan({super.key, required this.selectedWorkout});
 
   @override
-  State<HighIntensity> createState() => _HighIntensityState();
+  State<RoutinePlan> createState() => _RoutinePlanState();
 }
 
-class _HighIntensityState extends State<HighIntensity> {
+class _RoutinePlanState extends State<RoutinePlan> {
   double screenHeight = 0;
   double screenWidth = 0;
   bool startAnimation = false;

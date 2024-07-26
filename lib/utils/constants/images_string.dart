@@ -32,7 +32,7 @@ class MImages {
   static const String workoutOptions4 = 'assets/images/opt-4.jpg';
   static const String workoutOptions5 = 'assets/images/opt-5.jpg';
   static const String workoutOptions6 = 'assets/images/opt-6.jpg';
-  static const String workoutOptions7 = 'assets/images/weight.jpg';
+  static const String workoutOptions7 = 'assets/images/opt-7.jpg';
   static const String workoutOptions8 = 'assets/images/recovery.jpg';
 
   //dashboard gifs//
@@ -45,5 +45,6 @@ class MImages {
 
   //Loaders
   static const String docerAnimation = 'assets/lottie_animations/loader1.json';
-  static const String docerAnimation2 = 'assets/lottie_animations/animation1.json';
+  static const String docerAnimation2 =
+      'assets/lottie_animations/animation1.json';
 }

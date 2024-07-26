@@ -1,4 +1,5 @@
 import 'package:bodFit_group5_summative/features/workout/screens/movements/movements.dart';
+import 'package:bodFit_group5_summative/features/workout/screens/options/new_plan.dart';
 import 'package:bodFit_group5_summative/features/workout/screens/options/routine_plan.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
@@ -13,11 +14,11 @@ class Hiit extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        heading: MTexts.highIntensity,
+        heading: "Cardio",
         page: '/',
       ),
-      body: const HighIntensity(
-        selectedWorkout: MTexts.highIntensity,
+      body: const PlanOverview(
+        selectedWorkout: MTexts.cardio,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -25,7 +26,7 @@ class Hiit extends StatelessWidget {
         onPressed: () {
           Get.to(
             () => const Movements(
-              title: MTexts.highIntensity,
+              title: MTexts.cardio,
             ),
             // () => const Test(),
             transition: Transition.circularReveal,
@@ -53,7 +54,7 @@ class WeightLossPlan extends StatelessWidget {
         heading: MTexts.weightLoss,
         page: '/',
       ),
-      body: const HighIntensity(
+      body: const RoutinePlan(
         selectedWorkout: MTexts.weightLoss,
       ),
       floatingActionButton: FloatingActionButton(
@@ -89,7 +90,7 @@ class RecoveryPlan extends StatelessWidget {
         heading: MTexts.recovery,
         page: '/',
       ),
-      body: const HighIntensity(
+      body: const RoutinePlan(
         selectedWorkout: MTexts.recovery,
       ),
       floatingActionButton: FloatingActionButton(
@@ -125,7 +126,7 @@ class StrengthPlan extends StatelessWidget {
         heading: MTexts.strength,
         page: '/',
       ),
-      body: const HighIntensity(
+      body: const RoutinePlan(
         selectedWorkout: MTexts.strength,
       ),
       floatingActionButton: FloatingActionButton(
@@ -161,7 +162,7 @@ class ThirtyDayPlan extends StatelessWidget {
         heading: MTexts.daysChallenge,
         page: '/',
       ),
-      body: const HighIntensity(
+      body: const RoutinePlan(
         selectedWorkout: MTexts.daysChallenge,
       ),
       floatingActionButton: FloatingActionButton(

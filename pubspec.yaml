@@ -23,7 +23,10 @@ dependencies:
 
 #-----JSON FOR WORKOUT API----#
   json_annotation:
-  
+
+#----GOOGLE FONTS-----#
+  google_fonts:
+
   # Icons
   cupertino_icons: ^1.0.6
   iconsax: ^0.0.8
