@@ -23,7 +23,7 @@ class MImages {
   static const String succesScreen = 'assets/gifs/succes_screen.gif';
 
   //User test Images
-  static const String userKanayo = 'assets/images/kanayo.jpg';
+  static const String userKanayo = 'assets/images/user.png';
 
   //Workout Options//
   static const String workoutOptions1 = 'assets/images/opt-1.jpg';
