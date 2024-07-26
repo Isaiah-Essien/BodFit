@@ -1,7 +1,6 @@
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-
 import 'package:url_launcher/url_launcher.dart'; // This imports the url_launcher for launching URLs. I used it to launch the paypal url
 
 class SubscriptionPage extends StatelessWidget {
@@ -11,21 +10,9 @@ class SubscriptionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Determine if BODFIT is in dark mode
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Scaffold(
-      // appBar: AppBar(
-      //   leading: IconButton(
-      //     icon: Icon(Icons.close, color: isDarkMode ? Colors.white : Colors.black),
-      //     onPressed: () {
-      //       Navigator.pop(context);
-      //     },
-      //   ),
-      //   backgroundColor: isDarkMode ? Colors.black : Colors.white,
-      //   title: Text('Get Premium', style: TextStyle(color: isDarkMode ? Colors.white : Colors.black)),
-      //   centerTitle: true,
-      //   elevation: 0,
-      // ),
-      appBar: const MyAppBar(heading: 'Get Premium',showBackArrow: false,showCloseIcon: true,showAvatar: true),
+      appBar: const MyAppBar(heading: 'Get Premium', showBackArrow: false, showCloseIcon: true, showAvatar: true),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -57,10 +44,10 @@ class SubscriptionPage extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Annual',
                         style: TextStyle(
                           fontSize: 18,
@@ -68,12 +55,28 @@ class SubscriptionPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: MSizes.spaceBtwSects/2),
-                      Text(
+                      const SizedBox(height: MSizes.spaceBtwSects / 2),
+                      const Text(
                         'First 30 days free - Then ₦25000/Year',
                         style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
+                      ElevatedButton(
+                        onPressed: () async {
+                          // URL for Paystack payment for annual subscription
+                          const url = 'https://paystack.com/pay/bodfit_annual';
+                          if (await canLaunch(url)) {
+                            await launch(url); // Launch the Paystack URL
+                          } else {
+                            throw 'Could not launch $url'; // Error handling
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          backgroundColor: Colors.green,
+                        ),
+                        child: const Text('Subscribe Annually'),
+                      ),
                     ],
                   ),
                   // Best value tag in the annual box
@@ -108,10 +111,10 @@ class SubscriptionPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.white), // White outline
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Monthly',
                     style: TextStyle(
                       fontSize: 18,
@@ -119,31 +122,31 @@ class SubscriptionPage extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'First 7 days free - Then ₦3000/Month',
                     style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  const SizedBox(height: 5),
+                  ElevatedButton(
+                    onPressed: () async {
+                      // URL for Paystack payment for monthly subscription
+                      const url = 'https://paystack.com/pay/bodfit_monthly';
+                      if (await canLaunch(url)) {
+                        await launch(url); // Launch the Paystack URL
+                      } else {
+                        throw 'Could not launch $url'; // Error handling
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      backgroundColor: Colors.blue,
+                    ),
+                    child: const Text('Subscribe Monthly'),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 20),
-            // Button to start the 7-day free trial
-            ElevatedButton(
-              onPressed: () async {
-                // URL for PayPal payment
-                const url = 'https://paypal.me/OCTRIPP?country.x=LS&locale.x=en_US';
-                if (await canLaunch(url)) {
-                  await launch(url); // Launch the PayPal URL
-                } else {
-                  throw 'Could not launch $url'; // Error handling
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                backgroundColor: Colors.blue,
-              ),
-              child: const Text('Start 7-day free trial'),
-            ),
             const SizedBox(height: 20),
             // Terms and conditions text
             RichText(
