@@ -1,14 +1,13 @@
 import 'package:bodFit_group5_summative/features/workout/screens/movements/movements.dart';
 import 'package:bodFit_group5_summative/features/workout/screens/options/new_plan.dart';
-import 'package:bodFit_group5_summative/features/workout/screens/options/routine_plan.dart';
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class Hiit extends StatelessWidget {
-  const Hiit({super.key});
+class CardioPlan extends StatelessWidget {
+  const CardioPlan({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +43,18 @@ class Hiit extends StatelessWidget {
   }
 }
 
-class WeightLossPlan extends StatelessWidget {
-  const WeightLossPlan({super.key});
+class ShouldersPlan extends StatelessWidget {
+  const ShouldersPlan({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        heading: MTexts.weightLoss,
+        heading: MTexts.shoulders,
         page: '/',
       ),
-      body: const RoutinePlan(
-        selectedWorkout: MTexts.weightLoss,
+      body: const PlanOverview(
+        selectedWorkout: MTexts.shoulders,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -63,7 +62,7 @@ class WeightLossPlan extends StatelessWidget {
         onPressed: () {
           Get.to(
             () => const Movements(
-              title: MTexts.weightLoss,
+              title: MTexts.shoulders,
             ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
@@ -80,18 +79,18 @@ class WeightLossPlan extends StatelessWidget {
   }
 }
 
-class RecoveryPlan extends StatelessWidget {
-  const RecoveryPlan({super.key});
+class LowerLegsPlan extends StatelessWidget {
+  const LowerLegsPlan({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        heading: MTexts.recovery,
+        heading: MTexts.lowerLegs,
         page: '/',
       ),
-      body: const RoutinePlan(
-        selectedWorkout: MTexts.recovery,
+      body: const PlanOverview(
+        selectedWorkout: MTexts.lowerLegs,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -99,7 +98,7 @@ class RecoveryPlan extends StatelessWidget {
         onPressed: () {
           Get.to(
             () => const Movements(
-              title: MTexts.recovery,
+              title: MTexts.lowerLegs,
             ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
@@ -116,18 +115,18 @@ class RecoveryPlan extends StatelessWidget {
   }
 }
 
-class StrengthPlan extends StatelessWidget {
-  const StrengthPlan({super.key});
+class BackPlan extends StatelessWidget {
+  const BackPlan({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        heading: MTexts.strength,
+        heading: MTexts.back,
         page: '/',
       ),
-      body: const RoutinePlan(
-        selectedWorkout: MTexts.strength,
+      body: const PlanOverview(
+        selectedWorkout: MTexts.back,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -135,7 +134,7 @@ class StrengthPlan extends StatelessWidget {
         onPressed: () {
           Get.to(
             () => const Movements(
-              title: MTexts.strength,
+              title: MTexts.back,
             ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),
@@ -152,18 +151,18 @@ class StrengthPlan extends StatelessWidget {
   }
 }
 
-class ThirtyDayPlan extends StatelessWidget {
-  const ThirtyDayPlan({super.key});
+class ChestPlan extends StatelessWidget {
+  const ChestPlan({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        heading: MTexts.daysChallenge,
+        heading: MTexts.chest,
         page: '/',
       ),
-      body: const RoutinePlan(
-        selectedWorkout: MTexts.daysChallenge,
+      body: const PlanOverview(
+        selectedWorkout: MTexts.chest,
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
@@ -171,7 +170,7 @@ class ThirtyDayPlan extends StatelessWidget {
         onPressed: () {
           Get.to(
             () => const Movements(
-              title: MTexts.daysChallenge,
+              title: MTexts.chest,
             ),
             transition: Transition.circularReveal,
             duration: const Duration(seconds: 1),

@@ -39,10 +39,10 @@ class _PlanOverviewState extends State<PlanOverview> {
       part = MTexts.back;
     } else if (widget.selectedWorkout == MTexts.cardio) {
       part = MTexts.cardio;
-    } else if (widget.selectedWorkout == MTexts.lowerLegs) {
-      part = MTexts.lowerLegs;
+    } else if (widget.selectedWorkout == MTexts.shoulders) {
+      part = MTexts.shoulders;
     } else {
-      part = MTexts.chest; // Default value if none of the conditions are met
+      part = "lower%20legs"; // Default value if none of the conditions are met
     }
 
     apiService = ApiService(part: part);

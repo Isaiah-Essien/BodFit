@@ -26,35 +26,35 @@ class WorkoutOptions extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Get.to(() => const Hiit());
+              Get.to(() => const CardioPlan());
             },
             child: const CustomImageContainer(
                 imageUrl: MImages.workoutOptions2, imageName: 'Cardio'),
           ),
           InkWell(
             onTap: () {
-              Get.to(() => const WeightLossPlan());
+              Get.to(() => const ShouldersPlan());
             },
             child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions3, imageName: 'Shoulders'),
+                imageUrl: MImages.workoutOptions5, imageName: 'Shoulders'),
           ),
           InkWell(
             onTap: () {
-              Get.to(() => const RecoveryPlan());
+              Get.to(() => const LowerLegsPlan());
             },
             child: const CustomImageContainer(
                 imageUrl: MImages.workoutOptions7, imageName: 'Lower Legs'),
           ),
           InkWell(
             onTap: () {
-              Get.to(() => const StrengthPlan());
+              Get.to(() => const BackPlan());
             },
             child: const CustomImageContainer(
-                imageUrl: MImages.workoutOptions5, imageName: 'Lower arms'),
+                imageUrl: MImages.workoutOptions3, imageName: 'Back'),
           ),
           InkWell(
             onTap: () {
-              Get.to(() => const ThirtyDayPlan());
+              Get.to(() => const ChestPlan());
             },
             child: const CustomImageContainer(
                 imageUrl: 'assets/images/opt-1.jpg', imageName: 'Chest'),

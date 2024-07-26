@@ -66,6 +66,7 @@ class _MovementsState extends State<Movements> {
       setState(() {
         _currentIndex++;
       });
+      stopTimer();
       futureExercises = apiService.fetchExercise();
     }
   }
@@ -126,7 +127,7 @@ class _MovementsState extends State<Movements> {
                         child: Center(
                           child: Text(exercise.name ?? 'no name',
                               style: GoogleFonts.nanumGothicCoding(
-                                  fontSize: 30, fontWeight: FontWeight.bold)),
+                                  fontSize: 25, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       const SizedBox(

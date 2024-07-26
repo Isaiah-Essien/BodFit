@@ -77,6 +77,7 @@ class MTexts {
   static const String chest = 'chest';
   static const String back = 'back';
   static const String lowerLegs = 'lower legs';
+  static const String shoulders = 'shoulders';
 
   //---------------- error snacBar message-------------------//
   static const String errorSnackBar = 'Oh Snap!';
