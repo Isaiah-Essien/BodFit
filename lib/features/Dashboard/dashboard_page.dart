@@ -191,7 +191,7 @@ class _DashboardPageState extends State<DashboardPage> {
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const Text(
-              'June 2, 2024',
+              'July 26, 2024',
               style: TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 20),
