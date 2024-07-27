@@ -1,5 +1,7 @@
 # BODFiT Nutrition and Fitness Mobile Application
-- This is the link to the video demo of our app : https://youtu.be/Via1ebsCK8I
+- This is the link to Backend Demo video: https://youtu.be/D_ITS3G2rdo
+
+- This is the link to the Front end video demo of our app : https://youtu.be/Via1ebsCK8I
 
 ### Link to the Firebase Console
 - https://console.firebase.google.com/u/0/project/bodfit-6f6ce/authentication/providers
