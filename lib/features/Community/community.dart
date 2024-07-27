@@ -10,10 +10,14 @@ import 'reach_out_form.dart'; // Import the form widget
 
 class FAQPage extends StatefulWidget {
   const FAQPage({super.key});
+:wq
 
   @override
-  _FAQPageState createState() => _FAQPageState();
-}
+  _FAQPageState createState() => _FAQPageState() wq
+  :wq
+  ;
+}x
+
 
 class _FAQPageState extends State<FAQPage> {
   @override
