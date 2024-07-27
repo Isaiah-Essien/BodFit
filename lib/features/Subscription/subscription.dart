@@ -13,7 +13,7 @@ class SubscriptionPage extends StatelessWidget {
 
     return Scaffold(
       appBar: const MyAppBar(heading: 'Get Premium', showBackArrow: false, showCloseIcon: true, showAvatar: true),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -146,7 +146,6 @@ class SubscriptionPage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
             const SizedBox(height: 20),
             // Terms and conditions text
             RichText(
