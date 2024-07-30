@@ -23,7 +23,7 @@ class CustomImageContainer extends StatelessWidget {
           children: <Widget>[
             Container(
                 width: screenWidth / 2.5,
-                height: screenHeight / 5.13,
+                height: screenHeight / 5.5,
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0xff29A0E3), width: 2),
                   borderRadius: BorderRadius.circular(20.0),

@@ -125,7 +125,7 @@ class _PlanOverviewState extends State<PlanOverview> {
         bottom: 12,
       ),
       padding: EdgeInsets.symmetric(
-        horizontal: screenWidth / 20,
+        horizontal: screenWidth / 25,
       ),
       decoration: BoxDecoration(
         color: Color(color),
@@ -135,9 +135,9 @@ class _PlanOverviewState extends State<PlanOverview> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            '${index + 1}. $text',
+            '$text',
             style: const TextStyle(
-              fontSize: 16,
+              fontSize: 15,
               fontWeight: FontWeight.w500,
             ),
           ),
