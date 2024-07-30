@@ -118,16 +118,21 @@ class _MovementsState extends State<Movements> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: screenWidth / 1.2,
-                        height: 50,
+                        width: screenWidth / 1.1,
+                        height: screenHeight / 11.5,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: MColors.primaryColor,
                         ),
                         child: Center(
-                          child: Text(exercise.name ?? 'no name',
-                              style: GoogleFonts.nanumGothicCoding(
-                                  fontSize: 25, fontWeight: FontWeight.bold)),
+                          child: Text(
+                            exercise.name ?? 'no name',
+                            style: GoogleFonts.nanumGothicCoding(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                height: 1.2),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                       const SizedBox(
