@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '662759304121',
     projectId: 'bodfit-6f6ce',
     authDomain: 'bodfit-6f6ce.firebaseapp.com',
+    databaseURL: 'https://bodfit-6f6ce-default-rtdb.firebaseio.com',
     storageBucket: 'bodfit-6f6ce.appspot.com',
     measurementId: 'G-91TK4PWFM6',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:662759304121:android:4e56fbbeaa71003c486468',
     messagingSenderId: '662759304121',
     projectId: 'bodfit-6f6ce',
+    databaseURL: 'https://bodfit-6f6ce-default-rtdb.firebaseio.com',
     storageBucket: 'bodfit-6f6ce.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:662759304121:ios:44aa949935c4ad79486468',
     messagingSenderId: '662759304121',
     projectId: 'bodfit-6f6ce',
+    databaseURL: 'https://bodfit-6f6ce-default-rtdb.firebaseio.com',
     storageBucket: 'bodfit-6f6ce.appspot.com',
     androidClientId: '662759304121-k7j5i6udstdevispaolk3e9fqrqegl1o.apps.googleusercontent.com',
     iosClientId: '662759304121-s7gaoi2dn65t57l8niko0lpbbgt3uolv.apps.googleusercontent.com',
@@ -78,6 +81,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '662759304121',
     projectId: 'bodfit-6f6ce',
     authDomain: 'bodfit-6f6ce.firebaseapp.com',
+    databaseURL: 'https://bodfit-6f6ce-default-rtdb.firebaseio.com',
     storageBucket: 'bodfit-6f6ce.appspot.com',
     measurementId: 'G-E5SS0Z6SRX',
   );
