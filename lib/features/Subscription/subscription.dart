@@ -1,10 +1,17 @@
 import 'package:bodFit_group5_summative/utils/constants/app_bar.dart';
 import 'package:bodFit_group5_summative/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart'; // This imports the url_launcher for launching URLs. I used it to launch the paypal url
+import 'package:url_launcher/url_launcher.dart';
 
 class SubscriptionPage extends StatelessWidget {
   const SubscriptionPage({super.key});
+
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,15 +69,7 @@ class SubscriptionPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       ElevatedButton(
-                        onPressed: () async {
-                          // URL for Paystack payment for annual subscription
-                          const url = 'https://paystack.com/pay/bodfit_annual';
-                          if (await canLaunch(url)) {
-                            await launch(url); // Launch the Paystack URL
-                          } else {
-                            throw 'Could not launch $url'; // Error handling
-                          }
-                        },
+                        onPressed: () => _launchUrl('https://paystack.com/pay/bodfit_annual'),
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           backgroundColor: Colors.green,
@@ -128,15 +127,7 @@ class SubscriptionPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   ElevatedButton(
-                    onPressed: () async {
-                      // URL for Paystack payment for monthly subscription
-                      const url = 'https://paystack.com/pay/bodfit_monthly';
-                      if (await canLaunch(url)) {
-                        await launch(url); // Launch the Paystack URL
-                      } else {
-                        throw 'Could not launch $url'; // Error handling
-                      }
-                    },
+                    onPressed: () => _launchUrl('https://paystack.com/pay/bodfit_monthly'),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       backgroundColor: Colors.blue,
